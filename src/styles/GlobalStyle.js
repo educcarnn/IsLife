@@ -5,7 +5,8 @@ body {
     box-sizing: border-box;
     background-color: #F5F5F5;
     color: black;
-    font-style: 'Inter', sans-serif;
+    font-family: 'Inter', sans-serif;
+
 }
 button{
     cursor: pointer;

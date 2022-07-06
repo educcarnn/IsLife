@@ -1,4 +1,4 @@
-import './App.css';
+
 import Routes from './routes';
 import { Global } from './styles/GlobalStyle';
 import { Reset } from './styles/Reset';
