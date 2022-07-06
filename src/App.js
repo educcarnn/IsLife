@@ -6,8 +6,7 @@ import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
-    <div >
- 
+    <div>
       <ToastContainer
         position="top-right"
         autoClose={1200}
@@ -22,7 +21,6 @@ function App() {
         <Global/>
         <Reset/>
         <Routes/>
-  
     </div>
   );
 }
