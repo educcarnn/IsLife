@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from "styled-components";
 
 export const Global = createGlobalStyle`
 html, body, div, span, applet, object, iframe,
@@ -60,4 +60,17 @@ li{
     list-style: none;
 }
 
-`
+:root{
+    --rosa: #CE2D5D;
+	--rosaBackground: #F9F1F1
+    --pretoFonte: #121214;
+	--backgroundCollor: #FFFFFF;
+	--backgroundInputs: #f2f2f2;
+	--pretoModal: #000000; 
+   --cinza: #D9D9D9;
+	--verde: #039914;
+
+
+}
+
+`;
