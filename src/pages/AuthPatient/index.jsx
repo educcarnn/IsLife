@@ -9,7 +9,6 @@ import logo from "../../img/islife.png"
 function AuthPatient(){
     const history = useHistory()
 
-
     const schema = yup.object().shape({
         email: yup.string().email("email inválido").required("campo obrigatório"),
         password: yup.string().min(6, "mínino de 6 dígitos").required("campo obrigatório"),
@@ -38,7 +37,7 @@ function AuthPatient(){
                 <button onClick={()=> history.push("/")}>Voltar</button>
         </DivHeader>
 
-             <img src={logo} alt="logo" />
+             <div className="divImgLogo"> <img src={logo} alt="logo" /></div>
 
         <DivBody>
 

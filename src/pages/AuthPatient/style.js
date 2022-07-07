@@ -4,17 +4,31 @@ export const DivGlobalLogin = styled.div`
 width: 100vw;
 height: 100vh;
 display: flex;
-gap: 25px;
 flex-direction: column;
 align-items: center;
 /* background-color: antiquewhite; */
 
-img{
-    width: 100px;
-    height: 80px;
+.divImgLogo{
+    width: 150px;
+    height: 100px;
+    /* border: 1px solid  black; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    object-fit: contain;
+
+    img{
+    width: 230px;
+    }
+
 }
 
 `
+
+
 
 export const  DivHeader = styled.div`
    width: 100vw;
