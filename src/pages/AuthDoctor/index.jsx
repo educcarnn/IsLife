@@ -10,20 +10,20 @@ let schema = yup.object().shape({
   cpf: yup.string().required("CPF Inválido"),
 });
 
-const {
-  register,
-  handleSubmit,
-  formState: { errors },
-} = useForm({ resolver: yupResolver(schema) });
+// const {
+//   register,
+//   handleSubmit,
+//   formState: { errors },
+// } = useForm({ resolver: yupResolver(schema) });
 
 function AuthDoctor() {
   return (
-    <form onSubmit={handleSubmit(register)}>
+    <form>
       <div>
         <div>
           <label>Nome</label>
           <input
-            {...register("name")}
+            // {...register("name")}
             placeholder="Digite aqui seu nome"
           ></input>
         </div>
