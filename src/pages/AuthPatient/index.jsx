@@ -65,7 +65,7 @@ function AuthPatient(){
 
             <DivInfo>
                 <h4>Sou médico ainda não tenho cadastro</h4>
-                <button>Cadastre-se</button>
+                <button onClick={()=> history.push("/authdoctor")}>Cadastre-se</button>
             </DivInfo>
 
         </DivBody>
