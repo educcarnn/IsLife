@@ -1,9 +1,9 @@
 import { Content } from "./style";
 
-function ButtonForm({ children, rosaSchema = false, ...rest }) {
+function ButtonForm({ children, ...rest }) {
   return (
     <>
-      <Content rosaSchema={rosaSchema} type="button" {...rest}>
+      <Content type="button" {...rest}>
         {children}
       </Content>
     </>

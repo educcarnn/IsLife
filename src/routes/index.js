@@ -10,19 +10,19 @@ const Routes = () => {
     <BrowserRouter>
       <Switch>
         <Route exact path="/">
-          <Home/>
+          <Home />
         </Route>
         <Route exact path="/authdoctor">
-          <AuthDoctor/>
+          <AuthDoctor />
         </Route>
         <Route exact path="/authpatient">
-          <AuthPatient/>
+          <AuthPatient />
         </Route>
         <Route exact path="/dashdoctor">
-          <DashDoctor/>
+          <DashDoctor />
         </Route>
         <Route exact path="/dashpatient">
-          <DashPatient/>
+          <DashPatient />
         </Route>
       </Switch>
     </BrowserRouter>

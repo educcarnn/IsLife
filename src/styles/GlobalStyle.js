@@ -63,10 +63,10 @@ li{
 :root{
     --rosa: #CE2D5D;
 	--rosaBackground: #F9F1F1
-    --pretoFonte: #121214;
-	--backgroundCollor: #FFFFFF;
-	--backgroundInputs: #f2f2f2;
-	--pretoModal: #000000; 
+    --pretoFont: #121214;
+	--brancoBackground: #FFFFFF;
+	--inputsBackground: #f2f2f2;
+	--pretoTitles: #000000; 
    --cinza: #D9D9D9;
 	--verde: #039914;
 

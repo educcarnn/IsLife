@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const Content = styled.div`
-  background: var(--backgroundInputs);
+  background: var(--inputsBackground);
   border-radius: 10px;
-  color: var(--pretoFonte);
+  color: var(--pretoFont);
   display: flex;
   width: 100%;
 
