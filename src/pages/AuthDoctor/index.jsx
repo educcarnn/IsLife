@@ -1,12 +1,31 @@
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
 
+let schema = yup.object().shape({
+  name: yup
+    .string()
+    .required("Adicione valores válidos")
+    .matches(/^[a-zA-Z]*$/, "Adicione apenas letras e sem espaço"),
+  cpf: yup.string().required("CPF Inválido"),
+});
+
+const {
+  register,
+  handleSubmit,
+  formState: { errors },
+} = useForm({ resolver: yupResolver(schema) });
 
 function AuthDoctor() {
   return (
-    <div>
+    <form onSubmit={handleSubmit(register)}>
       <div>
         <div>
           <label>Nome</label>
-          <input placeholder="Digite aqui sua senha"></input>
+          <input
+            {...register("name")}
+            placeholder="Digite aqui seu nome"
+          ></input>
         </div>
         <div>
           <label>CPF</label>
@@ -24,9 +43,10 @@ function AuthDoctor() {
           <label>Confirmar sua senha</label>
           <input placeholder="Confirme sua senha"></input>
         </div>
-        <label>Telefone</label>
-        <input placeholder="Digite seu telefone"></input>
-
+        <div>
+          <label>Telefone</label>
+          <input placeholder="Digite seu telefone"></input>
+        </div>
         <div>
           <label>CNPJ</label>
           <input placeholder="Digite seu CNPJ"></input>
@@ -63,13 +83,12 @@ function AuthDoctor() {
           </select>
         </div>
         <div>
-            <label>CRM</label>
-            <input placeholder='Digite seu CRM'></input>
+          <label>CRM</label>
+          <input placeholder="Digite seu CRM"></input>
         </div>
+        <button type="submit">Cadastrar</button>
       </div>
-
-      <button type="submit">Cadastrar</button>
-    </div>
+    </form>
   );
 }
 export default AuthDoctor;
