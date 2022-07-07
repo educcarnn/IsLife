@@ -1,12 +1,12 @@
 
 import Routes from './routes';
 import { Global } from './styles/GlobalStyle';
-import { Reset } from './styles/Reset';
 import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
     <div>
+      <Global/>
       <ToastContainer
         position="top-right"
         autoClose={1200}
@@ -18,8 +18,7 @@ function App() {
         draggable
         pauseOnHover
         />
-        <Global/>
-        <Reset/>
+     
         <Routes/>
     </div>
   );
