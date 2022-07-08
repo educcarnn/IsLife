@@ -8,19 +8,20 @@ import DashPatient from "../pages/DashPatient";
 import DoctorPatient from "../pages/DoctorPatient";
 import DoctorSchedule from "../pages/DoctorSchedule";
 import Home from "../pages/Home";
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from "react";
 
 const Routes = () => {
-  
   const [auth, setAuth] = useState(false);
 
-    useEffect(() => {
-        const token = localStorage.getItem('@IsLife:token');
+  console.log(auth);
 
-        if (token) {
-            return setAuth(true)
-        };
-    },[]);
+  useEffect(() => {
+    const token = localStorage.getItem("@IsLife:token");
+
+    if (token) {
+      return setAuth(true);
+    }
+  }, []);
 
   return (
     <BrowserRouter>
@@ -35,9 +36,6 @@ const Routes = () => {
           <AuthPatient />
         </Route>
         <Route exact path="/dashdoctor">
-<<<<<<< HEAD
-          <DashDoctor />
-=======
           <HeaderDoctor />
           <DashDoctor />
         </Route>
@@ -48,7 +46,6 @@ const Routes = () => {
         <Route exact path="/doctorpatient">
           <HeaderDoctor />
           <DoctorPatient />
->>>>>>> bbf6bf842caad2b3cf2a771ea6ef3b50af71129f
         </Route>
         <Route exact path="/dashpatient">
           <DashPatient />
