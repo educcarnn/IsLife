@@ -2,28 +2,33 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
-let schema = yup.object().shape({
-  name: yup
-    .string()
-    .required("Adicione valores válidos")
-    .matches(/^[a-zA-Z]*$/, "Adicione apenas letras e sem espaço"),
-  cpf: yup.string().required("CPF Inválido"),
-});
-
-// const {
-//   register,
-//   handleSubmit,
-//   formState: { errors },
-// } = useForm({ resolver: yupResolver(schema) });
 
 function AuthDoctor() {
+
+  let schema = yup.object().shape({
+    name: yup.string().required("Adicione valores válidos"),
+    cpf: yup.string().required("CPF Inválido"),
+  });
+
+  const sendates = (info) => {
+    const dates = {
+      name: info.name,
+    }
+  }
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({ resolver: yupResolver(schema)});
+
   return (
-    <form>
+    <form onSubmit={handleSubmit()}>
       <div>
         <div>
           <label>Nome</label>
           <input
-            // {...register("name")}
+          {...register("name")}
             placeholder="Digite aqui seu nome"
           ></input>
         </div>
@@ -51,29 +56,9 @@ function AuthDoctor() {
           <label>CNPJ</label>
           <input placeholder="Digite seu CNPJ"></input>
         </div>
-        <div>
-          <label>CEP</label>
-          <input placeholder="Digite seu CEP"></input>
-        </div>
       </div>
       {/* ------- */}
       <div>
-        <div>
-          <label>Bairro</label>
-          <input placeholder="Digite o nome do seu bairro" />
-        </div>
-        <div>
-          <label>Rua</label>
-          <input placeholder="Digite o nome do seu bairro" />
-        </div>
-        <div>
-          <label>Complemento</label>
-          <input placeholder="Digite o nome do seu bairro" />
-        </div>
-        <div>
-          <label>Nº</label>
-          <input placeholder="Digite o nome do seu bairro" />
-        </div>
         <div>
           <label>Escolha sua profissão</label>
           <select>
@@ -91,4 +76,5 @@ function AuthDoctor() {
     </form>
   );
 }
+
 export default AuthDoctor;
