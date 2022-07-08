@@ -12,6 +12,7 @@ export const ContainerListNewPatient = styled.li`
   width: 90%;
   margin-top: 25px;
   height: 70px;
+  background-color: #f8f9fa;
   .name-and--date {
     width: 50%;
     height: auto;

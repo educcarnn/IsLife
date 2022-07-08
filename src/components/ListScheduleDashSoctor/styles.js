@@ -3,9 +3,10 @@ import styled from "styled-components";
 export const ContainerListSchedule = styled.li`
   width: 100%;
   border-left: 5px solid green;
-  border-radius: 10px;
+  border-radius: 5px;
   height: 89px;
   background-color: #f8f9fa;
+  box-shadow: 0px 0px 4px grey;
 `;
 
 export const ContentListSchedule = styled.div`

@@ -12,6 +12,8 @@ export const ContainerPatient = styled.main`
     align-items: center;
     padding-top: 90px;
     margin-left: 16px;
+    align-content: center;
+    justify-content: flex-start;
   }
 `;
 export const ContentPatientForm = styled.div`
