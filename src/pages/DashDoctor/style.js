@@ -11,6 +11,9 @@ export const ContainerConsult = styled.main`
   @media (max-width: 800px) {
     display: flex;
     flex-direction: column;
+    align-content: center;
+    align-items: center;
+    padding: 16px;
   }
 `;
 export const ContentConsultHour = styled.div`
@@ -35,6 +38,12 @@ export const ListContentHour = styled.ul`
   justify-content: center;
   align-items: center;
   gap: 20px;
+
+  @media (max-width: 800px) {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
 `;
 
 export const ContentConsultList = styled.div`
@@ -59,8 +68,10 @@ export const ListContentConsult = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 20px;
+
   @media (max-width: 800px) {
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
 `;
