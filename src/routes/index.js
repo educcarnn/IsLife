@@ -1,8 +1,12 @@
 import { Switch, BrowserRouter, Route } from "react-router-dom";
+import HeaderDoctor from "../components/Header";
+
 import AuthDoctor from "../pages/AuthDoctor";
 import AuthPatient from "../pages/AuthPatient";
 import DashDoctor from "../pages/DashDoctor";
 import DashPatient from "../pages/DashPatient";
+import DoctorPatient from "../pages/DoctorPatient";
+import DoctorSchedule from "../pages/DoctorSchedule";
 import Home from "../pages/Home";
 import {useState, useEffect} from 'react';
 
@@ -22,19 +26,28 @@ const Routes = () => {
     <BrowserRouter>
       <Switch>
         <Route exact path="/">
-          <Home/>
+          <Home />
         </Route>
         <Route exact path="/authdoctor">
-          <AuthDoctor auth={auth} setAuth={setAuth} />
+          <AuthDoctor />
         </Route>
         <Route exact path="/authpatient">
-          <AuthPatient auth={auth} setAuth={setAuth} />
+          <AuthPatient />
         </Route>
         <Route exact path="/dashdoctor">
-          <DashDoctor auth={auth} setAuth={setAuth} />
+          <HeaderDoctor />
+          <DashDoctor />
+        </Route>
+        <Route exact path="/doctorschedule">
+          <HeaderDoctor />
+          <DoctorSchedule />
+        </Route>
+        <Route exact path="/doctorpatient">
+          <HeaderDoctor />
+          <DoctorPatient />
         </Route>
         <Route exact path="/dashpatient">
-          <DashPatient auth={auth} setAuth={setAuth} />
+          <DashPatient />
         </Route>
       </Switch>
     </BrowserRouter>
