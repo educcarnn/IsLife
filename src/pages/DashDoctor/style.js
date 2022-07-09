@@ -22,6 +22,11 @@ export const ContentConsultHour = styled.div`
   padding: 16px;
   display: flex;
   flex-direction: column;
+  .title-consults {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
   @media (max-width: 800px) {
     display: flex;
     flex-direction: column;
@@ -68,6 +73,7 @@ export const ListContentConsult = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 20px;
+  padding-top: 45px;
 
   @media (max-width: 800px) {
     display: flex;
