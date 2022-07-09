@@ -13,7 +13,7 @@ function DashDoctor() {
     <div>
       <ContainerConsult>
         <ContentConsultHour>
-          <h2>Consultas do dia</h2>
+          <h2 className="title-consults">Consultas do dia</h2>
           <ListContentHour>
             <ListHourDashDoctor />
           </ListContentHour>
