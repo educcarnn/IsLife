@@ -2,13 +2,13 @@ import { api } from "../../services/api";
 import { ContainerListNewPatient } from "./styles";
 
 function ListNewPatient() {
-  if (!localStorage.setItem("@isLifetoken:")) {
-    const patientList = (data) => {
-      const { name, email } = data;
-      console.log(data);
-      api.get("/users?doctorId=4", data).then((res) => res.data);
-    };
-  }
+  // if (!localStorage.setItem("@isLifetoken:")) {
+  //   const patientList = (data) => {
+  //     const { name, email } = data;
+  //     console.log(data);
+  //     api.get("/users?doctorId=4", data).then((res) => res.data);
+  //   };
+  // }
 
   return (
     <ContainerListNewPatient>

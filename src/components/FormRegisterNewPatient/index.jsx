@@ -9,7 +9,7 @@ function FormRegisterNewPatient() {
     console.log(data);
     api
       .post("/register", data)
-      .then((res) => res.data)
+      .then((res) => console.log(res))
       .catch((err) => console.log(err));
   };
 

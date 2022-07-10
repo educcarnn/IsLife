@@ -13,6 +13,7 @@ function AuthDoctor() {
   const sendates = (info) => {
     const dates = {
       name: info.name,
+      cpf: info.cpf,
     }
   }
 
