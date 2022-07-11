@@ -1,15 +1,36 @@
 import { api } from "../../services/api";
 import { ContainerListNewPatient } from "./styles";
+import { useState } from "react";
 
 function ListNewPatient() {
-  // if (!localStorage.setItem("@isLifetoken:")) {
-  //   const patientList = (data) => {
-  //     const { name, email } = data;
-  //     console.log(data);
-  //     api.get("/users?doctorId=4", data).then((res) => res.data);
-  //   };
-  // }
+  const [datesDash, setDatesDash] = useState(
+    JSON.parse(localStorage.getItem("token"))
+  );
 
+    console.log(datesDash.user.id)
+
+  api.get(`/users?doctorId=${datesDash.user.id}`, {
+    headers: {
+      'Content-Type': "application/json",
+      'Authorization': `Bearer ${localStorage.getItem('token')}`
+    }
+} )
+.then((res) =>{
+  console.log(res)
+})  
+.catch((res) =>{
+  console.log(res)
+})  
+
+
+
+const itemCart = (item) => {
+  return (
+    <li key={item.id} className="Li-Name">
+      <div>teste</div>
+    </li>
+  );
+};
   return (
     <ContainerListNewPatient>
       <div className="name-and--date">

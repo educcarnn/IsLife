@@ -31,10 +31,6 @@ function DoctorPatient() {
         </div>
         <UlContainer>
           <ListNewPatient />
-          <ListNewPatient />
-          <ListNewPatient />
-          <ListNewPatient />
-          <ListNewPatient />
           {/* <img className="img-nocard--new---patient" src={noCardList} alt="" />
           <img className="img-nocard--new---patient" src={noCardList} alt="" />
           <img className="img-nocard--new---patient" src={noCardList} alt="" />

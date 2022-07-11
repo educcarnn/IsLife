@@ -54,7 +54,11 @@ body {
 }
 button{
     cursor: pointer;
-    background-color: red;
+    background-color: #CE2D5D;
+	font-family: 'Inter', sans-serif;
+	color: white;
+	border-radius: 5px;
+	border: none;
 }
 li{
     list-style: none;

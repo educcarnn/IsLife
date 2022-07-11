@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 
 function Home() {
   const history = useHistory();
+  
   return (
     <ContainerHome>
       <ContentWelcome>
@@ -22,10 +23,10 @@ function Home() {
           </p>
         </div>
         <div className="div-buttons--home">
-          <button onClick={() => history.push("/authdoctor")}>
+          <button onClick={() => history.push("/home/doctor")}>
             Sou um profissional
           </button>
-          <button onClick={() => history.push("/authpatient")}>
+          <button onClick={() => history.push("/home/patient")}>
             Sou um cliente
           </button>
         </div>

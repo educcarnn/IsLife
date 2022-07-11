@@ -1,4 +1,4 @@
-import { Switch, BrowserRouter, Route } from "react-router-dom";
+import { Switch, BrowserRouter, Route} from "react-router-dom";
 import HeaderDoctor from "../components/Header";
 
 import AuthDoctor from "../pages/AuthDoctor";
@@ -8,30 +8,23 @@ import DashPatient from "../pages/DashPatient";
 import DoctorPatient from "../pages/DoctorPatient";
 import DoctorSchedule from "../pages/DoctorSchedule";
 import Home from "../pages/Home";
-import {useState, useEffect} from 'react';
+import HomeDoctor from "../pages/HomeDoctor";
+import HomePatient from "../pages/HomePatient";
+
 
 const Routes = () => {
   
-  const [auth, setAuth] = useState(false);
-
-    useEffect(() => {
-        const token = localStorage.getItem('@IsLife:token');
-
-        if (token) {
-            return setAuth(true)
-        };
-    },[]);
-
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route path="/authdoctor">
+        <Route exact path="/"> <Home/> </Route>
+        <Route path="/home/doctor"> <HomeDoctor/> </Route>
+        <Route path="/home/patient"> <HomePatient/></Route>
+
+        <Route path="/register/doctor">
           <AuthDoctor />
         </Route>
-        <Route path="/authpatient">
+        <Route path="/login">
           <AuthPatient />
         </Route>
         <Route path="/dashdoctor">
