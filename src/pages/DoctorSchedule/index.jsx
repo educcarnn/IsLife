@@ -7,14 +7,21 @@ import {
 import noCard from "../../assets/img/NoCard.svg";
 import imgSchedule from "../../assets/img/imgSchedule.svg";
 import ListSchedule from "../../components/ListScheduleDashSoctor";
+import ModalSchedule from "../../components/modalSchedule/index"
+import { useState } from "react";
 
 function DoctorSchedule() {
+  
+  const [showModal, setShowModal] = useState(false)
+
+
   return (
     <ContainerSchedule>
+      {showModal && (<ModalSchedule showModal={showModal} setShowModal={setShowModal}/>)}
       <ContentSchedule>
         <div className="title-content">
           <h1 className="title-schedule">Agendar uma consulta</h1>
-          <button className="btn-schedule">+</button>
+          <button onClick={()=> setShowModal(true)} className="btn-schedule">+</button>
         </div>
         <ListContentSchedule>
           <ListSchedule />
