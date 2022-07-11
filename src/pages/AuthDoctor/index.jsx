@@ -55,7 +55,7 @@ function AuthDoctor() {
       <button onClick={() => history.push("/")} className="buttonDoctor">
         <img src={logo} alt={logo} className="imgSize"></img>
       </button>
-      {/* dev */}
+   
       
       <div className="DivElem">
         <DivElems>
@@ -79,7 +79,7 @@ function AuthDoctor() {
         </DivElems>
         <DivElems>
           <label>E-mail</label>
-          <input placeholder="Digite aqui seu e-mail" {...register('email')} className="label" type='password' required></input>
+          <input placeholder="Digite aqui seu e-mail" {...register('email')} className="label" required></input>
         </DivElems>
         <DivElems>
           <label>Senha</label>
@@ -87,7 +87,7 @@ function AuthDoctor() {
         </DivElems>
         <DivElems>
           <label>Confirmar sua senha</label>
-          <input placeholder="Confirme sua senha" {...register('confirmPassword')} className="label"></input>
+          <input placeholder="Confirme sua senha" {...register('confirmPassword')} className="label" type='password'></input>
         </DivElems>
         <DivElems>
           <label>CRM</label>
