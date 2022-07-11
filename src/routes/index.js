@@ -6,19 +6,16 @@ import AuthDoctor from "../pages/AuthDoctor";
 import AuthPatient from "../pages/AuthPatient";
 import DashDoctor from "../pages/DashDoctor";
 import DashPatient from "../pages/DashPatient";
-<<<<<<< HEAD
+import DayShare from "../pages/PatientDayShare"
 
 import PageTest from "../pages/testPage"
 
-import Home from "../pages/Home";
-=======
 import DoctorPatient from "../pages/DoctorPatient";
 import DoctorSchedule from "../pages/DoctorSchedule";
 import Home from "../pages/Home"
 import HomeDoctor from "../pages/HomeDoctor";
 import HomePatient from "../pages/HomePatient";
 
->>>>>>> 40092de1816676b383aedb2a7a8f4e9c4a41267b
 
 
 const Routes = () => {
@@ -49,6 +46,17 @@ const Routes = () => {
           <HeaderPatient/>
           <DashPatient />
         </Route>
+
+    {/* Rotas do Paciente */}
+      <Route path={"/dayshare"}>
+          <HeaderPatient/>
+          <DayShare/>
+      </Route>
+
+      <Route path={"/"}>
+          <HeaderPatient/>
+          <Home/>
+      </Route>
 
 
         <Route exact path="/receitas">

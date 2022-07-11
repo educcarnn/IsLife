@@ -16,8 +16,8 @@ function HeaderPatient() {
   const history = useHistory()
 
   const displayMenuMobile = () => {
-    setIsActiveMenuMobile(!isActiveMenuMobile);
 
+    setIsActiveMenuMobile(!isActiveMenuMobile);
 
 
   };

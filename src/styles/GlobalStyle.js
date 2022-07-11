@@ -55,14 +55,11 @@ body {
 button{
     cursor: pointer;
     background-color: #CE2D5D;
-<<<<<<< HEAD
 	color: #ffffff;
-=======
 	font-family: 'Inter', sans-serif;
 	color: white;
 	border-radius: 5px;
 	border: none;
->>>>>>> 40092de1816676b383aedb2a7a8f4e9c4a41267b
 }
 li{
     list-style: none;
@@ -75,7 +72,7 @@ li{
 	--brancoBackground: #FFFFFF;
 	--inputsBackground: #f2f2f2;
 	--pretoTitles: #000000; 
-   --cinza: #D9D9D9;
+   	--cinza: #D9D9D9;
 	--verde: #039914;
 }
 
