@@ -20,7 +20,6 @@ const Routes = () => {
         <Route exact path="/"> <Home/> </Route>
         <Route path="/home/doctor"> <HomeDoctor/> </Route>
         <Route path="/home/patient"> <HomePatient/></Route>
-
         <Route path="/register/doctor">
           <AuthDoctor />
         </Route>
