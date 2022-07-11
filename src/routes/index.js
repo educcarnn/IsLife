@@ -54,12 +54,6 @@ const Routes = () => {
           <DayShare/>
       </Route>
 
-      <Route path={"/"}>
-          <HeaderPatient/>
-          <Home/>
-      </Route>
-
-
         <Route exact path="/receitas">
           <PageTest/>
         </Route>
