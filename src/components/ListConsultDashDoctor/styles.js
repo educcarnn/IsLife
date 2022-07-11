@@ -14,17 +14,19 @@ export const ContainerList = styled.li`
   p {
     font-size: 18px;
   }
-  @media (max-width: 980px) {
+ /*  @media (max-width: 980px) {
     display: flex;
     flex-direction: column;
     width: 400px;
     height: 150px;
   }
+  */
 
   @media (max-width: 800px) {
     display: flex;
     flex-direction: column;
-    height: 150px;
-    width: 310px;
-  }
+    height: 100px;
+    padding: .3rem 0;
+
+  } 
 `;
