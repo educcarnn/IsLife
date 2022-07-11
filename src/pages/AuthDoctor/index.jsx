@@ -39,7 +39,7 @@ function AuthDoctor() {
   } = useForm({ resolver: yupResolver(schema) });
 
   const onSubmitFunction = (data) => {
-    console.log(data);
+
 
     data.type = "doctor";
     data.patients = [];
@@ -50,7 +50,7 @@ function AuthDoctor() {
         console.log(response);
         console.log(data);
         localStorage.setItem(
-          "@isLifetoken:",
+          "token",
           JSON.stringify(response.data.accessToken)
         );
         localStorage.setItem(
@@ -82,8 +82,7 @@ function AuthDoctor() {
         <span> {errors.name && errors.name.message} </span>
         <Input label="CPF" placeholder="CPF" register={register} name="cpf" />
         <span> {errors.cpf && errors.cpf.message} </span>
-        {/* <Input label="Idade" placeholder="Sua idade" {...register("age")} />
-        <span> {errors.age && errors.age.message} </span> */}
+
         <Input
           label="E-mail"
           placeholder="E-mail"
