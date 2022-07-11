@@ -20,7 +20,6 @@ function App() {
         draggable
         pauseOnHover
         />
-    
       <Routes/>
     </div>
   );
