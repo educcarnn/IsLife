@@ -1206,10 +1206,17 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
+<<<<<<< HEAD
 "@hookform/resolvers@^2.9.3":
   version "2.9.4"
   resolved "https://registry.npmjs.org/@hookform/resolvers/-/resolvers-2.9.4.tgz"
   integrity sha512-rVqwNB5Z5J67QGsJWp9a46z4+MJq8YDUXX8mMIr6hEsGD4bs6c7Jtel+ZNvk0aFfywGRwIEMfmQUrpxjWQck3w==
+=======
+"@hookform/resolvers@^2.9.5":
+  version "2.9.5"
+  resolved "https://registry.yarnpkg.com/@hookform/resolvers/-/resolvers-2.9.5.tgz#adfa2d240a9315f4ab6ff4c63621d22d1b574c07"
+  integrity sha512-4XABrKdE4GpX6v2RZ+Ij1Wrl9qPEl5ZvVhFxROY+SZhP/6TU8gPw0LO4ZS9/GgIbTx3Pw1U8HmcXVAoGOq+7iA==
+>>>>>>> 40092de1816676b383aedb2a7a8f4e9c4a41267b
 
 "@humanwhocodes/config-array@^0.9.2":
   version "0.9.5"
