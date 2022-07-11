@@ -1,40 +1,118 @@
-import { ContainerHome, ContentWelcome, ContentImg } from "./style";
-import logo from "../../assets/img/logo.png";
-import imgHome from "../../assets/img/imgHome.svg";
-import { useHistory } from "react-router-dom";
+import logo from "../../img/IsLifeLogo1.png";
+import ImgHome from "../../img/DashHome.png";
+import Fernando from "../../img/Fernando.jfif";
+import Idaline from "../../img/Idaline.jfif";
+import Leomar from "../../img/Leomar.jfif";
+import Lucas from "../../img/Lucas.jfif";
+import Eduardo from "../../img/Eduardo.jfif";
+import Herbert from "../../img/Herbert.jpg";
+import { AiFillGithub } from "react-icons/ai";
+import { AiFillLinkedin } from "react-icons/ai";
+import { AiOutlineInstagram } from "react-icons/ai";
+import { useHistory } from "react-router";
+import { Container, Logo, WelcomeContainer, Footer } from "./style";
 
-function Home() {
-  const history = useHistory();
-  return (
-    <ContainerHome>
-      <ContentWelcome>
-        <div className="div-logo--home">
-          <img src={logo} alt="" />
-        </div>
-        <div className="welcome">
-          <h3>Seja Bem Vindo (a)</h3>
-          <h2>IsLife</h2>
-          <p className="text-line typing-animation">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem
-            eaque iusto numquam omnis? Cum aliquam sequi, vitae sint veniam
-            natus repellendus quod ab eius alias. Numquam, non labore. Possimus,
-            assumenda.
-          </p>
-        </div>
-        <div className="div-buttons--home">
-          <button onClick={() => history.push("/authdoctor")}>
-            Sou um profissional
-          </button>
-          <button onClick={() => history.push("/authpatient")}>
-            Sou um cliente
-          </button>
-        </div>
-      </ContentWelcome>
-      <ContentImg>
-        <img src={imgHome} alt="" />
-      </ContentImg>
-    </ContainerHome>
-  );
-}
+function Home () {
+    const history = useHistory();
+
+    function goToDash(path) {
+        history.push(path);
+      }
+
+    return(
+        <>
+            <Logo>
+                <img src={logo} alt="IsLife" />
+            </Logo>
+            <Container>
+                <WelcomeContainer>
+                    <h1>Seja Bem Vindo (a)</h1>
+                    <h2>IsLife</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam bibendum commodo massa.
+                        Donec neque lectus, efficitur nec porta non, faucibus quis enim.
+                    </p>
+                    <div>
+                        <button onClick={() => goToDash("/home/doctor")}>Sou um médico</button>
+                        <button onClick={() => goToDash("/home/patient")}>Sou um paciente</button>
+                    </div>
+                </WelcomeContainer>
+                <div>
+                    <img src={ImgHome} alt="Welcome" />
+                </div>
+            </Container>
+            <Footer>
+                <h3>Conheça os devs que fizeram esse projeto</h3>
+                <ul>
+                    <li>
+                        <img src={Eduardo} alt="Eduardo" />
+                        <h2>Eduardo Carneiro</h2>
+                        <h4>Dev</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris purus erat, tincidunt nec pulvinar vel, consectetur id tellus.</p>
+                        <div className="icons">
+                            <AiFillGithub className="github" />
+                            <AiFillLinkedin className="linkedin" />
+                            <AiOutlineInstagram  className="instagram" />
+                        </div>
+                    </li>
+                    <li>
+                        <img src={Idaline} alt="Idaline" />
+                        <h2>Idaline Viana</h2>
+                        <h4>Dev</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris purus erat, tincidunt nec pulvinar vel, consectetur id tellus.</p>
+                        <div className="icons">
+                            <AiFillGithub className="github" />
+                            <AiFillLinkedin className="linkedin" />
+                            <AiOutlineInstagram  className="instagram" />
+                        </div>
+                    </li>
+                    <li>
+                        <img src={Fernando} alt="Fernando" />
+                        <h2>Fernando Lacerda</h2>
+                        <h4>Dev</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris purus erat, tincidunt nec pulvinar vel, consectetur id tellus.</p>
+                        <div className="icons">
+                            <AiFillGithub className="github" />
+                            <AiFillLinkedin className="linkedin" />
+                            <AiOutlineInstagram  className="instagram" />
+                        </div>
+                    </li>
+                    <li>
+                        <img src={Herbert} alt="Herbert" />
+                        <h2>Hebert Sipriano</h2>
+                        <h4>Dev</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris purus erat, tincidunt nec pulvinar vel, consectetur id tellus.</p>
+                        <div className="icons">
+                            <AiFillGithub className="github" />
+                            <AiFillLinkedin className="linkedin" />
+                            <AiOutlineInstagram  className="instagram" />
+                        </div>
+                    </li>
+                    <li>
+                        <img src={Leomar} alt="Leomar" />
+                        <h2>Leomar Paz</h2>
+                        <h4>Dev</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris purus erat, tincidunt nec pulvinar vel, consectetur id tellus.</p>
+                        <div className="icons">
+                            <AiFillGithub className="github" />
+                            <AiFillLinkedin className="linkedin" />
+                            <AiOutlineInstagram  className="instagram" />
+                        </div>
+                    </li>
+                    <li>
+                        <img src={Lucas} alt="Lucas" />
+                        <h2>Lucas Roque</h2>
+                        <h4>Dev</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris purus erat, tincidunt nec pulvinar vel, consectetur id tellus.</p>
+                        <div className="icons">
+                            <AiFillGithub className="github" />
+                            <AiFillLinkedin className="linkedin" />
+                            <AiOutlineInstagram  className="instagram" />
+                        </div>
+                    </li>
+                </ul>
+            </Footer>
+        </>
+    );
+};
 
 export default Home;

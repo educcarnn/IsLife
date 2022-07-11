@@ -1,5 +1,6 @@
-import { Switch, BrowserRouter, Route } from "react-router-dom";
+import { Switch, BrowserRouter, Route} from "react-router-dom";
 import HeaderDoctor from "../components/Header";
+import HeaderPatient from "../components/HeaderPatient";
 
 import AuthDoctor from "../pages/AuthDoctor";
 import AuthPatient from "../pages/AuthPatient";
@@ -7,46 +8,37 @@ import DashDoctor from "../pages/DashDoctor";
 import DashPatient from "../pages/DashPatient";
 import DoctorPatient from "../pages/DoctorPatient";
 import DoctorSchedule from "../pages/DoctorSchedule";
-import Home from "../pages/Home";
-import {useState, useEffect} from 'react';
+import Home from "../pages/Home"
+import HomeDoctor from "../pages/HomeDoctor";
+import HomePatient from "../pages/HomePatient";
+
 
 const Routes = () => {
   
-  const [auth, setAuth] = useState(false);
-
-    useEffect(() => {
-        const token = localStorage.getItem('@IsLife:token');
-
-        if (token) {
-            return setAuth(true)
-        };
-    },[]);
-
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route exact path="/authdoctor">
-          <AuthDoctor />
-        </Route>
-        <Route exact path="/authpatient">
+        <Route exact path="/"> <Home/> </Route>
+        <Route path="/home/doctor"> <HomeDoctor/> </Route>
+        <Route path="/home/patient"> <HomePatient/></Route>
+        <Route path="/register/doctor"> <AuthDoctor /> </Route>
+        <Route path="/login">
           <AuthPatient />
         </Route>
-        <Route exact path="/dashdoctor">
+        <Route path="/dashdoctor">
           <HeaderDoctor />
           <DashDoctor />
         </Route>
-        <Route exact path="/doctorschedule">
+        <Route path="/doctorschedule">
           <HeaderDoctor />
           <DoctorSchedule />
         </Route>
-        <Route exact path="/doctorpatient">
+        <Route path="/doctorpatient">
           <HeaderDoctor />
           <DoctorPatient />
         </Route>
-        <Route exact path="/dashpatient">
+        <Route path="/dashpatient">
+          <HeaderPatient/>
           <DashPatient />
         </Route>
       </Switch>
