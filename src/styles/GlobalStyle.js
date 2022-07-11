@@ -55,6 +55,7 @@ body {
 button{
     cursor: pointer;
     background-color: #CE2D5D;
+	color: #ffffff;
 	font-family: 'Inter', sans-serif;
 	color: white;
 	border-radius: 5px;
@@ -71,7 +72,7 @@ li{
 	--brancoBackground: #FFFFFF;
 	--inputsBackground: #f2f2f2;
 	--pretoTitles: #000000; 
-   --cinza: #D9D9D9;
+   	--cinza: #D9D9D9;
 	--verde: #039914;
 }
 

@@ -5,7 +5,7 @@ function ListConsultDashDoctor() {
     <>
       <ContainerList className="li-content-hour">
         <p>Fulano de tal</p>
-        <p>próxima consulta:</p>
+        <p>próx. consulta</p>
         <p>10/08/22</p>
         <p>14:30</p>
       </ContainerList>
