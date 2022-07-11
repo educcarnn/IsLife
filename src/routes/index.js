@@ -29,25 +29,25 @@ const Routes = () => {
         <Route exact path="/">
           <Home />
         </Route>
-        <Route exact path="/authdoctor">
+        <Route path="/authdoctor">
           <AuthDoctor />
         </Route>
-        <Route exact path="/authpatient">
+        <Route path="/authpatient">
           <AuthPatient />
         </Route>
-        <Route exact path="/dashdoctor">
+        <Route path="/dashdoctor">
           <HeaderDoctor />
           <DashDoctor />
         </Route>
-        <Route exact path="/doctorschedule">
+        <Route path="/doctorschedule">
           <HeaderDoctor />
           <DoctorSchedule />
         </Route>
-        <Route exact path="/doctorpatient">
+        <Route path="/doctorpatient">
           <HeaderDoctor />
           <DoctorPatient />
         </Route>
-        <Route exact path="/dashpatient">
+        <Route path="/dashpatient">
           <DashPatient />
         </Route>
       </Switch>

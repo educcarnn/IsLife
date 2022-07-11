@@ -10,6 +10,7 @@ export const ContainerList = styled.li`
   background: #f0f3f4;
   gap: 16px;
   border-radius: 10px;
+  box-shadow: 0px 0px 4px grey;
 
   .avatar {
     width: 55px;
@@ -28,12 +29,12 @@ export const ContainerList = styled.li`
     flex-direction: column;
     justify-content: center;
     height: 150px;
-    width: 100%;
+    width: 400px;
   }
   @media (max-width: 800px) {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 310px;
     height: 150px;
   }
 `;

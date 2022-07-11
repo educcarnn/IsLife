@@ -34,11 +34,20 @@ function AuthDoctor() {
     cnpj: yup.string().required("campo obrigatório"),
   });
 
+<<<<<<< HEAD
   // const sendates = (info) => {
   //   const dates = {
   //     name: info.name,
   //   };
   // };
+=======
+  const sendates = (info) => {
+    const dates = {
+      name: info.name,
+      cpf: info.cpf,
+    }
+  }
+>>>>>>> 6d801309839c5f33ecbc6648ad1b9455a04d365b
 
   const {
     register,
