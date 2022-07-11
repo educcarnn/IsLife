@@ -6,7 +6,6 @@ height: 100vh;
 display: flex;
 flex-direction: column;
 align-items: center;
-/* background-color: antiquewhite; */
 
 .divImgLogo{
     width: 150px;
@@ -44,14 +43,13 @@ export const  DivHeader = styled.div`
     height: 30px;
     width: 100px;
     border:none;
-    color:  #CE2D5D;
+    color:  white;
     border: 1px solid #CE2D5D;
 
     :hover{
-        color: white;
-        background-color: #CE2D5D;
+        color: #CE2D5D;
+        background-color: white;
         border: 1px solid #CE2D5D;
-
     }
    }
 `
@@ -92,7 +90,8 @@ width: 272px;
 height: 290px;
 
 input{
-    width: 265px;
+    width: 232px;
+    padding-left: 1.2rem;
     margin-left: 12px;
     height: 38px;
     border: none;
@@ -114,7 +113,6 @@ button{
         color: #CE2D5D;
         background-color: white;
         border: 1px solid #CE2D5D;
-
     }
 
 }
@@ -147,7 +145,7 @@ export const DivInfo = styled.div`
  }
 
  button{
-    color: #CE2D5D;
+    color: white;
     border: 1px solid #CE2D5D;
     font-family:  "Inter";
     width: 100px;

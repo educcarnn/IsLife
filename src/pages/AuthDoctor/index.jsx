@@ -21,7 +21,6 @@ function AuthDoctor() {
   let schema = yup.object().shape({
     name: yup.string().required("Adicione valores válidos"),
     cpf: yup.string().required("CPF Inválido"),
-    // age: yup.string().required("campo está vazio"),
     email: yup.string().required("campo obrigatório").email("e-mail inválido!"),
     confirmedPassword: yup
       .string()
