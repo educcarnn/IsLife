@@ -16,4 +16,10 @@ export const Content = styled.button`
   justify-content: center;
 
   font-family: "Roboto", serif;
+
+  :hover {
+    color: var(--rosa);
+    background: var(--brancoBackground);
+    border: 1px solid var(--rosa);
+  }
 `;
