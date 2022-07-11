@@ -9,10 +9,9 @@ import { Input } from "../../components/inputs";
 import { Select } from "../../components/inputs";
 import ButtonForm from "../../components/button";
 
-import { DivGlobalLogin, FormLoginDoctor } from "./style";
-import { Nav } from "./style";
-
 import { useHistory } from "react-router-dom";
+
+import { DivGlobalLogin, FormLoginDoctor, Nav } from "./style";
 
 import Logo from "../../img/IsLifeLogo.png";
 
@@ -33,21 +32,6 @@ function AuthDoctor() {
     crm: yup.string().required("documentação obrigatória"),
     cnpj: yup.string().required("campo obrigatório"),
   });
-
-<<<<<<< HEAD
-  // const sendates = (info) => {
-  //   const dates = {
-  //     name: info.name,
-  //   };
-  // };
-=======
-  const sendates = (info) => {
-    const dates = {
-      name: info.name,
-      cpf: info.cpf,
-    }
-  }
->>>>>>> 6d801309839c5f33ecbc6648ad1b9455a04d365b
 
   const {
     register,
@@ -115,7 +99,7 @@ function AuthDoctor() {
           type="password"
           placeholder="Senha"
         />
-        <span> {errors.password && errors.password.message} </span>
+        <span> {errors.password && errors.password.message}</span>
         <Input
           label="Telefone"
           placeholder="Telefone"
