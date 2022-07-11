@@ -1,9 +1,17 @@
-function DashPatient(){
+import HeaderPatient from "../../components/HeaderPatient";
 
-    return (
-        <div>
-            <span>Você é um paciente, aqui estarão suas consultas, feedback e suas visitas</span>
-        </div>
-    )
+function DashPatient() {
+  return (
+    <>
+      <HeaderPatient />
+      
+      <div>
+        <span>
+          Você é um paciente, aqui estarão suas consultas, feedback e suas
+          visitas
+        </span>
+      </div>
+    </>
+  );
 }
-export default DashPatient
+export default DashPatient;

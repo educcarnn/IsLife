@@ -3,7 +3,11 @@ import AuthDoctor from "../pages/AuthDoctor";
 import AuthPatient from "../pages/AuthPatient";
 import DashDoctor from "../pages/DashDoctor";
 import DashPatient from "../pages/DashPatient";
+
+import PageTest from "../pages/testPage"
+
 import Home from "../pages/Home";
+
 
 const Routes = () => {
   return (
@@ -23,6 +27,11 @@ const Routes = () => {
         </Route>
         <Route exact path="/dashpatient">
           <DashPatient/>
+        </Route>
+
+
+        <Route exact path="/receitas">
+          <PageTest/>
         </Route>
       </Switch>
     </BrowserRouter>

@@ -54,7 +54,8 @@ body {
 }
 button{
     cursor: pointer;
-    background-color: red;
+    background-color: #CE2D5D;
+	color: #ffffff;
 }
 li{
     list-style: none;

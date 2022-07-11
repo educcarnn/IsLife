@@ -2,6 +2,7 @@
 import Routes from './routes';
 import { Global } from './styles/GlobalStyle';
 import { ToastContainer } from 'react-toastify';
+import DashPatient from './pages/DashPatient';
 
 function App() {
   return (
@@ -18,8 +19,10 @@ function App() {
         draggable
         pauseOnHover
         />
+
+        <DashPatient/>
      
-        <Routes/>
+      {/* <Routes/> */}
     </div>
   );
 }
