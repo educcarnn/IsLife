@@ -43,10 +43,10 @@ function Home() {
             </p>
 
             <Menu>
-              <ButtonForm onClick={() => goToDash("/authdoctor")}>
+              <ButtonForm onClick={() => goToDash("/home/doctor")}>
                 Sou um profissional
               </ButtonForm>
-              <ButtonForm onClick={() => goToDash("/authpatient")}>
+              <ButtonForm onClick={() => goToDash("/home/patient")}>
                 Sou um cliente
               </ButtonForm>
             </Menu>
