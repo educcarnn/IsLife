@@ -7,12 +7,10 @@ function ListNewPatient() {
     JSON.parse(localStorage.getItem("token"))
   );
 
-    console.log(datesDash.user.id)
-
   api.get(`/users?doctorId=${datesDash.user.id}`, {
     headers: {
       'Content-Type': "application/json",
-      'Authorization': `Bearer ${localStorage.getItem('token')}`
+      'Authorization': `Bearer ${datesDash.accessToken}`
     }
 } )
 .then((res) =>{
