@@ -55,6 +55,7 @@ function AuthDoctor() {
       <button onClick={() => history.push("/")} className="buttonDoctor">
         <img src={logo} alt={logo} className="imgSize"></img>
       </button>
+      {/* dev */}
       
       <div className="DivElem">
         <DivElems>
