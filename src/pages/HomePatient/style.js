@@ -10,8 +10,6 @@ export const DivHomePatient = styled.div`
     padding-bottom: 7%;
     padding-top: 1.7%;
    
-
-
     .imgLogo{
         width: 7rem;
         margin-bottom: -1rem;
