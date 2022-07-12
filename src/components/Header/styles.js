@@ -13,7 +13,12 @@ export const ContainerHeader = styled.header`
   border-bottom: 0.5px solid grey;
   object-fit: cover;
 
-
+  .buttonImg{
+    background-color: transparent;
+    width: 0rem;
+    height: 0rem;
+    margin-top: -4rem;
+  }
 
   img {
     height: 60px;
