@@ -13,6 +13,7 @@ import {
 } from "./style.js";
 import { api } from "../../services/api.js";
 import logo from "../../img/islife.png";
+import IsAuth from "../../components/IsAuth/index.jsx";
 
 
 function AuthPatient() {
@@ -53,54 +54,62 @@ function AuthPatient() {
       });
   };
 
-  return (
-    <DivGlobalLogin>
-      <DivHeader>
-        <button onClick={() => history.push("/")}>Voltar</button>
-      </DivHeader>
-
-      <div className="divImgLogo">
-        {" "}
-        <img src={logo} alt="logo" />
-      </div>
-
-      <DivBody>
-        <FormLogin onSubmit={handleSubmit(onSubmitFunction)}>
-          <DivLabel>
-            <label>Email</label>
-          </DivLabel>
-
-          <input
-            {...register("email")}
-            name="email"
-            error={errors?.email?.message}
-            required
-          />
-
-          <DivLabel>
-            <label>Senha</label>
   
-          </DivLabel>
-          <input
-            {...register("password")}
-            name="password"
-            type="password"
-            error={errors?.email?.password}
-            required
-          />
-
-          <button type="submit">Login</button>
-        </FormLogin>
-
-        <DivInfo>
-          <h4>Você é medico, e não tem cadastro?</h4>
-          <button onClick={() => history.push("/register/doctor")}>
-            Cadastre-se
-          </button>
-        </DivInfo>
-      </DivBody>
-    </DivGlobalLogin>
-  );
+  if(localStorage.getItem('token') !== null) {
+    return (
+      <IsAuth/>
+    )
+  } else {
+    return (
+      <DivGlobalLogin>
+        <DivHeader>
+          <button onClick={() => history.push("/")}>Voltar</button>
+        </DivHeader>
+  
+        <div className="divImgLogo">
+          {" "}
+          <img src={logo} alt="logo" />
+        </div>
+  
+        <DivBody>
+          <FormLogin onSubmit={handleSubmit(onSubmitFunction)}>
+            <DivLabel>
+              <label>Email</label>
+            </DivLabel>
+  
+            <input
+              {...register("email")}
+              name="email"
+              error={errors?.email?.message}
+              required
+            />
+  
+            <DivLabel>
+              <label>Senha</label>
+    
+            </DivLabel>
+            <input
+              {...register("password")}
+              name="password"
+              type="password"
+              error={errors?.email?.password}
+              required
+            />
+  
+            <button type="submit">Login</button>
+          </FormLogin>
+  
+          <DivInfo>
+            <h4>Você é medico, e não tem cadastro?</h4>
+            <button onClick={() => history.push("/register/doctor")}>
+              Cadastre-se
+            </button>
+          </DivInfo>
+        </DivBody>
+      </DivGlobalLogin>
+    );
+  }
+  
 }
 
 export default AuthPatient;
