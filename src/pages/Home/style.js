@@ -28,21 +28,18 @@ export const Logo = styled.header`
       height: 350px;
     }
   }
+
+  @media screen and (min-width: 1280px) {
+    top: -50px;
+    left: 30px;
+  }
+
+  img {
+    width: 500px;
+  }
 `;
 
 export const Container = styled.main`
-  display: flex;
-  justify-content: space-between;
-
-  img {
-    width: 375px;
-    height: 180px;
-    position: absolute;
-    top: 150px;
-    left: 0;
-    border-radius: 60px;
-  }
-
   button {
     width: 320px;
     height: 65px;
@@ -92,6 +89,22 @@ export const Container = styled.main`
     & button:hover {
       font-size: 1.25rem;
     }
+
+    @media screen and (min-width: 1280px) {
+      display: flex;
+      justify-content: space-between;
+
+      img {
+        width: 705px;
+        height: 474px;
+        top: -255px;
+        right: 20px;
+      }
+
+      button {
+        margin-left: 5px;
+      }
+    }
   }
 `;
 
@@ -102,6 +115,7 @@ export const WelcomeContainer = styled.div`
   position: relative;
   top: 10px;
   margin-bottom: 30px;
+  margin-right: 28px;
 
   h1 {
     font-size: 2.42rem;
@@ -121,8 +135,8 @@ export const WelcomeContainer = styled.div`
     font-weight: 500;
     line-height: 33px;
     margin: 10px 0 20px 0;
-    padding: 0 28px 0 28px;
-    text-align: justify;
+    padding: 0 28px 0 70px;
+    text-align: center;
   }
 
   @media screen and (min-width: 768px) {
@@ -147,6 +161,15 @@ export const WelcomeContainer = styled.div`
       line-height: 33px;
       margin: 1px 0 10px 0;
       text-align: start;
+    }
+  }
+
+  @media screen and (min-width: 1280px) {
+    top: -110px;
+
+    p {
+      font-size: 1.4rem;
+      margin-top: 10px;
     }
   }
 `;
@@ -292,6 +315,22 @@ export const Footer = styled.footer`
 
     .icons {
       margin-top: 10px;
+    }
+  }
+
+  @media screen and (min-width: 1280px) {
+    h3 {
+      margin-left: 40px;
+    }
+
+    li {
+      width: 265px;
+      height: 450px;
+      margin: 0 80px 70px 60px;
+    }
+
+    .icons {
+      margin-top: 30px;
     }
   }
 `;
