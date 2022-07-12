@@ -18,7 +18,7 @@ function DayShare() {
           <p>com o seu médico como foi o seu dia</p>
           <ContentDayShare>
             <TextDayShare
-              rows="12"
+              rows="10"
               placeholder="Como você está se sentindo hoje?"
             />
           </ContentDayShare>
