@@ -65,6 +65,11 @@ li{
     list-style: none;
 }
 
+a{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
 :root{
     --rosa: #CE2D5D;
 	--rosaBackground: #F9F1F1

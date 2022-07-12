@@ -13,17 +13,17 @@ function PostDayShare() {
 
       <ContainerColumn>
         <div>
-          <h3>Fernando Lacerda - está se sentindo feliz </h3>
+          <h3>Fernando Lacerda&#160;  - <span>está se sentindo feliz </span> </h3>
           <p>2 Jul 2022</p>
         </div>
         <div>
-          <p>
+          <p className="Text__Post">
             Escolhi uma rota diferente para caminhar hoje e acabei descobrindo
             uma cafeteria que nunca javia visto antes no meu bairro e comi o
             melhor prailine da minha vida!
           </p>
         </div>
-        dadsdsdasdas
+
       </ContainerColumn>
     </PostContainer>
   );
