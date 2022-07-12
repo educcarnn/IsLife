@@ -14,6 +14,7 @@ export const ContainerForm = styled.form`
     width: 100%;
     height: 75%;
   }
+  
   .input-new-patient {
     width: 98%;
     background: #e9ecef;

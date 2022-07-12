@@ -33,7 +33,8 @@ margin-top: 30px;
   position: absolute;
   opacity: 1;
   width: 450px;
-  height: 355px;
+  height: 410px;
+  background-color: black;
   display: flex;
   /* justify-content: space-between; */
   flex-direction: column;
@@ -117,7 +118,7 @@ input{
 
   .divPickerHora input{
     width: 156px;
-    height: 35px;
+    height: 32px;
   }
 }
 `

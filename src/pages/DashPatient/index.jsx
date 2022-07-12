@@ -1,8 +1,5 @@
 
 function DashPatient(){
-// const user = JSON.parse(localStorage.getItem("@isLifeUser"))
-// const token = JSON.parse(localStorage.getItem("@isLifetoken"))
-//     if(user.type === "patient" && token){
         return (
             
         <div>

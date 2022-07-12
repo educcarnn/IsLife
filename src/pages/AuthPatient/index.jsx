@@ -27,6 +27,7 @@ function AuthPatient(){
             localStorage.setItem("@isLifeUser:", JSON.stringify(response.data.user))
             response.data.user.type === "patient" ? history.push("/dashpatient") : history.push("/dashdoctor")
         })
+        
         .catch((err)=> console.log(err))    
     }
     

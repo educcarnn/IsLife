@@ -1,23 +1,19 @@
 import {DivGlobalModalShedule,DivFormModal,DivHeaderForm, ButtonSchedule,Form} from "./style"
-import DatePicker from "react-date-picker";
-import { useState } from "react";
-import DoctorSchedule from "../../pages/DoctorSchedule/index"
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup"
-import { FiClock, FiCalendar } from "react-icons/fi";
-
-
+import { api } from "../../services/api.js";
+import {newUser} from "../../services/token"
 
 function  ModalSchedule({showModal,setShowModal}){
 
-    const [selectedDate, setSelectedDate] = useState(null)
-
-
+    const newToken= JSON.parse(localStorage.getItem("@isLifetoken:"))
+ 
     const schema = yup.object().shape({
-        name: yup.string().required("campo obrigatório"),
-        hours: yup.string().required("Campo obrigatório"),
-        calendario: yup.string().required("Campo Obirgatório")
+        nome: yup.string().required("campo obrigatório"),
+        horarioConsulta: yup.string().required("Campo obrigatório"),
+        dataConsulta: yup.string().required("Campo Obirgatório"),
+        modo:yup.string().required("Campo Obirgatório"),
     })
 
     const {register, handleSubmit, formState:{errors},} = useForm(
@@ -25,8 +21,23 @@ function  ModalSchedule({showModal,setShowModal}){
         );
 
     const onSubmitFunction = (data)=>{
-        console.log(data)
+    
+    const objData = {
+        nome: data.nome,
+        dataConsulta: data.dataConsulta,
+        horarioConsulta:data.horarioConsulta,
+        modo: data.modo,
+        userId: newUser.id,
+        IdPatient: 3
     }
+   
+    api.post("/consultas", objData, {
+        headers: {"Authorization": `Bearer ${newToken}`}}).then(response =>{
+        setShowModal(false)
+
+    })
+}
+    
     return(
     
     <DivGlobalModalShedule>
@@ -38,30 +49,35 @@ function  ModalSchedule({showModal,setShowModal}){
             </DivHeaderForm>
 
             <Form onSubmit={handleSubmit(onSubmitFunction)}>
+
                 <input type="text" 
                 placeholder="Digite o nome do paciente"
-                {...register("name")} 
-                name = "name"
-                error={errors.name?.message}/>
+                {...register("nome")} 
+                name = "nome"
+                error={errors.nome?.message}/>
+
+                <input type="text" placeholder="tipo da consulta: Ex: presencial" 
+                       {...register("modo")}
+                       name = "modo"/>
 
                  <div className="divPicker">
                     
                     <div className="divPickerData">
                         <label>Data</label>
                         <input 
+                          type= "date"
                           className= "datepicker"
                           placeholder = "Ex: 10/08/2022"
-                          {...register("calendario")} 
-                          name = "calendario"/>
+                          {...register("dataConsulta")} 
+                          name = "dataConsulta"/>
                     </div>
 
                     <div className="divPickerHora">
-                        <label>  Hora</label>
+                        <label>Hora</label>
                         <input type="text" 
-                               icon = {FiClock}
                                placeholder="Ex: 16:00"
-                               {...register("hours")}
-                               name= "hours"/>
+                               {...register("horarioConsulta")}
+                               name= "horarioConsulta"/>
                     </div>
                 </div>
                 <ButtonSchedule type="submit">Agendar Consulta</ButtonSchedule>

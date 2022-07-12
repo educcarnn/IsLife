@@ -8,12 +8,19 @@ import noCard from "../../assets/img/NoCard.svg";
 import imgSchedule from "../../assets/img/imgSchedule.svg";
 import ListSchedule from "../../components/ListScheduleDashSoctor";
 import ModalSchedule from "../../components/modalSchedule/index"
-import { useState } from "react";
-
+import { useEffect, useState } from "react";
+import {newUser} from "../../services/token"
+import {api} from "../../services/api"
 function DoctorSchedule() {
   
   const [showModal, setShowModal] = useState(false)
+  const [arrConsultas, setArrConsultas] = useState([])
+  const newToken= JSON.parse(localStorage.getItem("@isLifetoken:"))
 
+  useEffect(()=>{
+    api.get(`/consultas?IdDoctor=${newUser.id}`, {
+      headers: {"Authorization": `Bearer ${newToken}`}} ).then((response)=> setArrConsultas(response.data))
+  },[])
 
   return (
     <ContainerSchedule>
@@ -24,12 +31,7 @@ function DoctorSchedule() {
           <button onClick={()=> setShowModal(true)} className="btn-schedule">+</button>
         </div>
         <ListContentSchedule>
-          <ListSchedule />
-          <img className="img-no-card" src={noCard} alt="" />
-          <img className="img-no-card" src={noCard} alt="" />
-          <img className="img-no-card" src={noCard} alt="" />
-          <img className="img-no-card" src={noCard} alt="" />
-          <img className="img-no-card" src={noCard} alt="" />
+         {arrConsultas.map((element)=> <ListSchedule element= {element}  />)}
         </ListContentSchedule>
       </ContentSchedule>
       <ContentImgSchedule>
