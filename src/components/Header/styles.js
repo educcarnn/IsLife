@@ -133,7 +133,7 @@ export const StyledMenuMobileDoctor = styled.div`
     height: 0;
     top: 64px;
     right: 0;
-    border-bottom-right-radius: 170%;
+    /* border-bottom-right-radius: 170%; */
     transition: 0.6s ease-in;
     z-index: 9999;
     overflow-y: auto;

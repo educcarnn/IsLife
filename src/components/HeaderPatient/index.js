@@ -4,25 +4,17 @@ import { FiMenu } from "react-icons/fi";
 import { MdClose } from "react-icons/md";
 import { useState } from "react";
 
-
-import { StyledHeader, StyledMenuMobile, UserInformation } from "./styles";
+import { StyledHeader, StyledMenuMobile } from "./styles";
 import { useHistory, Link } from "react-router-dom";
-
-
 
 function HeaderPatient() {
   const [isActiveMenuMobile, setIsActiveMenuMobile] = useState(false);
 
-  const history = useHistory()
+  const history = useHistory();
 
   const displayMenuMobile = () => {
-
     setIsActiveMenuMobile(!isActiveMenuMobile);
-
-
   };
-
-
 
   return (
     <>
@@ -33,12 +25,15 @@ function HeaderPatient() {
 
         <nav className="Menu">
           <div className="Menu__Desktop">
-            <button onClick={() => history.push('/')}>Home</button>
-            <button onClick={() => history.push('/receitas')}>Receitas</button>
-            <button onClick={() => history.push('/consultas')}>Consultas</button>
-            <button onClick={() => history.push('/rotinas')}>Minha Rotina</button>
+            <button onClick={() => history.push("/")}>Home</button>
+            <button onClick={() => history.push("/receitas")}>Receitas</button>
+            <button onClick={() => history.push("/consultas")}>
+              Consultas
+            </button>
+            <button onClick={() => history.push("/rotinas")}>
+              Minha Rotina
+            </button>
           </div>
-
 
           <div className="Menu__Mobile--icon">
             {isActiveMenuMobile === true ? (
@@ -54,30 +49,38 @@ function HeaderPatient() {
             )}
           </div>
 
-          <StyledMenuMobile className="Menu__Mobile" Display={isActiveMenuMobile === false ? "block" :"none"  }>
+          <StyledMenuMobile
+            className="Menu__Mobile"
+            Display={isActiveMenuMobile === false ? "block" : "none"}
+          >
+            <ul className={isActiveMenuMobile ? "Menu--Hidden" : "Menu"}>
+              <div className="UserInformation">
+                <div className="User__Info">
+                  <section> avatar </section>
+                  <h3>Leomar P.</h3>
+                </div>
 
-            <ul className={isActiveMenuMobile? "Menu--Hidden" : "Menu"  }>
-            <div className="UserInformation">
-              <div className="User__Info">
-                <section> avatar </section>
-                <h3>Leomar P.</h3>
+                <div>
+                  <button className="Menu__Mobile--Btn"> Sair </button>
+                </div>
               </div>
 
-              <div>
-                <button className="Menu__Mobile--Btn"> Sair </button>
-              </div>
-            </div>
-
-
-              <li>Home</li>
-              <li>Receitas</li>
-              <li>Consultas</li>
-              <li>Minha Rotina</li>
+              <li>
+                <Link to={"/"}>Home</Link>
+              </li>
+              <li>
+                <Link to={"/"}>Receitas</Link>
+              </li>
+              <li>
+                {" "}
+                <Link to={"/"}> Consultas</Link>{" "}
+              </li>
+              <li>
+                {" "}
+                <Link to={"/"}>Minha Rotina</Link>
+              </li>
             </ul>
-
           </StyledMenuMobile>
-
-         
         </nav>
       </StyledHeader>
     </>
