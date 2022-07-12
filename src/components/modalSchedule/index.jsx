@@ -3,10 +3,15 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup"
 import { api } from "../../services/api.js";
+import { useState } from "react";
 
 function  ModalSchedule({showModal,setShowModal}){
 
     const newToken= JSON.parse(localStorage.getItem("token"))
+
+    const [idUser, setIdUser] = useState(0)
+    const [arrPatientDoc, setArrPatientDoc] = useState([])
+
  
     const schema = yup.object().shape({
         nome: yup.string().required("campo obrigatório"),
@@ -21,22 +26,30 @@ function  ModalSchedule({showModal,setShowModal}){
 
     const onSubmitFunction = (data)=>{
     
+    api.get(`/users?doctorId=${newToken.user.id}`, 
+    {
+        headers: {"Authorization": `Bearer ${newToken.accessToken}`
+    }})
+    .then((response)=> response.data.map((item)=> item.name === data.nome ? setIdUser(item.id) : null ))
+        // setArrPatientDoc(response.data),
+        // console.log(response)
+
     const objData = {
         nome: data.nome,
         dataConsulta: data.dataConsulta,
         horarioConsulta:data.horarioConsulta,
         modo: data.modo,
         userId: newToken.user.id,
-        IdPatient: 3
+        IdPatient: idUser,
     }
    
     api.post("/consultas", objData, {
-        headers: {"Authorization": `Bearer ${newToken.accessToken}`}}).then(response =>{
+        headers: {"Authorization": `Bearer ${newToken.accessToken}`}})
+    .then(response =>{
         setShowModal(false)
-
     })
 }
-    
+    console.log(arrPatientDoc)
     return(
     
     <DivGlobalModalShedule>
@@ -54,6 +67,12 @@ function  ModalSchedule({showModal,setShowModal}){
                 {...register("nome")} 
                 name = "nome"
                 error={errors.nome?.message}/>
+
+                {/* <select
+                        {...register("nome")} 
+                        name = "nome">
+                    {arrPatientDoc.map((element)=><option value={element.name} key = {element.id}>{element.name}</option>)}
+                </select> */}
 
                 <input type="text" placeholder="tipo da consulta: Ex: presencial" 
                        {...register("modo")}

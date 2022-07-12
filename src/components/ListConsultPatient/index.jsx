@@ -23,13 +23,14 @@ function ListConsultPatient(){
 
         .then((response)=> setArrUser(response.data))
     },[])
+    console.log(arrConsultRq)
     return(
 
         <UlConsult>
             <div>Lista de consultas do paciente</div>
             {arrConsultRq.map((element)=>{
               return(
-                <LiConsult>
+                <LiConsult key={element.userId}>
                     <h3>{element.dataConsulta}</h3>
                     <h3>{element.horarioConsulta}</h3>
                     <h3>{element.modo}</h3>
