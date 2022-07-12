@@ -3,13 +3,15 @@ import styled from "styled-components";
 export const ContainerList = styled.li`
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  padding-left: .5rem;
   align-items: center;
   width: 100%;
+ 
   height: 60px;
   background: #f0f3f4;
   gap: 16px;
   border-radius: 10px;
+  box-shadow: 0px 0px 4px grey;
 
   .avatar {
     width: 55px;
@@ -20,20 +22,30 @@ export const ContainerList = styled.li`
   .list-info {
     display: flex;
     flex-direction: column;
+
     gap: 10px;
+
+    span{
+      display: flex;
+      gap: 5px;
+    }
   }
 
-  @media (max-width: 980px) {
+/* acho que essa Lista de consulta não precisa ser em coluna 
+no mobile
+*/
+
+/*   @media (max-width: 980px) {
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 150px;
-    width: 100%;
+    width: 400px;
   }
   @media (max-width: 800px) {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 310px;
     height: 150px;
-  }
+  } */
 `;

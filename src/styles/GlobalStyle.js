@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from "styled-components";
 
 export const Global = createGlobalStyle`
 html, body, div, span, applet, object, iframe,
@@ -54,10 +54,26 @@ body {
 }
 button{
     cursor: pointer;
-    background-color: red;
+    background-color: #CE2D5D;
+	color: #ffffff;
+	font-family: 'Inter', sans-serif;
+	color: white;
+	border-radius: 5px;
+	border: none;
 }
 li{
     list-style: none;
 }
 
-`
+:root{
+    --rosa: #CE2D5D;
+	--rosaBackground: #F9F1F1
+    --pretoFont: #121214;
+	--brancoBackground: #FFFFFF;
+	--inputsBackground: #f2f2f2;
+	--pretoTitles: #000000; 
+   	--cinza: #D9D9D9;
+	--verde: #039914;
+}
+
+`;

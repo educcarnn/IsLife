@@ -3,11 +3,10 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup"
 import { api } from "../../services/api.js";
-import {newUser} from "../../services/token"
 
 function  ModalSchedule({showModal,setShowModal}){
 
-    const newToken= JSON.parse(localStorage.getItem("@isLifetoken:"))
+    const newToken= JSON.parse(localStorage.getItem("token"))
  
     const schema = yup.object().shape({
         nome: yup.string().required("campo obrigatório"),
@@ -27,12 +26,12 @@ function  ModalSchedule({showModal,setShowModal}){
         dataConsulta: data.dataConsulta,
         horarioConsulta:data.horarioConsulta,
         modo: data.modo,
-        userId: newUser.id,
+        userId: newToken.user.id,
         IdPatient: 3
     }
    
     api.post("/consultas", objData, {
-        headers: {"Authorization": `Bearer ${newToken}`}}).then(response =>{
+        headers: {"Authorization": `Bearer ${newToken.accessToken}`}}).then(response =>{
         setShowModal(false)
 
     })

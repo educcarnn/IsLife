@@ -1,80 +1,115 @@
 import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from "yup"
-import {DivGlobalLogin, FormLogin,DivLabel,DivHeader,DivBody,DivInfo} from "./style.js"
+import { yupResolver } from "@hookform/resolvers/yup";
+import { toast } from "react-toastify";
+import * as yup from "yup";
+import {
+  DivGlobalLogin,
+  FormLogin,
+  DivLabel,
+  DivHeader,
+  DivBody,
+  DivInfo,
+} from "./style.js";
 import { api } from "../../services/api.js";
-import logo from "../../img/islife.png"
+import logo from "../../img/islife.png";
+import IsAuth from "../../components/IsAuth/index.jsx";
 
-function AuthPatient(){
-    const history = useHistory()
 
-    const schema = yup.object().shape({
-        email: yup.string().email("email inválido").required("campo obrigatório"),
-        password: yup.string().min(6, "mínino de 6 dígitos").required("campo obrigatório"),
-    })
+function AuthPatient() {
+  const history = useHistory();
 
-    const {register, handleSubmit, formState:{errors},} = useForm(
-       { resolver: yupResolver(schema)} 
-        );
+  const schema = yup.object().shape({
+    email: yup.string().email("email inválido").required("campo obrigatório"),
+    password: yup
+      .string()
+      .min(6, "mínino de 6 dígitos")
+      .required("campo obrigatório"),
+  });
 
-    const onSubmitFunction = (data)=>{
-        api.post("/login",data)
-        .then(response =>{
-            console.log( response.data) 
-            // const {accessToken,user} = response.data
-            localStorage.setItem("@isLifetoken:", JSON.stringify(response.data.accessToken))
-            localStorage.setItem("@isLifeUser:", JSON.stringify(response.data.user))
-            response.data.user.type === "patient" ? history.push("/dashpatient") : history.push("/dashdoctor")
-        })
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({ resolver: yupResolver(schema) });
+
+  const onSubmitFunction = (data) => {
+    api
+      .post("/login", data)
+      .then((response) => {
+        if(response.status === 200) {
+          localStorage.setItem("token",JSON.stringify(response.data))
+          toast.success("Sucesso no login");
+
+          setTimeout(() => {
+            response.data.user.type === "patient" ? history.push("/dashpatient") : history.push("/dashdoctor");
+          }, 2000);       
+        }
         
-        .catch((err)=> console.log(err))    
-    }
-    
+      })
+      .catch((error) => {
+        if (error.response.status) {
+          toast.error("Erro no login, revise seus dados");
+        }
+      });
+  };
+
+  
+  if(localStorage.getItem('token') !== null) {
     return (
-    <DivGlobalLogin>
-
-        <DivHeader>
-                <button onClick={()=> history.push("/")}>Voltar</button>
-        </DivHeader>
-
-             <div className="divImgLogo"> <img src={logo} alt="logo" /></div>
-
-        <DivBody>
-
-            <FormLogin onSubmit={handleSubmit(onSubmitFunction)}>
-            <DivLabel><label>Email</label></DivLabel>
-
-              <input 
-              // register={register}
-              {...register("email")} 
-              name = "email"
-              error={errors.email?.message}/>
-
-           <DivLabel><label>Senha</label></DivLabel>
-
-               <input 
-               // register={register} 
-               {...register("password")}
-               name= "password"
-               error={errors.email?.message}/>
-
-            <button type="submit">Login</button>
-
-            </FormLogin>
-
-            <DivInfo>
-                <h4>Sou médico ainda não tenho cadastro</h4>
-                <button onClick={()=> history.push("/authdoctor")}>Cadastre-se</button>
-            </DivInfo>
-
-        </DivBody>
-
-        </DivGlobalLogin>
+      <IsAuth/>
     )
+  } else {
+    return (
+      <DivGlobalLogin>
+        <DivHeader>
+          <button onClick={() => history.push("/")}>Voltar</button>
+        </DivHeader>
+  
+        <div className="divImgLogo">
+          {" "}
+          <img src={logo} alt="logo" />
+        </div>
+  
+        <DivBody>
+          <FormLogin onSubmit={handleSubmit(onSubmitFunction)}>
+            <DivLabel>
+              <label>Email</label>
+            </DivLabel>
+  
+            <input
+              {...register("email")}
+              name="email"
+              error={errors?.email?.message}
+              required
+            />
+  
+            <DivLabel>
+              <label>Senha</label>
+    
+            </DivLabel>
+            <input
+              {...register("password")}
+              name="password"
+              type="password"
+              error={errors?.email?.password}
+              required
+            />
+  
+            <button type="submit">Login</button>
+          </FormLogin>
+  
+          <DivInfo>
+            <h4>Você é medico, e não tem cadastro?</h4>
+            <button onClick={() => history.push("/register/doctor")}>
+              Cadastre-se
+            </button>
+          </DivInfo>
+        </DivBody>
+      </DivGlobalLogin>
+    );
+  }
+  
 }
 
-export default AuthPatient
-
-
-
+export default AuthPatient;

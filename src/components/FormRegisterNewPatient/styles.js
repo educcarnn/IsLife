@@ -8,24 +8,31 @@ export const ContainerForm = styled.form`
   flex-direction: column;
   gap: 16px;
   margin-top: 30px;
+  background: #f8f9fa;
 
   .div-input {
     margin-top: 32px;
     width: 100%;
     height: 75%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
   }
   
   .input-new-patient {
-    width: 98%;
+    width: 90%;
     background: #e9ecef;
     height: 50px;
     border-radius: 5px;
     outline: 0;
     border: none;
     margin-top: 25px;
+    padding-left: 16px;
   }
   .btn-register-patient {
-    width: 100%;
+    margin-top: -4rem;
+    width: 95%;
     height: 50px;
     background-color: #ce2d5d;
     color: white;
@@ -33,5 +40,6 @@ export const ContainerForm = styled.form`
     font-weight: 700;
     border-radius: 8px;
     border: none;
+    margin-left: 12px;
   }
 `;

@@ -9,17 +9,16 @@ import imgSchedule from "../../assets/img/imgSchedule.svg";
 import ListSchedule from "../../components/ListScheduleDashSoctor";
 import ModalSchedule from "../../components/modalSchedule/index"
 import { useEffect, useState } from "react";
-import {newUser} from "../../services/token"
 import {api} from "../../services/api"
 function DoctorSchedule() {
   
   const [showModal, setShowModal] = useState(false)
   const [arrConsultas, setArrConsultas] = useState([])
-  const newToken= JSON.parse(localStorage.getItem("@isLifetoken:"))
+  const newToken= JSON.parse(localStorage.getItem("token"))
 
   useEffect(()=>{
-    api.get(`/consultas?IdDoctor=${newUser.id}`, {
-      headers: {"Authorization": `Bearer ${newToken}`}} ).then((response)=> setArrConsultas(response.data))
+    api.get(`/consultas?IdDoctor=${newToken.user.id}`, {
+      headers: {"Authorization": `Bearer ${newToken.accessToken}`}} ).then((response)=> setArrConsultas(response.data))
   },[])
 
   return (

@@ -1,9 +1,12 @@
 import FormRegisterNewPatient from "../../components/FormRegisterNewPatient";
+import ListNewPatient from "../../components/ListNewPatient";
 import {
   ContainerPatient,
   ContentPatientForm,
   ContentPatientList,
+  UlContainer,
 } from "./styles";
+import noCardList from "../../assets/img/NoCard.svg";
 
 function DoctorPatient() {
   return (
@@ -16,7 +19,20 @@ function DoctorPatient() {
           <FormRegisterNewPatient />
         </div>
       </ContentPatientForm>
-      <ContentPatientList>teste</ContentPatientList>
+      <ContentPatientList>
+        <div className="div-description-list">
+          <p className="name-patient">Paciente</p>
+          <div className="div-btn--list">
+            <button className="btn-patient--new---list">Todos</button>
+            <button className="btn-patient--new---list">
+              Add recentemente
+            </button>
+          </div>
+        </div>
+        <UlContainer>
+          <ListNewPatient />
+        </UlContainer>
+      </ContentPatientList>
     </ContainerPatient>
   );
 }
