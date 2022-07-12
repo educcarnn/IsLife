@@ -15,7 +15,7 @@ import DoctorSchedule from "../pages/DoctorSchedule";
 import Home from "../pages/Home"
 import HomeDoctor from "../pages/HomeDoctor";
 import HomePatient from "../pages/HomePatient";
-
+import ListConsultPatient from "../components/ListConsultPatient/index"
 
 
 const Routes = () => {
@@ -56,6 +56,10 @@ const Routes = () => {
 
         <Route exact path="/receitas">
           <PageTest/>
+        </Route>
+
+        <Route exact path= "/consultas">
+          <ListConsultPatient/>
         </Route>
       </Switch>
     </BrowserRouter>
