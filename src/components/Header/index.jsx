@@ -3,21 +3,33 @@ import logo from "../../assets/img/logo.png";
 
 import { useHistory } from "react-router-dom";
 import { useState } from "react";
-
+import { Redirect } from "react-router-dom";
 import { FiMenu } from "react-icons/fi";
 import { MdClose } from "react-icons/md";
 
+
+
 function HeaderDoctor() {
+
+
   const history = useHistory();
   const [isActiveMenuMobile, setIsActiveMenuMobile] = useState(false);
+  const handleClick = () => {
+    history.push("/");
+    localStorage.removeItem("token");
+  };
 
   const displayMenuMobile = () => {
     setIsActiveMenuMobile(!isActiveMenuMobile);
   };
 
+
   return (
     <ContainerHeader>
+      <button className="buttonImg" onClick={handleClick}>
       <img src={logo} alt="" />
+      </button>
+      
       <div className="div-buttons">
         <button
           className="btn-header"

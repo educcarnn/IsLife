@@ -19,6 +19,7 @@ export const ContainerForm = styled.form`
     flex-wrap: wrap;
     align-content: center;
   }
+  
   .input-new-patient {
     width: 90%;
     background: #e9ecef;
@@ -30,6 +31,7 @@ export const ContainerForm = styled.form`
     padding-left: 16px;
   }
   .btn-register-patient {
+    margin-top: -4rem;
     width: 95%;
     height: 50px;
     background-color: #ce2d5d;

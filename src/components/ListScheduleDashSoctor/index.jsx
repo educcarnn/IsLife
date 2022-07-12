@@ -1,11 +1,12 @@
 import { ContainerListSchedule, ContentListSchedule } from "./styles";
 
-function ListSchedule() {
+function ListSchedule({element}) {
   return (
+    
     <ContainerListSchedule>
       <ContentListSchedule>
-        <p className="pacient-name">nome do paciente</p>
-        <span className="date-and-hour">data e hora</span>
+        <p className="pacient-name">{element.nome}</p>
+        <span className="date-and-hour">{element.dataConsulta} | {element.horarioConsulta}</span>
       </ContentListSchedule>
     </ContainerListSchedule>
   );

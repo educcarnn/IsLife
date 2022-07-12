@@ -57,6 +57,7 @@ const Routes = () => {
           <DashPatient />
         </Route>
 
+
         {/* Rotas do Paciente */}
         <Route path={"/dayshare"}>
           <HeaderPatient />

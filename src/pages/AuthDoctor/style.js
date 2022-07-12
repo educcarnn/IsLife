@@ -1,56 +1,45 @@
 import styled from "styled-components";
 
-export const DivGlobalLogin = styled.div`
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
+export const DivElems = styled.div`
 
-export const FormLoginDoctor = styled.form`
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
 
-  /* column-count: 2; */
-  align-items: center;
-  /* justify-content: center;  */
-
-  gap: 18px;
-  background-color: var(--cinza);
-  width: 700px;
-  height: 550px;
-  padding: 2rem 0 2rem 1rem;
-
-  font-family: "Inter", serif;
-
-  div {
-    width: 20rem;
-
-    div + div {
-      margin-top: 1.5rem;
+    @media (max-width: 800px){
+        display: flex;
+        max-width: 100%;
+        flex-direction: column;
     }
+`
 
-    div {
-      width: 20rem;
+export const FormElem = styled.form`
+    align-items: center;
+        display: flex;
+        flex-direction: column;
+    .DivElem {
+        padding: 2rem;
+        background-color: #D9D9D9;
+        margin-top: -2rem;
     }
-  }
+    .DivButton {
+        margin-top: -1.7rem;
+    }
+   
+   .imgSize{
+    width: 12rem;
+   }
+   .buttonDoctor {
+    border:none;
+    background-color: transparent;
+   }
 
-  button {
-    height: 3rem;
-    width: 20rem;
-    margin-top: 2.7rem;
-  }
-`;
-
-export const Nav = styled.nav`
-  display: flex;
-  width: 100vw;
-  height: 10rem;
-
-  align-items: center;
-
-  justify-content: center;
-  margin: 2rem;
-`;
+   .label{
+    background-color: #ffffff;
+    border: none;
+    margin-bottom: 0.5rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    padding-left: 0.5rem;
+   }
+`

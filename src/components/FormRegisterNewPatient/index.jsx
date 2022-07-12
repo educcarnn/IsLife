@@ -3,20 +3,38 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { api } from "../../services/api";
 import { useForm } from "react-hook-form";
+import { useState } from "react";
 
 function FormRegisterNewPatient() {
-  const signUp = (data) => {
-    console.log(data);
-    api
-      .post("/register", data)
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
-  };
+  const [datesDash, setDatesDash] = useState(
+    JSON.parse(localStorage.getItem("token"))
+  );
+     
+    const sendDates = (info) => {
+      console.log(info)
+      const dates = {
+        name: info.name,
+        email: info.email,
+        age: info.age,
+        cpf: "444.444.444-44",
+        telefone: info.telephone,
+        image: "https://cdn-icons-png.flaticon.com/512/146/146025.png",
+        password: info.password,
+        type: "patient",
+        profissão: "Autonomo",
+        doctorId: datesDash.user.id
+      };
+
+      api
+        .post("/register", dates)
+        .then((res) => console.log(res))
+        .catch((err) => console.log(err));
+    };
+  
 
   const schema = yup.object().shape({
     name: yup.string().required("Campo obrigatório"),
-    dateYear: yup.string().required("Campo obrigatório"),
-    cpf: yup.string().required("Campo obrigatório"),
+    age: yup.string().required("Campo obrigatório"),
     email: yup.string().email("Email inválido").required("Campo obrigatório"),
     password: yup
       .string()
@@ -33,8 +51,9 @@ function FormRegisterNewPatient() {
     resolver: yupResolver(schema),
   });
 
+
   return (
-    <ContainerForm onSubmit={handleSubmit(signUp)}>
+    <ContainerForm onSubmit={handleSubmit(sendDates)}>
       <div className="div-input">
         <input
           className="input-new-patient"
@@ -44,21 +63,16 @@ function FormRegisterNewPatient() {
         />
         <input
           className="input-new-patient"
-          type="date"
-          placeholder="Data de Nascimento"
-          {...register("dateYear")}
+          placeholder="Idade"
+          {...register("age")}
         />
         <input
           className="input-new-patient"
-          type="text"
-          placeholder="CPF"
-          {...register("cpf")}
-        />
-        <input
-          className="input-new-patient"
+  
           type="email"
           placeholder="Email"
           {...register("email")}
+
         />
         <input
           className="input-new-patient"
@@ -68,9 +82,11 @@ function FormRegisterNewPatient() {
         />
         <input
           className="input-new-patient"
+
           type="tel"
-          placeholder="Telefone"
           {...register("telephone")}
+          placeholder="Telefone"
+        
         />
       </div>
       <button type="submit" className="btn-register-patient">
