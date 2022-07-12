@@ -14,7 +14,7 @@ export const ContainerList = styled.li`
   p {
     font-size: 18px;
   }
- /*  @media (max-width: 980px) {
+  /*  @media (max-width: 980px) {
     display: flex;
     flex-direction: column;
     width: 400px;
@@ -26,7 +26,6 @@ export const ContainerList = styled.li`
     display: flex;
     flex-direction: column;
     height: 100px;
-    padding: .3rem 0;
-
-  } 
+    padding: 0.3rem 0;
+  }
 `;
