@@ -1,4 +1,4 @@
-import { ContainerHeader, StyledMenuMobileDoctor  } from "./styles";
+import { ContainerHeader, StyledMenuMobileDoctor } from "./styles";
 import logo from "../../assets/img/logo.png";
 
 import { useHistory } from "react-router-dom";
@@ -7,11 +7,7 @@ import { Redirect } from "react-router-dom";
 import { FiMenu } from "react-icons/fi";
 import { MdClose } from "react-icons/md";
 
-
-
 function HeaderDoctor() {
-
-
   const history = useHistory();
   const [isActiveMenuMobile, setIsActiveMenuMobile] = useState(false);
   const handleClick = () => {
@@ -23,13 +19,12 @@ function HeaderDoctor() {
     setIsActiveMenuMobile(!isActiveMenuMobile);
   };
 
-
   return (
     <ContainerHeader>
-      <button className="buttonImg" onClick={handleClick}>
-      <img src={logo} alt="" />
-      </button>
-      
+      {/* <button className="buttonImg" onClick={handleClick}> */}
+      <img onClick={handleClick} src={logo} alt="" />
+      {/* </button> */}
+
       <div className="div-buttons">
         <button
           className="btn-header"
@@ -66,8 +61,8 @@ function HeaderDoctor() {
         <ul className={isActiveMenuMobile ? "Menu--Hidden" : "Menu"}>
           <div className="UserInformation">
             <div className="User__Info">
-              <section> avatar </section>
-              <h3>Leomar P.</h3>
+              <section> </section>
+              <h3></h3>
             </div>
 
             <div>
@@ -75,10 +70,9 @@ function HeaderDoctor() {
             </div>
           </div>
 
-  
-          <li>Consultas</li>
-          <li>Agendar</li>
-          <li>Pacientes</li>
+          <li onClick={() => history.push("./dashdoctor")}>Consultas</li>
+          <li onClick={() => history.push("./doctorschedule")}>Agendar</li>
+          <li onClick={() => history.push("./doctorpatient")}>Pacientes</li>
         </ul>
       </StyledMenuMobileDoctor>
     </ContainerHeader>

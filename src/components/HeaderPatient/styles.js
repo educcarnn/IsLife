@@ -5,12 +5,10 @@ export const StyledHeader = styled.header`
   min-height: 60px;
   max-height: 62px;
   height: 7vh;
-
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-
   padding: 0.2rem 4%;
   box-shadow: 1px -3px 10px #3333 ;
 

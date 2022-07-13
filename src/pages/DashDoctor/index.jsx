@@ -18,9 +18,9 @@ function DashDoctor() {
             <ListHourDashDoctor />
           </ListContentHour>
         </ContentConsultHour>
-        
+
         <ContentConsultList>
-          <ListContentConsult>
+          <ListContentConsult className="teste">
             <ListConsultDashDoctor />
           </ListContentConsult>
         </ContentConsultList>

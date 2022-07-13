@@ -11,6 +11,7 @@ import { AiFillLinkedin } from "react-icons/ai";
 import { AiOutlineInstagram } from "react-icons/ai";
 import { useHistory } from "react-router";
 import { Container, Logo, WelcomeContainer, Footer } from "./style";
+import Typewriter from "typewriter-effect";
 
 function Home() {
   const history = useHistory();
@@ -28,11 +29,23 @@ function Home() {
         <WelcomeContainer>
           <h1>Seja Bem Vindo (a)</h1>
           <h2>IsLife</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
-            bibendum commodo massa. Donec neque lectus, efficitur nec porta non,
-            faucibus quis enim.
-          </p>
+          <div className="typewr">
+            <Typewriter
+              onInit={(typewriter) => {
+                typewriter
+                  .typeString("Quem olha para fora sonha,<br>")
+                  .pauseFor(2000)
+                  .start()
+                  .typeString("quem olha para dentro desperta.<br>")
+                  .pauseFor(2000)
+                  .start()
+                  .typeString('"Carl Jung."')
+                  .pauseFor(2000)
+                  .start();
+              }}
+            />
+          </div>
+
           <div>
             <button onClick={() => goToDash("/home/doctor")}>
               Sou um médico
@@ -48,8 +61,8 @@ function Home() {
       </Container>
       <Footer>
         <h3>Conheça os devs que fizeram esse projeto</h3>
-        <ul>
-          <li>
+        <ul className="">
+          <li className="devs-li">
             <img src={Eduardo} alt="Eduardo" />
             <h2>Eduardo Carneiro</h2>
             <h4>Dev</h4>

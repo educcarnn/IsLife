@@ -13,7 +13,7 @@ export const ContainerHeader = styled.header`
   border-bottom: 0.5px solid grey;
   object-fit: cover;
 
-  .buttonImg{
+  .buttonImg {
     background-color: transparent;
     width: 0rem;
     height: 0rem;
@@ -23,8 +23,9 @@ export const ContainerHeader = styled.header`
   img {
     height: 60px;
     background-color: #ffffff;
-    padding:  0 1rem;
+    padding: 0 1rem;
     border-radius: 55%;
+    cursor: pointer;
   }
 
   .div-buttons {
@@ -44,7 +45,7 @@ export const ContainerHeader = styled.header`
       display: none;
     }
 
-    .btn-header{
+    .btn-header {
       display: none;
     }
   }
@@ -65,18 +66,15 @@ export const ContainerHeader = styled.header`
     }
   }
 
-  
   @media only screen and (min-width: 801px) {
     .Menu__Mobile {
-        display: none;
+      display: none;
     }
-    .Menu__Mobile--icon{
-        display: none;
+    .Menu__Mobile--icon {
+      display: none;
     }
   }
 `;
-
-
 
 export const StyledMenuMobileDoctor = styled.div`
   display: ${(props) => props.Display || "none"};
@@ -151,13 +149,17 @@ export const StyledMenuMobileDoctor = styled.div`
     width: 70%;
     min-width: 280px;
     height: calc(100vh - 60px);
-  } 
+  }
 
   .Menu li {
     margin-top: 45px;
     margin-left: 1em;
     padding: 0.6em 0;
     text-align: center;
+    font-size: 1.3em;
+    color: #f1f1ff;
+    padding-bottom: 0.6em;
+    border-bottom: #e4e1e1 solid;
   }
 
   .Menu li a {
@@ -166,9 +168,6 @@ export const StyledMenuMobileDoctor = styled.div`
     border-bottom: #e4e1e1 solid;
   }
 
-  @media screen and (max-width:800px) {
-    
+  @media screen and (max-width: 800px) {
   }
-
 `;
-
