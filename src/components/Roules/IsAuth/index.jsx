@@ -1,4 +1,4 @@
-import imgLogin from "../../img/IsLogin.svg"
+import imgLogin from "../../../img/IsLogin.svg"
 import { useHistory } from "react-router";
 import { AuthDiv } from "./style"
 import { useState } from "react";
