@@ -134,6 +134,7 @@ export const WelcomeContainer = styled.div`
   top: 10px;
   margin-bottom: 30px;
   margin-right: 28px;
+  gap: 16px;
 
   h1 {
     font-size: 2.2rem;
@@ -205,6 +206,9 @@ export const WelcomeContainer = styled.div`
 `;
 
 export const Footer = styled.footer`
+  flex-direction: column;
+  display: flex;
+  justify-content: flex-start;
   h3 {
     font-weight: 600;
     font-size: 1.5rem;
@@ -222,15 +226,22 @@ export const Footer = styled.footer`
     border-top: 1px solid #000000;
   }
 
+  .ul-container {
+    display: flex;
+    justify-content: flex-start;
+    gap: 16px;
+    padding: 16px;
+  }
+
   li {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 375px;
-    height: 450px;
+    width: 310px;
+    height: 300px;
     background-color: #d9d9d9;
     border-radius: 10px;
-    margin: 0 28px 28px 28px;
+    margin-top: 16px;
   }
 
   img {
@@ -269,6 +280,7 @@ export const Footer = styled.footer`
     height: 40px;
     padding: 10px;
     transition: 0.8s;
+    color: #000000;
   }
   & .github:hover {
     width: 50px;
@@ -280,6 +292,7 @@ export const Footer = styled.footer`
     height: 40px;
     padding: 10px;
     transition: 0.8s;
+    color: #000000;
   }
   & .linkedin:hover {
     width: 50px;
@@ -307,9 +320,8 @@ export const Footer = styled.footer`
     }
 
     li {
-      width: 328px;
-      height: 500px;
-      margin: 28px;
+      width: 310px;
+      height: 320px;
     }
 
     .icons {
@@ -331,7 +343,7 @@ export const Footer = styled.footer`
 
     li {
       width: 265px;
-      height: 420px;
+      height: 320px;
       padding: 10px;
     }
 
@@ -355,8 +367,7 @@ export const Footer = styled.footer`
 
     li {
       width: 265px;
-      height: 450px;
-      margin: 0 80px 70px 60px;
+      height: 320px;
     }
 
     .icons {
