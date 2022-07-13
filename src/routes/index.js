@@ -57,14 +57,10 @@ const Routes = () => {
           <HeaderDoctor />
           <DoctorPatient />
         </Route>
-        <Route path="/dashpatient">
-          <HeaderPatient />
-          <DashPatient />
-        </Route>
-
+    
 
         {/* Rotas do Paciente */}
-        <Route path={"/dayshare"}>
+        <Route path={"/dashpatient"}>
           <HeaderPatient />
           <DayShare />
         </Route>
