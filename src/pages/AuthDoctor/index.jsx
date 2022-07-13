@@ -4,7 +4,7 @@ import * as yup from "yup";
 import { api } from "../../services/api";
 import logo from "../../img/islife.png"
 import { useHistory } from "react-router-dom";
-import { DivElems, FormElem } from "./style";
+import { DivElems, FormElem, DivGlobalRegister } from "./style";
 import { DivVoltar } from "./style";
 import IsAuth from "../../components/Roules/IsAuth";
 
@@ -12,7 +12,7 @@ import IsAuth from "../../components/Roules/IsAuth";
 function AuthDoctor() {
   const history = useHistory()
 
-  let schema = yup.object().shape({
+  const schema = yup.object().shape({
     name: yup.string().required("Adicione valores válidos"),
     cpf: yup.string().required("CPF Inválido"),
     email: yup.string().required("campo obrigatório").email("e-mail inválido!"),
@@ -29,11 +29,11 @@ function AuthDoctor() {
     crm: yup.string().required("documentação obrigatória"),
   });
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({ resolver: yupResolver(schema) });
+
+  const { register, handleSubmit,formState: { errors } } = useForm({
+    resolver: yupResolver(schema),
+  });
+
 
   const sendDates = (info) => {
    
@@ -64,64 +64,96 @@ function AuthDoctor() {
 
     return (
 
-      <FormElem className="formItem" onSubmit={handleSubmit(sendDates) }>
-          <button onClick={() => history.push("/")} className="buttonDoctor">
-            <img src={logo} alt={logo} className="imgSize"></img>
-          </button>
-          <DivVoltar>
-          <button onClick={() => history.push("/")} className="button">Voltar</button>
-        </DivVoltar>
+<DivGlobalRegister>
+
+  <DivVoltar>
+     <img src={logo} alt={logo}></img>
+     <button onClick={() => history.push("/")} className="button">Voltar</button>
+  </DivVoltar>
+
+     <h2>CADASTRO</h2>
+
+ <div className="divGlobalForm">
+
+    <FormElem className="formItem" onSubmit={handleSubmit(sendDates) }>
           
-          <div className="DivElem">
+          {/* <div className="DivElem"> */}
+
             <DivElems>
               <label>Nome</label>
               <input
                 {...register("name")}
                 placeholder="Digite aqui seu nome"
-              className="label"></input>
+              className="label"/>
+              <div className="divError">{errors?.name?.message}</div>
             </DivElems>
+
             <DivElems>
               <label>Data de nascimento</label>
               <input {...register("age")} type='date' className="label"></input>
-              
+              <div className="divError">{errors?.age?.message}</div>
             </DivElems>
+
             <DivElems>
               <label>CPF</label>
               <input placeholder="Digite aqui seu CPF" {...register("cpf")} className="label"></input>
+              <div className="divError">{errors?.cpf?.message}</div>
+
             </DivElems>
+
             <DivElems>
               <label>Telefone</label>
               <input placeholder="Digite seu telefone" {...register('telefone')} className="label"></input>
+              <div className="divError">{errors?.telefone?.message}</div>
+
             </DivElems>
+
             <DivElems>
               <label>E-mail</label>
               <input placeholder="Digite aqui seu e-mail" {...register('email')} className="label" required></input>
+              <div className="divError">{errors?.email?.message}</div>
+
             </DivElems>
+
             <DivElems>
               <label>Senha</label>
               <input placeholder="Digite aqui sua senha" {...register('password')} className="label" type='password' required></input>
+              <div className="divError">{errors?.password?.message}</div>
+
             </DivElems>
+
             <DivElems>
               <label>Confirmar sua senha</label>
               <input placeholder="Confirme sua senha" {...register('confirmPassword')} className="label" type='password'></input>
+              <div className="divError">{errors?.confirmPassword?.message}</div>
             </DivElems>
+
             <DivElems>
               <label>CRM</label>
               <input placeholder="Digite seu CRM" {...register('crm')} className="label"></input>
+              <div className="divError">{errors?.crm?.message}</div>
             </DivElems>
+
             <DivElems>
               <label>Escolha sua profissão </label>
               <select {...register('profissão')} className="label">
-                <option value="psicóloga">Psicóloga(o)</option>
+                <option value="selecione">Selecione</option>
+                <option value="psicóloga">Psicólogo(a)</option>
                 <option value="psiquiatra">Psiquiatra</option>
+                <option value="médico">Médico(a)</option>
                 <option value="outros">Outros</option>
               </select>
             </DivElems>
-          </div>
-          <div className="DivButton">
+
+          {/* </div> */}
+
+          <DivElems>
             <button type="submit">Cadastrar</button>
-          </div>
-        </FormElem>        
+          </DivElems>
+
+    </FormElem>        
+  </div>
+</DivGlobalRegister>
       );
   }
  
