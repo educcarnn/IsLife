@@ -19,11 +19,6 @@ function MyRoutineForm() {
 
   const { spyOnMove } = useContext(MyRoutineContext);
 
-  // console.log(paciente);
-  // console.log(paciente.accessToken);
-  // console.log(usuario.name);
-  // console.log(usuario.id);
-
   const schema = yup.object().shape({
     msgTarefa: yup.string().required("Campo obrigatório"),
     horarioTarefa: yup.string().required("Campo obrigatório"),
@@ -41,8 +36,10 @@ function MyRoutineForm() {
 
   const submeterTarefa = (data) => {
     // console.log(data);
+
     data.nome = token.user.name;
     data.userId = token.user.id;
+
     data.check = false;
 
     api

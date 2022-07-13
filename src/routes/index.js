@@ -66,6 +66,7 @@ const Routes = () => {
 
         <Route exact path="/receitas">
           <HeaderPatient />
+
           <PageReceitas />
         </Route>
 
