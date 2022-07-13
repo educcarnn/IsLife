@@ -13,6 +13,13 @@ export const StyledHeader = styled.header`
 
   padding: 0.2rem 4%;
   box-shadow: 1px -3px 10px #3333 ;
+
+  .buttonImg{
+    background-color: transparent;
+    width: 0rem;
+    height: 0rem;
+    margin-top: -1rem;
+  }
     
 
 
