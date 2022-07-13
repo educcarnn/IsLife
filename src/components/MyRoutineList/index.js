@@ -23,7 +23,6 @@ function MyRoutineList() {
       .get(`/toDo/?userId=:${token.user.id}`)
 
       .then((res) => {
-        console.log(res);
         setTarefas([...res.data]);
       })
 
