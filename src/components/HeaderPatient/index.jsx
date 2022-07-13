@@ -25,7 +25,9 @@ function HeaderPatient() {
     <>
       <StyledHeader>
         <div>
-          <img src={logo} alt="Logo do site IsLife" />
+        <button className="buttonImg" onClick={handleClick} >
+          <img src={logo} alt="" />
+        </button>
         </div>
 
         <nav className="Menu">

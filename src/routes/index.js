@@ -1,25 +1,19 @@
 import { Switch, BrowserRouter, Route } from "react-router-dom";
 import HeaderDoctor from "../components/Header";
 import HeaderPatient from "../components/HeaderPatient";
-
 import AuthDoctor from "../pages/AuthDoctor";
 import AuthPatient from "../pages/AuthPatient";
 import DashDoctor from "../pages/DashDoctor";
-
 import DayShare from "../pages/PatientDayShare";
-
-import PageTest from "../pages/testPage";
-
 import DoctorPatient from "../pages/DoctorPatient";
 import DoctorSchedule from "../pages/DoctorSchedule";
 import Home from "../pages/Home";
 import HomeDoctor from "../pages/HomeDoctor";
 import HomePatient from "../pages/HomePatient";
-
 import ListConsultPatient from "../components/ListConsultPatient/index"
-
-
 import PatientRoutine from "../pages/PatientRoutine";
+import ConsultPatient from "../pages/ConsultPatient";
+import PageReceitas from "../components/ReceitasPatient";
 
 
 const Routes = () => {
@@ -71,12 +65,16 @@ const Routes = () => {
         </Route>
 
         <Route exact path="/receitas">
-          <PageTest />
+          <HeaderPatient />
+          <PageReceitas/>
         </Route>
 
         <Route exact path= "/consultas">
+          <HeaderPatient />
           <ListConsultPatient/>
+          <ConsultPatient/>
         </Route>
+        
       </Switch>
     </BrowserRouter>
   );
