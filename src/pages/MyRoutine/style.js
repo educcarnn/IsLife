@@ -1,24 +1,13 @@
-import { Container } from ".";
+import styled from "styled-components";
 
-import MyRoutineForm from "../../components/MyRoutineForm";
-import MyRoutineList from "../../components/MyRoutineList";
+export const Container = styled.section`
+  width: 100vw;
+  height: 100vh;
 
-function MyRoutine() {
-  //   const paciente = JSON.parse(localStorage.getItem("token"));
-  //   const usuario = JSON.parse(localStorage.getItem("user"));
+  display: flex;
+  justify-content: center;
 
-  return (
-    <>
-      <Container>
-        <div>
-          <MyRoutineForm />
-        </div>
-        <div>
-          <MyRoutineList />
-        </div>
-      </Container>
-    </>
-  );
-}
+  margin-top: 1.5rem;
 
-export default MyRoutine;
+  background: var(--inputBackground);
+`;

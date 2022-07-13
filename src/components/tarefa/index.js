@@ -1,11 +1,15 @@
+import { TarefaConcent, DivExtra } from "./style";
+
 function Tarefa(props) {
   return (
     <>
-      <li>
+      <TarefaConcent>
         <input type="checkbox" />
-        <h6>{props.msgTarefa}</h6>
-        <span>{props.horarioTarefa}</span>
-      </li>
+        <DivExtra>
+          <h6>{props.msgTarefa}</h6>
+          <span>{props.horarioTarefa}</span>
+        </DivExtra>
+      </TarefaConcent>
     </>
   );
 }

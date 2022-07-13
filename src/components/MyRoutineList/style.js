@@ -1,9 +1,39 @@
-import { api } from "../../services/api";
+import styled from "styled-components";
 
+export const ContentPatient = styled.div`
+  display: flex;
+  justify-content: flex-start;
 
-function MyRoutineList(){
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
+  /* height: 100vh; */
 
-    return()
-}
+  padding: 17px;
+  margin-left: 1.9rem;
 
-export default MyRoutineList
+  /* background-color: #f9f1f1; */
+
+  @media (max-width: 800px) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+`;
+
+export const ListaTarefas = styled.ul`
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  /* max-height: 600px; */
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  @media (max-width: 800px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+`;

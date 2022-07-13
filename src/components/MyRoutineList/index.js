@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 
 import Tarefa from "../tarefa";
 
+import { ListaTarefas, ContentPatient } from "./style";
+
 function MyRoutineList() {
   const usuario = JSON.parse(localStorage.getItem("user"));
 
@@ -25,16 +27,18 @@ function MyRoutineList() {
 
   return (
     <>
-      <ul>
-        {tarefas.map((atividade) => (
-          <Tarefa
-            key={atividade.id}
-            msgTarefa={atividade.msgTarefa}
-            horarioTarefa={atividade.horarioTarefa}
-            check={atividade.check}
-          />
-        ))}
-      </ul>
+      <ContentPatient>
+        <ListaTarefas>
+          {tarefas.map((atividade) => (
+            <Tarefa
+              key={atividade.id}
+              msgTarefa={atividade.msgTarefa}
+              horarioTarefa={atividade.horarioTarefa}
+              check={atividade.check}
+            />
+          ))}
+        </ListaTarefas>
+      </ContentPatient>
     </>
   );
 }

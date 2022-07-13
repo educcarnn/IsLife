@@ -15,7 +15,7 @@ import DoctorSchedule from "../pages/DoctorSchedule";
 import Home from "../pages/Home";
 import HomeDoctor from "../pages/HomeDoctor";
 import HomePatient from "../pages/HomePatient";
-import MyRoutine from "../pages/MyRoutine/style";
+import MyRoutine from "../pages/MyRoutine";
 
 const Routes = () => {
   return (
