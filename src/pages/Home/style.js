@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Logo = styled.header`
   position: relative;
   top: -100px;
+  right: 60px;
 
   img {
     width: 375px;
@@ -11,7 +12,7 @@ export const Logo = styled.header`
 
   @media screen and (min-width: 768px) {
     top: -110px;
-    left: 90px;
+    left: 130px;
 
     img {
       width: 600px;
@@ -40,6 +41,14 @@ export const Logo = styled.header`
 `;
 
 export const Container = styled.main`
+  img {
+    width: 375px;
+    height: 200px;
+    position: absolute;
+    top: 150px;
+    border-radius: 60px;
+  }
+
   button {
     width: 320px;
     height: 65px;
@@ -73,18 +82,18 @@ export const Container = styled.main`
 
   @media screen and (min-width: 1024px) {
     img {
-      width: 560px;
-      height: 390px;
-      position: relative;
-      top: -225px;
-      right: 95px;
+      width: 540px;
+      height: 404px;
+      position: absolute;
+      top: 105px;
+      right: 8px;
     }
 
     button {
       width: 201px;
       height: 47px;
       font-size: 1.188rem;
-      margin-right: 5px;
+      margin-left: 5px;
     }
     & button:hover {
       font-size: 1.25rem;
@@ -97,8 +106,9 @@ export const Container = styled.main`
       img {
         width: 705px;
         height: 474px;
-        top: -255px;
+        top: 87px;
         right: 20px;
+        position: absolute;
       }
 
       button {
@@ -118,20 +128,19 @@ export const WelcomeContainer = styled.div`
   margin-right: 28px;
 
   h1 {
-    font-size: 2.42rem;
+    font-size: 2.2rem;
     font-weight: 700;
     line-height: 50px;
   }
 
   h2 {
-    font-size: 3.75rem;
+    font-size: 3.5rem;
     font-weight: 700;
-    line-height: 72px;
     margin-top: 10px;
   }
 
   p {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     font-weight: 500;
     line-height: 33px;
     margin: 10px 0 20px 0;
@@ -142,30 +151,33 @@ export const WelcomeContainer = styled.div`
   @media screen and (min-width: 768px) {
     top: 160px;
     margin-bottom: 230px;
+    width: 768px;
   }
 
   @media screen and (min-width: 1024px) {
     top: -160px;
-
+    right: 40px;
+    width: 580px;
     h1 {
       font-size: 2.3rem;
     }
 
     h2 {
       font-size: 3.2rem;
-      margin-top: 1px;
+      margin-top: 10px;
     }
 
     p {
-      font-size: 1.3rem;
+      font-size: 1.229rem;
       line-height: 33px;
-      margin: 1px 0 10px 0;
+      margin: 10px 0 10px 12px;
       text-align: start;
     }
   }
 
   @media screen and (min-width: 1280px) {
     top: -110px;
+    right: 10px;
 
     p {
       font-size: 1.4rem;
@@ -177,7 +189,7 @@ export const WelcomeContainer = styled.div`
 export const Footer = styled.footer`
   h3 {
     font-weight: 600;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     line-height: 33px;
     padding-bottom: 16.5px;
     padding-left: 60px;
