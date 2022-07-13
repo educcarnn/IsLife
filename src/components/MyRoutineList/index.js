@@ -6,19 +6,15 @@ import Tarefa from "../tarefa";
 
 import { ListaTarefas, ContentPatient } from "./style";
 
-// import { useContext } from "react";
-// import { MyRoutineProvider } from "../../providers/MyRoutine";
+import { useContext } from "react";
+import { MyRoutineContext } from "../../providers/MyRoutine";
 
 function MyRoutineList() {
   const usuario = JSON.parse(localStorage.getItem("user"));
 
-  // const { isMove } = useContext(MyRoutineProvider);
+  const { isMove } = useContext(MyRoutineContext);
 
   // console.log(isMove);
-
-  // console.log(move);
-
-  //   console.log(usuario);
 
   const [tarefas, setTarefas] = useState([]);
 
@@ -32,6 +28,16 @@ function MyRoutineList() {
       .catch((err) => console.log(err));
   }, []);
 
+  useEffect(() => {
+    api
+      .get(`/toDo/?IdPatient=:${usuario.id}`)
+      .then((res) => {
+        console.log(res);
+        setTarefas([...res.data]);
+      })
+      .catch((err) => console.log(err));
+  }, [isMove]);
+
   console.log(tarefas);
 
   const tarefasOrdenadas = tarefas.sort(function (a, b) {
@@ -44,15 +50,15 @@ function MyRoutineList() {
 
   console.log(tarefasOrdenadas);
 
-  // useEffect(() => {
-  //   api
-  //     .get(`/toDo/?IdPatient=:${usuario.id}`)
-  //     .then((res) => {
-  //       console.log(res);
-  //       setTarefas([...res.data]);
-  //     })
-  //     .catch((err) => console.log(err));
-  // }, [move]);
+  useEffect(() => {
+    api
+      .get(`/toDo/?IdPatient=:${usuario.id}`)
+      .then((res) => {
+        console.log(res);
+        setTarefas([...res.data]);
+      })
+      .catch((err) => console.log(err));
+  }, [isMove]);
 
   console.log(tarefas);
 
@@ -63,6 +69,7 @@ function MyRoutineList() {
           {tarefasOrdenadas.map((atividade) => (
             <Tarefa
               key={atividade.id}
+              id={atividade.id}
               msgTarefa={atividade.msgTarefa}
               horarioTarefa={atividade.horarioTarefa}
               check={atividade.check}

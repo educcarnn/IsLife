@@ -2,6 +2,8 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
+// import { useEffect } from "react";
+
 import { Form, DivExtra } from "./style";
 import { Input, Select } from "../inputs";
 
@@ -9,14 +11,14 @@ import ButtonForm from "../button";
 
 import { api } from "../../services/api";
 
-// import { useContext } from "react";
-// import { MyRoutineProvider } from "../../providers/MyRoutine";
+import { useContext } from "react";
+import { MyRoutineContext } from "../../providers/MyRoutine";
 
 function MyRoutineForm() {
   const paciente = JSON.parse(localStorage.getItem("token"));
   const usuario = JSON.parse(localStorage.getItem("user"));
 
-  // const { spyOnMove } = useContext(MyRoutineProvider);
+  const { spyOnMove } = useContext(MyRoutineContext);
 
   // console.log(paciente);
   // console.log(paciente.accessToken);
@@ -54,6 +56,7 @@ function MyRoutineForm() {
       })
       .then((res) => {
         console.log(res);
+        spyOnMove();
       })
       .catch((err) => console.log(err));
   };
