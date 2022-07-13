@@ -5,7 +5,7 @@ import HeaderPatient from "../components/HeaderPatient";
 import AuthDoctor from "../pages/AuthDoctor";
 import AuthPatient from "../pages/AuthPatient";
 import DashDoctor from "../pages/DashDoctor";
-import DashPatient from "../pages/DashPatient";
+
 import DayShare from "../pages/PatientDayShare";
 
 import PageTest from "../pages/testPage";
