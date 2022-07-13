@@ -17,6 +17,8 @@ export const ContainerDayShare = styled.main`
     padding: 16px;
   }
 `;
+
+
 export const ContentShare = styled.div`
   width: 25%;
   max-width: 450px;
@@ -66,6 +68,13 @@ export const ContentDayShare = styled.div`
     flex-direction: column;
   }
 `;
+
+export const InputStatus = styled.input`
+width: 150px;
+height: 30px;
+background-color: blueviolet;
+color: white;
+`
 
 export const ContentConsultList = styled.div`
   display: flex;
