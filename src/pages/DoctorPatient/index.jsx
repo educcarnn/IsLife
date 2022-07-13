@@ -6,7 +6,6 @@ import {
   ContentPatientList,
   UlContainer,
 } from "./styles";
-import noCardList from "../../assets/img/NoCard.svg";
 
 function DoctorPatient() {
   return (
@@ -21,13 +20,7 @@ function DoctorPatient() {
       </ContentPatientForm>
       <ContentPatientList>
         <div className="div-description-list">
-          <p className="name-patient">Paciente</p>
-          <div className="div-btn--list">
-            <button className="btn-patient--new---list">Todos</button>
-            <button className="btn-patient--new---list">
-              Add recentemente
-            </button>
-          </div>
+          <p className="name-patient">Pacientes</p>
         </div>
         <UlContainer>
           <ListNewPatient />

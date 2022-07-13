@@ -4,6 +4,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { api } from "../../services/api";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 function FormRegisterNewPatient() {
   const [datesDash, setDatesDash] = useState(
@@ -27,7 +28,10 @@ function FormRegisterNewPatient() {
       api
         .post("/register", dates)
         .then((res) => console.log(res))
-        .catch((err) => console.log(err));
+        .then((res) => {
+          console.log(res.response.data)
+        })
+    
     };
   
 
@@ -37,7 +41,7 @@ function FormRegisterNewPatient() {
     email: yup.string().email("Email inválido").required("Campo obrigatório"),
     password: yup
       .string()
-      .min(8, "Mínimo de 8 digitos")
+      .min(6, "Mínimo de 6 digitos")
       .required("Campo obrigatório"),
     telephone: yup.string().required("Campo obrigatório"),
   });
