@@ -10,13 +10,12 @@ import { useContext } from "react";
 import { MyRoutineContext } from "../../providers/MyRoutine";
 
 function MyRoutineList() {
-  const usuario = JSON.parse(localStorage.getItem("user"));
+  const usuario = JSON.parse(localStorage.getItem("token"));
 
   const { isMove } = useContext(MyRoutineContext);
 
-  // console.log(isMove);
-
   const [tarefas, setTarefas] = useState([]);
+  console.log(tarefas);
 
   useEffect(() => {
     api

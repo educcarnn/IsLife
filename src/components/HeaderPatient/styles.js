@@ -5,14 +5,19 @@ export const StyledHeader = styled.header`
   min-height: 60px;
   max-height: 62px;
   height: 7vh;
-
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-
   padding: 0.2rem 4%;
   box-shadow: 1px -3px 10px #3333 ;
+
+  .buttonImg{
+    background-color: transparent;
+    width: 0rem;
+    height: 0rem;
+    margin-top: -1rem;
+  }
     
 
 
@@ -176,12 +181,13 @@ export const StyledMenuMobile = styled.div`
     height: 0;
     top: 66px;
     right: 0;
-    border-bottom-right-radius: 170%;
+    /* border-bottom-right-radius: 170%; */
     transition: 0.6s ease-in;
     z-index: 9999;
     overflow-y: auto;
     visibility: hidden;
     background-color: #ce2d5d;
+
   }
 
   .Menu {
@@ -189,6 +195,7 @@ export const StyledMenuMobile = styled.div`
     width: 70%;
     min-width: 280px;
     height: calc(100vh - 60px);
+
   } 
 
   .Menu li {

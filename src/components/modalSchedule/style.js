@@ -33,7 +33,8 @@ margin-top: 30px;
   position: absolute;
   opacity: 1;
   width: 450px;
-  height: 355px;
+  height: 410px;
+  background-color: black;
   display: flex;
   /* justify-content: space-between; */
   flex-direction: column;
@@ -52,6 +53,18 @@ display: flex;
 flex-direction: column;
 align-items: center;
 gap: 40px;
+
+.selectPatient {
+  width: 400px ;
+  height: 40px;
+
+  @media (max-width: 455px) {
+    width: 250px;
+
+
+}
+}
+
 
 input{
   width: 400px ;
@@ -117,7 +130,7 @@ input{
 
   .divPickerHora input{
     width: 156px;
-    height: 35px;
+    height: 32px;
   }
 }
 `

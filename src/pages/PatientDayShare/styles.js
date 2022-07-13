@@ -17,12 +17,16 @@ export const ContainerDayShare = styled.main`
     padding: 16px;
   }
 `;
+
+
 export const ContentShare = styled.div`
   width: 25%;
+  max-width: 450px;
   height: auto;
   padding: 16px;
   display: flex;
   flex-direction: column;
+
 
  
 
@@ -34,7 +38,10 @@ export const ContentShare = styled.div`
   @media (max-width: 800px) {
     display: flex;
     flex-direction: column;
-    width: 90%;
+    width: 99%;
+    max-width: 800px;
+
+    padding: 1rem 0;
   }
 `;
 
@@ -62,6 +69,13 @@ export const ContentDayShare = styled.div`
   }
 `;
 
+export const InputStatus = styled.input`
+width: 150px;
+height: 30px;
+background-color: blueviolet;
+color: white;
+`
+
 export const ContentConsultList = styled.div`
   display: flex;
   justify-content: flex-start;
@@ -70,27 +84,40 @@ export const ContentConsultList = styled.div`
   width: 60%;
   height: 100vh;
   max-height: 650px;
-  background-color: #f9f1f1;
+  max-width: 800px;
 
+  padding: 1rem;
+
+  box-sizing: border-box;
 
   @media (max-width: 800px) {
     display: flex;
     flex-direction: column;
     width: 100%;
+
+    padding: 1rem 0;
+
+    height: auto;
   }
 `;
 
 export const ListContentDayshare = styled.ul`
-  margin-top: 20px;
-  width: 90%;
+  
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding-top: 45px;
+
+  
 
   max-height: 600px;
   overflow-y: auto;
   overflow-x: hidden;
+
+  border-radius: 10px;
+  box-shadow: 1px 2px 8px #777;
+
+  background-color: aqua;
 
   @media (max-width: 800px) {
     display: flex;
@@ -104,7 +131,7 @@ export const ListContentDayshare = styled.ul`
 
 export const TextDayShare = styled.textarea`
   width: 98%;
-  min-width: 180px;
+  min-width: 220px;
   
   resize: none;
   padding: 1rem;
@@ -112,6 +139,10 @@ export const TextDayShare = styled.textarea`
   border-radius: 8px;
   box-sizing: border-box;
 
+  @media (min-width: 800px) {
+    width: 96%;
+    min-width: 320px;
+  }
 
 `
 

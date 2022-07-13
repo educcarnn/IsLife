@@ -1,8 +1,17 @@
+<<<<<<< HEAD
 import Routes from "./routes";
 import { Global } from "./styles/GlobalStyle";
 import { ToastContainer } from "react-toastify";
 import DashPatient from "./pages/DashPatient";
 import "react-toastify/dist/ReactToastify.css";
+=======
+
+import Routes from './routes';
+import { Global } from './styles/GlobalStyle';
+import { ToastContainer } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css'
+>>>>>>> 6b0d21081467324bd5423b075492d25e39c4fdb9
 
 function App() {
   return (

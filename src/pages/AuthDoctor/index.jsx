@@ -5,7 +5,10 @@ import { api } from "../../services/api";
 import logo from "../../img/islife.png"
 import { useHistory } from "react-router-dom";
 import { DivElems, FormElem } from "./style";
-import IsAuth from "../../components/IsAuth";
+import { DivVoltar } from "./style";
+import IsAuth from "../../components/Roules/IsAuth";
+
+
 function AuthDoctor() {
   const history = useHistory()
 
@@ -13,6 +16,10 @@ function AuthDoctor() {
     name: yup.string().required("Adicione valores válidos"),
     cpf: yup.string().required("CPF Inválido"),
     email: yup.string().required("campo obrigatório").email("e-mail inválido!"),
+    password: yup
+    .string()
+    .min(6, "mínino de 6 dígitos")
+    .required("campo obrigatório"),
     confirmPassword: yup
       .string()
       .required("confirmação obrigatória")
@@ -28,7 +35,6 @@ function AuthDoctor() {
     formState: { errors },
   } = useForm({ resolver: yupResolver(schema) });
 
-  console.log(errors)
   const sendDates = (info) => {
    
     const dates = {
@@ -52,7 +58,7 @@ function AuthDoctor() {
 
   if(localStorage.getItem('token') !== null) {
     return (
-      <IsAuth/>
+     <IsAuth/>
     )
   }else {
 
@@ -62,7 +68,9 @@ function AuthDoctor() {
           <button onClick={() => history.push("/")} className="buttonDoctor">
             <img src={logo} alt={logo} className="imgSize"></img>
           </button>
-       
+          <DivVoltar>
+          <button onClick={() => history.push("/")} className="button">Voltar</button>
+        </DivVoltar>
           
           <div className="DivElem">
             <DivElems>
@@ -75,6 +83,7 @@ function AuthDoctor() {
             <DivElems>
               <label>Data de nascimento</label>
               <input {...register("age")} type='date' className="label"></input>
+              
             </DivElems>
             <DivElems>
               <label>CPF</label>

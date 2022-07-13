@@ -13,7 +13,12 @@ export const ContainerHeader = styled.header`
   border-bottom: 0.5px solid grey;
   object-fit: cover;
 
-
+  .buttonImg{
+    background-color: transparent;
+    width: 0rem;
+    height: 0rem;
+    margin-top: -4rem;
+  }
 
   img {
     height: 60px;
@@ -133,7 +138,7 @@ export const StyledMenuMobileDoctor = styled.div`
     height: 0;
     top: 64px;
     right: 0;
-    border-bottom-right-radius: 170%;
+    /* border-bottom-right-radius: 170%; */
     transition: 0.6s ease-in;
     z-index: 9999;
     overflow-y: auto;
