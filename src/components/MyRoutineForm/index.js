@@ -9,9 +9,14 @@ import ButtonForm from "../button";
 
 import { api } from "../../services/api";
 
+// import { useContext } from "react";
+// import { MyRoutineProvider } from "../../providers/MyRoutine";
+
 function MyRoutineForm() {
   const paciente = JSON.parse(localStorage.getItem("token"));
   const usuario = JSON.parse(localStorage.getItem("user"));
+
+  // const { spyOnMove } = useContext(MyRoutineProvider);
 
   // console.log(paciente);
   // console.log(paciente.accessToken);

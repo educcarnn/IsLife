@@ -8,7 +8,7 @@ export const TarefaConcent = styled.li`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border-left: 5px solid red;
+  /* border-left: 5px solid red; */
   box-shadow: 0px 0px 4px grey;
 
   h6,
