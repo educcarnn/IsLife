@@ -63,89 +63,89 @@ function Home() {
       </Container>
       <Footer>
         <h3>Conheça os devs que fizeram esse projeto</h3>
-        <ul className="">
+        <ul className="ul-container">
           <li className="devs-li">
             <img src={Eduardo} alt="Eduardo" />
             <h2>Eduardo Carneiro</h2>
             <h4>Dev</h4>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-              purus erat, tincidunt nec pulvinar vel, consectetur id tellus.
-            </p>
+
             <div className="icons">
-              <AiFillGithub className="github" />
-              <AiFillLinkedin className="linkedin" />
-              <AiOutlineInstagram className="instagram" />
+              <a href="https://github.com/educcarnn">
+                <AiFillGithub className="github" />
+              </a>
+              <a href="https://www.linkedin.com/in/eduardo-carneiro-98b21b213/">
+                <AiFillLinkedin className="linkedin" />
+              </a>
             </div>
           </li>
           <li>
             <img src={Idaline} alt="Idaline" />
             <h2>Idaline Viana</h2>
             <h4>Dev</h4>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-              purus erat, tincidunt nec pulvinar vel, consectetur id tellus.
-            </p>
+
             <div className="icons">
-              <AiFillGithub className="github" />
-              <AiFillLinkedin className="linkedin" />
-              <AiOutlineInstagram className="instagram" />
+              <a href="https://github.com/idalineviana">
+                <AiFillGithub className="github" />
+              </a>
+              <a href="https://www.linkedin.com/in/idaline-viana-5b2643142/">
+                <AiFillLinkedin className="linkedin" />
+              </a>
             </div>
           </li>
           <li>
             <img src={Fernando} alt="Fernando" />
             <h2>Fernando Lacerda</h2>
             <h4>Dev</h4>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-              purus erat, tincidunt nec pulvinar vel, consectetur id tellus.
-            </p>
+
             <div className="icons">
-              <AiFillGithub className="github" />
-              <AiFillLinkedin className="linkedin" />
-              <AiOutlineInstagram className="instagram" />
+              <a href="https://github.com/anjosdelacerda">
+                <AiFillGithub className="github" />
+              </a>
+              <a href="https://www.linkedin.com/in/fernando-lacerda-935024232/">
+                <AiFillLinkedin className="linkedin" />
+              </a>
             </div>
           </li>
           <li>
             <img src={Herbert} alt="Herbert" />
             <h2>Herbert Sipriano</h2>
             <h4>Dev</h4>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-              purus erat, tincidunt nec pulvinar vel, consectetur id tellus.
-            </p>
+
             <div className="icons">
-              <AiFillGithub className="github" />
-              <AiFillLinkedin className="linkedin" />
-              <AiOutlineInstagram className="instagram" />
+              <a href="https://github.com/herbertcaiosama">
+                <AiFillGithub className="github" />
+              </a>
+              <a href="https://www.linkedin.com/in/herbert-sipriano-da-silva-30643667/">
+                <AiFillLinkedin className="linkedin" />
+              </a>
             </div>
           </li>
-          <li>
+          <li className="li-card--devs">
             <img src={Leomar} alt="Leomar" />
             <h2>Leomar Paz</h2>
             <h4>Dev</h4>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-              purus erat, tincidunt nec pulvinar vel, consectetur id tellus.
-            </p>
+
             <div className="icons">
-              <AiFillGithub className="github" />
-              <AiFillLinkedin className="linkedin" />
-              <AiOutlineInstagram className="instagram" />
+              <a href="https://github.com/LeomarPaz2022">
+                <AiFillGithub className="github" />
+              </a>
+              <a href="https://www.linkedin.com/in/leomarpaz/">
+                <AiFillLinkedin className="linkedin" />
+              </a>
             </div>
           </li>
           <li>
             <img src={Lucas} alt="Lucas" />
             <h2>Lucas Roque</h2>
             <h4>Dev</h4>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-              purus erat, tincidunt nec pulvinar vel, consectetur id tellus.
-            </p>
+
             <div className="icons">
-              <AiFillGithub className="github" />
-              <AiFillLinkedin className="linkedin" />
-              <AiOutlineInstagram className="instagram" />
+              <a href="https://github.com/lucasroquesousa">
+                <AiFillGithub className="github" />
+              </a>
+              <a href="https://www.linkedin.com/in/lucas-roque-sousa-5619761b7/">
+                <AiFillLinkedin className="linkedin" />
+              </a>
             </div>
           </li>
         </ul>
