@@ -4,14 +4,17 @@ export const ContainerHeader = styled.header`
   position: relative;
   width: 100%;
   min-height: 60px;
-  max-height: 63px;
-  height: 7vh;
+  max-height: 90px;
+  height: 10vh;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   border-bottom: 0.5px solid grey;
   object-fit: cover;
+
+  padding: 0px 4%;
+  box-sizing: border-box;
 
   .buttonImg {
     background-color: transparent;
@@ -28,11 +31,10 @@ export const ContainerHeader = styled.header`
   }
 
   .div-buttons {
-    width: 15%;
     display: flex;
     justify-content: space-between;
     .btn-header {
-      width: 120px;
+      width: 100px;
       height: 30px;
       border-radius: 8px;
     }
@@ -43,7 +45,6 @@ export const ContainerHeader = styled.header`
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    height: 300px;
 
     .Menu__Desktop {
       display: none;
@@ -129,7 +130,7 @@ export const StyledMenuMobileDoctor = styled.div`
     position: fixed;
     width: 0;
     height: 0;
-    top: 64px;
+    top: 72px;
     right: 0;
     /* border-bottom-right-radius: 170%; */
     transition: 0.6s ease-in;

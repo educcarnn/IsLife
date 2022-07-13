@@ -2,6 +2,7 @@
 import Routes from './routes';
 import { Global } from './styles/GlobalStyle';
 import { ToastContainer } from 'react-toastify';
+import DashPatient from './pages/DashPatient';
 import 'react-toastify/dist/ReactToastify.css'
 
 function App() {

@@ -21,9 +21,9 @@ function HeaderDoctor() {
 
   return (
     <ContainerHeader>
-      <button className="buttonImg" onClick={handleClick}>
-        <img src={logo} alt="" />
-      </button>
+      {/* <button className="buttonImg" onClick={handleClick}> */}
+      <img onClick={handleClick} src={logo} alt="" />
+      {/* </button> */}
 
       <div className="div-buttons">
         <ButtonForm
