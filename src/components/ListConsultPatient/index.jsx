@@ -22,7 +22,7 @@ function ListConsultPatient(){
         }})
 
         .then((response)=> setArrUser(response.data))
-    },[])
+    },[arrConsultRq,arrUser])
     
     return(
 
