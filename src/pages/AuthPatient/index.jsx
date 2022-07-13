@@ -13,7 +13,7 @@ import {
 } from "./style.js";
 import { api } from "../../services/api.js";
 import logo from "../../img/islife.png";
-import IsAuth from "../../components/IsAuth/index.jsx";
+import IsAuth from "../../components/Roules/IsAuth/index.jsx";
 
 
 function AuthPatient() {
