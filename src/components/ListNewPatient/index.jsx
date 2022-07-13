@@ -11,8 +11,7 @@ function ListNewPatient() {
   const [patient, setPatient] = useState([]);
 
   useEffect(() => {
-    api
-      .get(`/users?doctorId=${datesDash.user.id}`, {
+    api.get(`/users?doctorId=${datesDash.user.id}`, {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${datesDash.accessToken}`,

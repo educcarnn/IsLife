@@ -40,8 +40,6 @@ function ConsultPatient() {
         <ContentListConsult className="teste">
           <UlListConsult>
             <ListPatientConsult />
-            <ListPatientConsult />
-            <ListPatientConsult />
           </UlListConsult>
         </ContentListConsult>
       </ContainerConsult>
