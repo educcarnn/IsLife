@@ -6,12 +6,16 @@ import { useState } from "react";
 
 import { StyledHeader, StyledMenuMobile } from "./styles";
 import { useHistory, Link } from "react-router-dom";
-import ButtonForm from "../button";
 
 function HeaderPatient() {
   const [isActiveMenuMobile, setIsActiveMenuMobile] = useState(false);
 
   const history = useHistory();
+
+  const handleClick = () => {
+    history.push("/");
+    localStorage.removeItem("token");
+  };
 
   const displayMenuMobile = () => {
     setIsActiveMenuMobile(!isActiveMenuMobile);
@@ -21,35 +25,21 @@ function HeaderPatient() {
     <>
       <StyledHeader>
         <div>
-          <img src={logo} alt="Logo do site IsLife" />
+        <button className="buttonImg" onClick={handleClick} >
+          <img src={logo} alt="" />
+        </button>
         </div>
 
         <nav className="Menu">
           <div className="Menu__Desktop">
-            <ButtonForm
-              className="btn-patient-header"
-              onClick={() => history.push("/")}
-            >
-              Home
-            </ButtonForm>
-            <ButtonForm
-              className="btn-patient-header"
-              onClick={() => history.push("/receitas")}
-            >
-              Receitas
-            </ButtonForm>
-            <ButtonForm
-              className="btn-patient-header"
-              onClick={() => history.push("/consultas")}
-            >
+            <button onClick={handleClick}>Home</button>
+            <button onClick={() => history.push("/receitas")}>Receitas</button>
+            <button onClick={() => history.push("/consultas")}>
               Consultas
-            </ButtonForm>
-            <ButtonForm
-              className="btn-patient-header"
-              onClick={() => history.push("/rotinas")}
-            >
+            </button>
+            <button onClick={() => history.push("/rotinas")}>
               Minha Rotina
-            </ButtonForm>
+            </button>
           </div>
 
           <div className="Menu__Mobile--icon">

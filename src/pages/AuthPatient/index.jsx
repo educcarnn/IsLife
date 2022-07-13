@@ -15,7 +15,6 @@ import { api } from "../../services/api.js";
 import logo from "../../img/islife.png";
 import IsAuth from "../../components/IsAuth/index.jsx";
 
-
 function AuthPatient() {
   const history = useHistory();
 
@@ -37,15 +36,18 @@ function AuthPatient() {
     api
       .post("/login", data)
       .then((response) => {
-        if(response.status === 200) {
-          localStorage.setItem("token",JSON.stringify(response.data))
+        if (response.status === 200) {
+          localStorage.setItem("token", JSON.stringify(response.data));
+          localStorage.setItem("user", JSON.stringify(response.data.user));
+
           toast.success("Sucesso no login");
 
           setTimeout(() => {
-            response.data.user.type === "patient" ? history.push("/dashpatient") : history.push("/dashdoctor");
-          }, 2000);       
+            response.data.user.type === "patient"
+              ? history.push("/dashpatient")
+              : history.push("/dashdoctor");
+          }, 2000);
         }
-        
       })
       .catch((error) => {
         if (error.response.status) {
@@ -54,39 +56,35 @@ function AuthPatient() {
       });
   };
 
-  
-  if(localStorage.getItem('token') !== null) {
-    return (
-      <IsAuth/>
-    )
+  if (localStorage.getItem("token") !== null) {
+    return <IsAuth />;
   } else {
     return (
       <DivGlobalLogin>
         <DivHeader>
           <button onClick={() => history.push("/")}>Voltar</button>
         </DivHeader>
-  
+
         <div className="divImgLogo">
           {" "}
           <img src={logo} alt="logo" />
         </div>
-  
+
         <DivBody>
           <FormLogin onSubmit={handleSubmit(onSubmitFunction)}>
             <DivLabel>
               <label>Email</label>
             </DivLabel>
-  
+
             <input
               {...register("email")}
               name="email"
               error={errors?.email?.message}
               required
             />
-  
+
             <DivLabel>
               <label>Senha</label>
-    
             </DivLabel>
             <input
               {...register("password")}
@@ -95,10 +93,10 @@ function AuthPatient() {
               error={errors?.email?.password}
               required
             />
-  
+
             <button type="submit">Login</button>
           </FormLogin>
-  
+
           <DivInfo>
             <h4>Você é medico, e não tem cadastro?</h4>
             <button onClick={() => history.push("/register/doctor")}>
@@ -109,7 +107,6 @@ function AuthPatient() {
       </DivGlobalLogin>
     );
   }
-  
 }
 
 export default AuthPatient;

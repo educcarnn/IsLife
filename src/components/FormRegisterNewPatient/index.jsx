@@ -38,7 +38,7 @@ function FormRegisterNewPatient() {
     email: yup.string().email("Email inválido").required("Campo obrigatório"),
     password: yup
       .string()
-      .min(8, "Mínimo de 8 digitos")
+      .min(6, "Mínimo de 6 digitos")
       .required("Campo obrigatório"),
     telephone: yup.string().required("Campo obrigatório"),
   });
