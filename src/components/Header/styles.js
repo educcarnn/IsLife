@@ -13,7 +13,7 @@ export const ContainerHeader = styled.header`
   border-bottom: 0.5px solid grey;
   object-fit: cover;
 
-  .buttonImg{
+  .buttonImg {
     background-color: transparent;
     width: 0rem;
     height: 0rem;
@@ -23,7 +23,7 @@ export const ContainerHeader = styled.header`
   img {
     height: 60px;
     background-color: #ffffff;
-    padding:  0 1rem;
+    padding: 0 1rem;
     border-radius: 55%;
   }
 
@@ -31,6 +31,11 @@ export const ContainerHeader = styled.header`
     width: 15%;
     display: flex;
     justify-content: space-between;
+    .btn-header {
+      width: 120px;
+      height: 30px;
+      border-radius: 8px;
+    }
   }
   @media (max-width: 800px) {
     display: flex;
@@ -44,7 +49,7 @@ export const ContainerHeader = styled.header`
       display: none;
     }
 
-    .btn-header{
+    .btn-header {
       display: none;
     }
   }
@@ -54,29 +59,17 @@ export const ContainerHeader = styled.header`
     display: flex;
     justify-content: flex-start;
     gap: 10px;
-
-    .btn-header {
-      width: 175px;
-      height: 40px;
-      color: white;
-      background-color: #ce2d5d;
-      border: 1px solid black;
-      border-radius: 10px;
-    }
   }
 
-  
   @media only screen and (min-width: 801px) {
     .Menu__Mobile {
-        display: none;
+      display: none;
     }
-    .Menu__Mobile--icon{
-        display: none;
+    .Menu__Mobile--icon {
+      display: none;
     }
   }
 `;
-
-
 
 export const StyledMenuMobileDoctor = styled.div`
   display: ${(props) => props.Display || "none"};
@@ -151,7 +144,7 @@ export const StyledMenuMobileDoctor = styled.div`
     width: 70%;
     min-width: 280px;
     height: calc(100vh - 60px);
-  } 
+  }
 
   .Menu li {
     margin-top: 45px;
@@ -166,9 +159,6 @@ export const StyledMenuMobileDoctor = styled.div`
     border-bottom: #e4e1e1 solid;
   }
 
-  @media screen and (max-width:800px) {
-    
+  @media screen and (max-width: 800px) {
   }
-
 `;
-

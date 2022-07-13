@@ -8,14 +8,14 @@ import DashDoctor from "../pages/DashDoctor";
 import DashPatient from "../pages/DashPatient";
 import DayShare from "../pages/PatientDayShare";
 
-import PageTest from "../pages/testPage";
-
 import DoctorPatient from "../pages/DoctorPatient";
 import DoctorSchedule from "../pages/DoctorSchedule";
 import Home from "../pages/Home";
 import HomeDoctor from "../pages/HomeDoctor";
 import HomePatient from "../pages/HomePatient";
 import PatientRoutine from "../pages/PatientRoutine";
+import PageReceitas from "../pages/ReceitasPatient";
+import ConsultPatient from "../pages/ConsultPatient";
 
 const Routes = () => {
   return (
@@ -57,11 +57,15 @@ const Routes = () => {
           <DashPatient />
         </Route>
 
-
         {/* Rotas do Paciente */}
         <Route path={"/dayshare"}>
           <HeaderPatient />
           <DayShare />
+        </Route>
+
+        <Route path={"/consultas"}>
+          <HeaderPatient />
+          <ConsultPatient />
         </Route>
 
         <Route path={"/rotinas"}>
@@ -70,7 +74,8 @@ const Routes = () => {
         </Route>
 
         <Route exact path="/receitas">
-          <PageTest />
+          <HeaderPatient />
+          <PageReceitas />
         </Route>
       </Switch>
     </BrowserRouter>

@@ -6,6 +6,7 @@ import { useState } from "react";
 
 import { StyledHeader, StyledMenuMobile } from "./styles";
 import { useHistory, Link } from "react-router-dom";
+import ButtonForm from "../button";
 
 function HeaderPatient() {
   const [isActiveMenuMobile, setIsActiveMenuMobile] = useState(false);
@@ -25,14 +26,30 @@ function HeaderPatient() {
 
         <nav className="Menu">
           <div className="Menu__Desktop">
-            <button onClick={() => history.push("/")}>Home</button>
-            <button onClick={() => history.push("/receitas")}>Receitas</button>
-            <button onClick={() => history.push("/consultas")}>
+            <ButtonForm
+              className="btn-patient-header"
+              onClick={() => history.push("/")}
+            >
+              Home
+            </ButtonForm>
+            <ButtonForm
+              className="btn-patient-header"
+              onClick={() => history.push("/receitas")}
+            >
+              Receitas
+            </ButtonForm>
+            <ButtonForm
+              className="btn-patient-header"
+              onClick={() => history.push("/consultas")}
+            >
               Consultas
-            </button>
-            <button onClick={() => history.push("/rotinas")}>
+            </ButtonForm>
+            <ButtonForm
+              className="btn-patient-header"
+              onClick={() => history.push("/rotinas")}
+            >
               Minha Rotina
-            </button>
+            </ButtonForm>
           </div>
 
           <div className="Menu__Mobile--icon">

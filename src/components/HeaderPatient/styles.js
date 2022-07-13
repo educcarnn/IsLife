@@ -8,25 +8,34 @@ export const StyledHeader = styled.header`
 
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 
   padding: 0.2rem 4%;
-  box-shadow: 1px -3px 10px #3333 ;
-    
-
+  box-shadow: 1px -3px 10px #3333;
 
   img {
     height: 50px;
     background-color: #ffffff;
-    padding:  0 1rem;
+    padding: 0 1rem;
     border-radius: 55%;
   }
 
   .Menu {
     display: flex;
     align-items: center;
+    width: 30%;
     gap: 1rem;
+
+    .Menu__Desktop {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      .btn-patient-header {
+        width: 120px;
+        height: 30px;
+      }
+    }
   }
 
   .Menu__Mobile {
@@ -76,15 +85,18 @@ export const StyledHeader = styled.header`
   @media only screen and (max-width: 800px) {
     .Menu__Desktop {
       display: none;
+      .btn-patient-header {
+        display: none;
+      }
     }
   }
 
   @media only screen and (min-width: 801px) {
     .Menu__Mobile {
-        display: none;
+      display: none;
     }
-    .Menu__Mobile--icon{
-        display: none;
+    .Menu__Mobile--icon {
+      display: none;
     }
   }
 `;
@@ -182,7 +194,6 @@ export const StyledMenuMobile = styled.div`
     overflow-y: auto;
     visibility: hidden;
     background-color: #ce2d5d;
-
   }
 
   .Menu {
@@ -190,8 +201,7 @@ export const StyledMenuMobile = styled.div`
     width: 70%;
     min-width: 280px;
     height: calc(100vh - 60px);
-
-  } 
+  }
 
   .Menu li {
     margin-top: 45px;
@@ -206,8 +216,6 @@ export const StyledMenuMobile = styled.div`
     border-bottom: #e4e1e1 solid;
   }
 
-  @media screen and (max-width:800px) {
-    
+  @media screen and (max-width: 800px) {
   }
-
 `;
