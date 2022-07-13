@@ -19,7 +19,7 @@ function DoctorSchedule() {
   useEffect(()=>{
     api.get(`/consultas?IdDoctor=${newToken.user.id}`, {
       headers: {"Authorization": `Bearer ${newToken.accessToken}`}} ).then((response)=> setArrConsultas(response.data))
-  },[])
+  },[showModal, arrConsultas])
   
   return (
     <ContainerSchedule>
