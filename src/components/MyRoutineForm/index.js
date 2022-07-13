@@ -15,8 +15,7 @@ import { useContext } from "react";
 import { MyRoutineContext } from "../../providers/MyRoutine";
 
 function MyRoutineForm() {
-  const paciente = JSON.parse(localStorage.getItem("token"));
-  const usuario = JSON.parse(localStorage.getItem("user"));
+  const token = JSON.parse(localStorage.getItem("token"));
 
   const { spyOnMove } = useContext(MyRoutineContext);
 
@@ -24,8 +23,6 @@ function MyRoutineForm() {
   // console.log(paciente.accessToken);
   // console.log(usuario.name);
   // console.log(usuario.id);
-
-  const token = paciente.accessToken;
 
   const schema = yup.object().shape({
     msgTarefa: yup.string().required("Campo obrigatório"),
@@ -44,14 +41,14 @@ function MyRoutineForm() {
 
   const submeterTarefa = (data) => {
     // console.log(data);
-    data.nome = usuario.name;
-    data.userId = usuario.id;
+    data.nome = token.user.name;
+    data.userId = token.user.id;
     data.check = false;
 
     api
       .post("/toDo", data, {
         header: {
-          Authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${token.accessToken}`,
         },
       })
       .then((res) => {

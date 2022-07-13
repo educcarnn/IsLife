@@ -10,34 +10,35 @@ import { useContext } from "react";
 import { MyRoutineContext } from "../../providers/MyRoutine";
 
 function MyRoutineList() {
-  const usuario = JSON.parse(localStorage.getItem("token"));
+  const token = JSON.parse(localStorage.getItem("token"));
+
+  console.log(token.user.id + "id salvo na localstorage");
 
   const { isMove } = useContext(MyRoutineContext);
 
   const [tarefas, setTarefas] = useState([]);
-  console.log(tarefas);
 
   useEffect(() => {
     api
-      .get(`/toDo/?IdPatient=:${usuario.id}`)
+      .get(`/toDo/?userId=:${token.user.id}`)
       .then((res) => {
         console.log(res);
         setTarefas([...res.data]);
       })
+
       .catch((err) => console.log(err));
   }, []);
 
   useEffect(() => {
     api
-      .get(`/toDo/?IdPatient=:${usuario.id}`)
+      .get(`/toDo/?userId=${token.user.id}`)
       .then((res) => {
         console.log(res);
+        console.log(token.user.id + "valor do id da lista");
         setTarefas([...res.data]);
       })
       .catch((err) => console.log(err));
   }, [isMove]);
-
-  console.log(tarefas);
 
   const tarefasOrdenadas = tarefas.sort(function (a, b) {
     if (a.horarioTarefa < b.horarioTarefa) {
@@ -47,19 +48,15 @@ function MyRoutineList() {
     }
   });
 
-  console.log(tarefasOrdenadas);
-
   useEffect(() => {
     api
-      .get(`/toDo/?IdPatient=:${usuario.id}`)
+      .get(`/toDo/?userId=${token.user.id}`)
       .then((res) => {
         console.log(res);
         setTarefas([...res.data]);
       })
       .catch((err) => console.log(err));
   }, [isMove]);
-
-  console.log(tarefas);
 
   return (
     <>
