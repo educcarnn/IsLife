@@ -23,7 +23,7 @@ function ListConsultPatient(){
 
         .then((response)=> setArrUser(response.data))
     },[])
-    console.log(arrConsultRq)
+    
     return(
 
         <UlConsult>

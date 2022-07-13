@@ -11,7 +11,6 @@ function FormRegisterNewPatient() {
   );
      
     const sendDates = (info) => {
-      console.log(info)
       const dates = {
         name: info.name,
         email: info.email,

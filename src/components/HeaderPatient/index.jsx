@@ -12,6 +12,11 @@ function HeaderPatient() {
 
   const history = useHistory();
 
+  const handleClick = () => {
+    history.push("/");
+    localStorage.removeItem("token");
+  };
+
   const displayMenuMobile = () => {
     setIsActiveMenuMobile(!isActiveMenuMobile);
   };
@@ -25,7 +30,7 @@ function HeaderPatient() {
 
         <nav className="Menu">
           <div className="Menu__Desktop">
-            <button onClick={() => history.push("/")}>Home</button>
+            <button onClick={handleClick}>Home</button>
             <button onClick={() => history.push("/receitas")}>Receitas</button>
             <button onClick={() => history.push("/consultas")}>
               Consultas

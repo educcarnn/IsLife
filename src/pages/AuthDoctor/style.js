@@ -13,6 +13,22 @@ export const DivElems = styled.div`
     }
 `
 
+export const DivVoltar = styled.div`
+
+width: 100vw;
+   height: 50px;
+   display: flex;
+   align-items: center;
+   justify-content: flex-end;
+   
+   .button{
+    padding: 0.5rem;
+    margin-top: -11rem;
+    margin-right: 4rem;
+   }
+
+`
+
 export const FormElem = styled.form`
     align-items: center;
         display: flex;
@@ -33,6 +49,7 @@ export const FormElem = styled.form`
     border:none;
     background-color: transparent;
    }
+
 
    .label{
     background-color: #ffffff;
