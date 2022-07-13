@@ -25,9 +25,9 @@ function HeaderPatient() {
     <>
       <StyledHeader>
         <div>
-        <button className="buttonImg" onClick={handleClick} >
-          <img src={logo} alt="" />
-        </button>
+          <button className="buttonImg" onClick={handleClick}>
+            <img src={logo} alt="" />
+          </button>
         </div>
 
         <nav className="Menu">
@@ -63,8 +63,8 @@ function HeaderPatient() {
             <ul className={isActiveMenuMobile ? "Menu--Hidden" : "Menu"}>
               <div className="UserInformation">
                 <div className="User__Info">
-                  <section> avatar </section>
-                  <h3>Leomar P.</h3>
+                  <section> </section>
+                  <h3></h3>
                 </div>
 
                 <div>
@@ -75,9 +75,7 @@ function HeaderPatient() {
               <li>
                 <Link to={"/"}>Home</Link>
               </li>
-              <li>
-                <Link to={"/"}>Receitas</Link>
-              </li>
+
               <li>
                 {" "}
                 <Link to={"/"}> Consultas</Link>{" "}

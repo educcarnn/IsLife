@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ContainerList = styled.li`
   background: white;
-  width: 100%;
+  width: 80%;
   height: 60px;
   border-radius: 5px;
   display: flex;
@@ -10,7 +10,12 @@ export const ContainerList = styled.li`
   align-items: center;
   border-left: 5px solid green;
   box-shadow: 0px 0px 4px grey;
-
+  .div-list-consult {
+    width: 33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   p {
     font-size: 18px;
   }
@@ -26,6 +31,7 @@ export const ContainerList = styled.li`
     display: flex;
     flex-direction: column;
     height: 100px;
+    width: 90%;
     padding: 0.3rem 0;
   }
 `;

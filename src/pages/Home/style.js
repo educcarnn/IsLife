@@ -41,6 +41,12 @@ export const Logo = styled.header`
 `;
 
 export const Container = styled.main`
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 16px;
+
   img {
     width: 375px;
     height: 200px;
@@ -61,6 +67,8 @@ export const Container = styled.main`
     margin-left: 28px;
     border-radius: 50px;
     transition: 0.6s;
+    margin-top: 16px;
+    margin-bottom: 16px;
   }
   & button:hover {
     background-color: #e21955;
@@ -147,11 +155,21 @@ export const WelcomeContainer = styled.div`
     padding: 0 28px 0 70px;
     text-align: center;
   }
+  .typewr {
+    height: 120px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    font-size: 25px;
+    line-height: 35px;
+    font-family: "Edu SA Beginner", cursive;
+  }
 
   @media screen and (min-width: 768px) {
     top: 160px;
     margin-bottom: 230px;
     width: 768px;
+    .typewr {
+    }
   }
 
   @media screen and (min-width: 1024px) {
@@ -290,7 +308,7 @@ export const Footer = styled.footer`
 
     li {
       width: 328px;
-      height: 430px;
+      height: 500px;
       margin: 28px;
     }
 

@@ -24,9 +24,15 @@ function ListConsultDashDoctor() {
       {consultas?.map((info, key) => {
         return (
           <ContainerList className="li-content-hour" key={key}>
-            <p>{info.nome}</p>
-            <p>{info.dataConsulta}</p>
-            <p>{info.horarioConsulta}</p>
+            <div className="div-list-consult">
+              <p>{info.nome}</p>
+            </div>
+            <div className="div-list-consult">
+              <p>{info.dataConsulta}</p>
+            </div>
+            <div className="div-list-consult">
+              <p>{info.horarioConsulta}</p>
+            </div>
           </ContainerList>
         );
       })}
