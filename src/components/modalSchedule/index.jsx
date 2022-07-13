@@ -3,13 +3,13 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup"
 import { api } from "../../services/api.js";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function  ModalSchedule({showModal,setShowModal}){
 
     const newToken= JSON.parse(localStorage.getItem("token"))
 
-    const [idUser, setIdUser] = useState(0)
+    const [idUser, setIdUser] = useState(null)
     const [arrPatientDoc, setArrPatientDoc] = useState([])
 
  
@@ -24,15 +24,19 @@ function  ModalSchedule({showModal,setShowModal}){
        { resolver: yupResolver(schema)} 
         );
 
-    const onSubmitFunction = (data)=>{
-    
-    api.get(`/users?doctorId=${newToken.user.id}`, 
-    {
-        headers: {"Authorization": `Bearer ${newToken.accessToken}`
-    }})
-    .then((response)=> response.data.map((item)=> item.name === data.nome ? setIdUser(item.id) : null ))
-        // setArrPatientDoc(response.data),
-        // console.log(response)
+        useEffect(()=>{
+            api.get(`/users?doctorId=${newToken.user.id}`, 
+            {
+                headers: {"Authorization": `Bearer ${newToken.accessToken}`
+            }})
+            .then((response)=>setArrPatientDoc(response.data))
+        
+        },[])
+
+
+    const onSubmitFunction = (data)=>{   
+
+    arrPatientDoc.map((item)=> item.name === data.nome ? setIdUser(item.id) : null)
 
     const objData = {
         nome: data.nome,
@@ -40,7 +44,7 @@ function  ModalSchedule({showModal,setShowModal}){
         horarioConsulta:data.horarioConsulta,
         modo: data.modo,
         userId: newToken.user.id,
-        IdPatient: idUser,
+        IdPatient: idUser
     }
    
     api.post("/consultas", objData, {
@@ -49,7 +53,6 @@ function  ModalSchedule({showModal,setShowModal}){
         setShowModal(false)
     })
 }
-    console.log(arrPatientDoc)
     return(
     
     <DivGlobalModalShedule>
@@ -62,17 +65,19 @@ function  ModalSchedule({showModal,setShowModal}){
 
             <Form onSubmit={handleSubmit(onSubmitFunction)}>
 
-                <input type="text" 
+                {/* <input type="text" 
                 placeholder="Digite o nome do paciente"
                 {...register("nome")} 
                 name = "nome"
-                error={errors.nome?.message}/>
+                error={errors.nome?.message}/> */}
 
-                {/* <select
-                        {...register("nome")} 
-                        name = "nome">
+                <select
+                    className="selectPatient"
+                    {...register("nome")} 
+                    name = "nome">
+                    <option>Selecione um Paciente</option>
                     {arrPatientDoc.map((element)=><option value={element.name} key = {element.id}>{element.name}</option>)}
-                </select> */}
+                </select>
 
                 <input type="text" placeholder="tipo da consulta: Ex: presencial" 
                        {...register("modo")}

@@ -54,6 +54,18 @@ flex-direction: column;
 align-items: center;
 gap: 40px;
 
+.selectPatient {
+  width: 400px ;
+  height: 40px;
+
+  @media (max-width: 455px) {
+    width: 250px;
+
+
+}
+}
+
+
 input{
   width: 400px ;
   height: 40px;

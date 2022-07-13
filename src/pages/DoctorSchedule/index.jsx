@@ -20,7 +20,7 @@ function DoctorSchedule() {
     api.get(`/consultas?IdDoctor=${newToken.user.id}`, {
       headers: {"Authorization": `Bearer ${newToken.accessToken}`}} ).then((response)=> setArrConsultas(response.data))
   },[])
-
+  
   return (
     <ContainerSchedule>
       {showModal && (<ModalSchedule showModal={showModal} setShowModal={setShowModal}/>)}
