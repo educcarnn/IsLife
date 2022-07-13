@@ -1,66 +1,84 @@
 import styled from "styled-components";
 
-export const ContainerHeader = styled.header`
+export const StyledHeader = styled.header`
   position: relative;
-  width: 100%;
   min-height: 60px;
-  max-height: 63px;
+  max-height: 62px;
   height: 7vh;
+
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  border-bottom: 0.5px solid grey;
-  object-fit: cover;
 
+  padding: 0.2rem 4%;
+  box-shadow: 1px -3px 10px #3333 ;
+    
 
 
   img {
-    height: 60px;
+    height: 50px;
     background-color: #ffffff;
     padding:  0 1rem;
     border-radius: 55%;
   }
 
-  .div-buttons {
-    width: 15%;
+  .Menu {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
   }
-  @media (max-width: 800px) {
+
+  .Menu__Mobile {
+    width: 0;
+
+    position: absolute;
+
+    top: 66px;
+    right: 0;
+    background-color: #d21;
+  }
+
+  .Menu__Mobile {
+    width: 75%;
+    height: 100vh;
+
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    height: 300px;
 
+    text-align: center;
+
+    position: fixed;
+
+    top: 66px;
+    right: 0;
+    background-color: rgba(206, 45, 93, 75);
+  }
+
+  .List__Menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    gap: 3rem;
+
+    margin-top: 100px;
+  }
+
+  button {
+    margin-left: 10px;
+    border-radius: 5px;
+    padding: 0.3rem 1rem;
+  }
+
+  @media only screen and (max-width: 800px) {
     .Menu__Desktop {
       display: none;
     }
-
-    .btn-header{
-      display: none;
-    }
   }
 
-  .div-buttons {
-    width: 200px;
-    display: flex;
-    justify-content: flex-start;
-    gap: 10px;
-
-    .btn-header {
-      width: 175px;
-      height: 40px;
-      color: white;
-      background-color: #ce2d5d;
-      border: 1px solid black;
-      border-radius: 10px;
-    }
-  }
-
-  
   @media only screen and (min-width: 801px) {
     .Menu__Mobile {
         display: none;
@@ -71,9 +89,34 @@ export const ContainerHeader = styled.header`
   }
 `;
 
+export const UserInformation = styled.div`
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
+  padding: 2px 3%;
+  width: 100%;
 
-export const StyledMenuMobileDoctor = styled.div`
+  background-color: aqua;
+
+  .User__Info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  section {
+    display: flex;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background-color: #dad121;
+  }
+`;
+
+export const StyledMenuMobile = styled.div`
   display: ${(props) => props.Display || "none"};
   width: 0;
   height: 0;
@@ -131,7 +174,7 @@ export const StyledMenuMobileDoctor = styled.div`
     position: fixed;
     width: 0;
     height: 0;
-    top: 64px;
+    top: 66px;
     right: 0;
     /* border-bottom-right-radius: 170%; */
     transition: 0.6s ease-in;
@@ -139,6 +182,7 @@ export const StyledMenuMobileDoctor = styled.div`
     overflow-y: auto;
     visibility: hidden;
     background-color: #ce2d5d;
+
   }
 
   .Menu {
@@ -146,6 +190,7 @@ export const StyledMenuMobileDoctor = styled.div`
     width: 70%;
     min-width: 280px;
     height: calc(100vh - 60px);
+
   } 
 
   .Menu li {
@@ -166,4 +211,3 @@ export const StyledMenuMobileDoctor = styled.div`
   }
 
 `;
-

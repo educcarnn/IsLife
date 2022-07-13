@@ -1,11 +1,12 @@
-import { ContainerHeader, StyledMenuMobileDoctor  } from "./styles";
 import logo from "../../assets/img/logo.png";
-
-import { useHistory } from "react-router-dom";
-import { useState } from "react";
 
 import { FiMenu } from "react-icons/fi";
 import { MdClose } from "react-icons/md";
+import { useState } from "react";
+
+import { StyledHeader, StyledMenuMobile } from "./styles";
+import { useHistory, Link } from "react-router-dom";
+
 
 function HeaderDoctor() {
   const history = useHistory();
@@ -16,61 +17,66 @@ function HeaderDoctor() {
   };
 
   return (
-    <ContainerHeader>
-      <img src={logo} alt="" />
-      <div className="div-buttons">
-        <button
-          className="btn-header"
-          onClick={() => history.push("./dashdoctor")}
-        >
-          Consultas
-        </button>
-        <button
-          className="btn-header"
-          onClick={() => history.push("./doctorschedule")}
-        >
-          Agendar
-        </button>
-        <button
-          className="btn-header"
-          onClick={() => history.push("./doctorpatient")}
-        >
-          Pacientes
-        </button>
-      </div>
+    <>
+      <StyledHeader>
+        <div>
+          <img src={logo} alt="Logo do site IsLife" />
+        </div>
 
-      <div className="Menu__Mobile--icon">
-        {isActiveMenuMobile === true ? (
-          <FiMenu onClick={displayMenuMobile} style={{ fontSize: "32px" }} />
-        ) : (
-          <MdClose onClick={displayMenuMobile} style={{ fontSize: "30px" }} />
-        )}
-      </div>
-
-      <StyledMenuMobileDoctor
-        className="Menu__Mobile"
-        Display={isActiveMenuMobile === false ? "block" : "none"}
-      >
-        <ul className={isActiveMenuMobile ? "Menu--Hidden" : "Menu"}>
-          <div className="UserInformation">
-            <div className="User__Info">
-              <section> avatar </section>
-              <h3>Leomar P.</h3>
-            </div>
-
-            <div>
-              <button className="Menu__Mobile--Btn"> Sair </button>
-            </div>
+        <nav className="Menu">
+          <div className="Menu__Desktop">
+            <button onClick={() => history.push("/")}>Consultas</button>
+            <button onClick={() => history.push("/receitas")}>Agendar</button>
+            <button onClick={() => history.push("/consultas")}>Pacientes</button>
           </div>
 
-  
-          <li>Consultas</li>
-          <li>Agendar</li>
-          <li>Pacientes</li>
-        </ul>
-      </StyledMenuMobileDoctor>
-    </ContainerHeader>
+          <div className="Menu__Mobile--icon">
+            {isActiveMenuMobile === true ? (
+              <FiMenu
+                onClick={displayMenuMobile}
+                style={{ fontSize: "32px" }}
+              />
+            ) : (
+              <MdClose
+                onClick={displayMenuMobile}
+                style={{ fontSize: "30px" }}
+              />
+            )}
+          </div>
+
+          <StyledMenuMobile
+            className="Menu__Mobile"
+            Display={isActiveMenuMobile === false ? "block" : "none"}
+          >
+            <ul className={isActiveMenuMobile ? "Menu--Hidden" : "Menu"}>
+              <div className="UserInformation">
+                <div className="User__Info">
+                  <section> avatar </section>
+                  <h3>Leomar P.</h3>
+                </div>
+
+                <div>
+                  <button className="Menu__Mobile--Btn"> Sair </button>
+                </div>
+              </div>
+
+              <li>
+                {" "}
+                <Link to={"/"}> Consultas</Link>{" "}
+              </li>
+              
+              <li>
+                <Link to={"/"}>Agendar</Link>
+              </li>
+              <li>
+                {" "}
+                <Link to={"/"}>Pacientes</Link>
+              </li>
+            </ul>
+          </StyledMenuMobile>
+        </nav>
+      </StyledHeader>
+    </>
   );
 }
-
 export default HeaderDoctor;
