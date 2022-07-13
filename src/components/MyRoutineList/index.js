@@ -16,13 +16,12 @@ function MyRoutineList() {
 
 
   const [tarefas, setTarefas] = useState([]);
-  console.log(tarefas)
+ 
 
   useEffect(() => {
     api
-      .get(`/toDo/?IdPatient=:${usuario.id}`)
+      .get(`/toDo/?IdPatient=:${usuario.user.id}`)
       .then((res) => {
-        console.log(res);
         setTarefas([...res.data]);
       })
       .catch((err) => console.log(err));
