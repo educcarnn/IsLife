@@ -4,17 +4,18 @@ import HeaderPatient from "../components/HeaderPatient";
 import AuthDoctor from "../pages/AuthDoctor";
 import AuthPatient from "../pages/AuthPatient";
 import DashDoctor from "../pages/DashDoctor";
+
 import DayShare from "../pages/PatientDayShare";
 import DoctorPatient from "../pages/DoctorPatient";
 import DoctorSchedule from "../pages/DoctorSchedule";
 import Home from "../pages/Home";
 import HomeDoctor from "../pages/HomeDoctor";
 import HomePatient from "../pages/HomePatient";
-import ListConsultPatient from "../components/ListConsultPatient/index"
+
+import ListConsultPatient from "../components/ListConsultPatient/index";
 import ConsultPatient from "../pages/ConsultPatient";
 import PageReceitas from "../components/ReceitasPatient";
 import MyRoutine from "../pages/MyRoutine";
-
 
 const Routes = () => {
   return (
@@ -51,7 +52,6 @@ const Routes = () => {
           <HeaderDoctor />
           <DoctorPatient />
         </Route>
-    
 
         {/* Rotas do Paciente */}
         <Route path={"/dashpatient"}>
@@ -66,15 +66,15 @@ const Routes = () => {
 
         <Route exact path="/receitas">
           <HeaderPatient />
-          <PageReceitas/>
+
+          <PageReceitas />
         </Route>
 
-        <Route exact path= "/consultas">
+        <Route exact path="/consultas">
           <HeaderPatient />
-          <ListConsultPatient/>
-          <ConsultPatient/>
+          <ListConsultPatient />
+          <ConsultPatient />
         </Route>
-        
       </Switch>
     </BrowserRouter>
   );

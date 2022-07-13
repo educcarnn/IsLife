@@ -13,6 +13,8 @@ import { useHistory } from "react-router";
 import { Container, Logo, WelcomeContainer, Footer } from "./style";
 import Typewriter from "typewriter-effect";
 
+/* teste */
+
 function Home() {
   const history = useHistory();
 
