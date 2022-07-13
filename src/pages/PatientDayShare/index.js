@@ -22,6 +22,7 @@ function DayShare() {
  
  function getInfo(valueInput, valueTextArea){
 
+    console.log(token.user.id)
     setObjMessage({
       nome: token.user.name,
       status: valueInput,
@@ -30,17 +31,25 @@ function DayShare() {
       userId: token.user.id,
       IdDoctor: token.user.doctorId
     })
+
+    api.post("/messages",{
+      nome: token.user.name,
+      status: valueInput,
+      msgImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPL8t1n4_1cQSVsXJh9lhpFs1DRMFOF58V-Q&usqp=CAU",
+      msgPatient: valueTextArea,
+      userId: token.user.id,
+      IdDoctor: token.user.doctorId
+    },
+    {
+        headers: {"Authorization": `Bearer ${token.accessToken}`
+    }})
+    .then((response)=> console.log(response))
+    .catch((err)=> console.log(err))
+
 }
 
-useEffect(()=>{
-  api.post("/messagens",objMessage,
-  {
-      headers: {"Authorization": `Bearer ${token.accessToken}`
-  }})
-  .then((response)=> console.log(response))
-  .catch((err)=> console.log(err))
 
-  },[])
+
 
  
 
