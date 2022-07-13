@@ -20,7 +20,7 @@ function MyRoutineList() {
 
   useEffect(() => {
     api
-      .get(`/toDo/?userId=:${token.user.id}`)
+      .get(`/toDo/?userId=${token.user.id}`)
 
       .then((res) => {
         setTarefas([...res.data]);
@@ -35,7 +35,6 @@ function MyRoutineList() {
       .get(`/toDo/?userId=${token.user.id}`)
       .then((res) => {
         console.log(res);
-        console.log(token.user.id + "valor do id da lista");
 
         setTarefas([...res.data]);
       })
@@ -49,17 +48,6 @@ function MyRoutineList() {
       return true;
     }
   });
-
-  useEffect(() => {
-    api
-      .get(`/toDo/?userId=${token.user.id}`)
-
-      .then((res) => {
-        console.log(res);
-        setTarefas([...res.data]);
-      })
-      .catch((err) => console.log(err));
-  }, [isMove]);
 
   return (
     <>
