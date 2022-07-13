@@ -33,7 +33,6 @@ function HeaderPatient() {
         <nav className="Menu">
           <div className="Menu__Desktop">
             <button onClick={handleClick}>Home</button>
-            <button onClick={() => history.push("/receitas")}>Receitas</button>
             <button onClick={() => history.push("/consultas")}>
               Consultas
             </button>

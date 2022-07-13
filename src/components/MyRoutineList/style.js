@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ContentPatient = styled.div`
   display: flex;
   justify-content: flex-start;
-
+  height: 700px;
   align-items: center;
   flex-direction: column;
   width: 50%;
@@ -24,12 +24,13 @@ export const ContentPatient = styled.div`
 export const ListaTarefas = styled.ul`
   width: 95%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  display: flex;
+  flex-wrap: wrap;
   gap: 20px;
-
+  height: 700px;
+  overflow-y: scroll;
   /* max-height: 600px; */
-  overflow-y: auto;
-  overflow-x: hidden;
 
   @media (max-width: 800px) {
     display: flex;
