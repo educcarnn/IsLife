@@ -11,9 +11,9 @@ import Home from "../pages/Home";
 import HomeDoctor from "../pages/HomeDoctor";
 import HomePatient from "../pages/HomePatient";
 import ListConsultPatient from "../components/ListConsultPatient/index"
-import PatientRoutine from "../pages/PatientRoutine";
 import ConsultPatient from "../pages/ConsultPatient";
 import PageReceitas from "../components/ReceitasPatient";
+import MyRoutine from "../pages/MyRoutine";
 
 
 const Routes = () => {
@@ -59,9 +59,9 @@ const Routes = () => {
           <DayShare />
         </Route>
 
-        <Route path={"/rotinas"}>
+        <Route exact path="/rotinas">
           <HeaderPatient />
-          <PatientRoutine />
+          <MyRoutine></MyRoutine>
         </Route>
 
         <Route exact path="/receitas">
