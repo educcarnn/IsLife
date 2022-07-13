@@ -26,7 +26,7 @@ function ListConsultPatient(){
     
     return(
         <UlConsult>
-            {arrConsultRq.map((element)=>{
+            {arrConsultRq?.map((element)=>{
               return(
                 <LiConsult key={element.userId}>
                     <h3>{element.dataConsulta}</h3>
