@@ -5,19 +5,21 @@ import { useEffect, useState } from "react";
 function ListConsultDashDoctor() {
   const [consultas, setConsultas] = useState([]);
 
-  const local = JSON.parse(localStorage.getItem("token"));
+  const [datesDash, setDatesDash] = useState(
+    JSON.parse(localStorage.getItem("token"))
+  );
 
   useEffect(() => {
     api
       .get(`/consultas?IdDoctor=${4}`, {
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${local.accessToken}`,
+          Authorization: `Bearer ${datesDash.accessToken}`,
         },
       })
       .then((res) => setConsultas(res.data))
       .catch((err) => console.log(err));
-  }, []);
+  }, [consultas]);
 
   return (
     <>

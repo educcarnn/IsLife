@@ -13,7 +13,7 @@ function HeaderPatient() {
   const history = useHistory();
 
   const handleClick = () => {
-    history.push("/");
+    history.push("/dashpatient");
     localStorage.removeItem("token");
   };
 
