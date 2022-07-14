@@ -11,7 +11,7 @@ import {
   InputStatus
 } from "./styles";
 import {api} from "../../services/api"
-
+import AuthGlobal from "../../components/Roules/AuthGlobal";
 
 
 function DayShare() {
@@ -47,6 +47,11 @@ function DayShare() {
    .then((response)=> setMessages(response.data))
 },[messages])
  
+if(localStorage.getItem('token') === null) {
+  return (
+   <AuthGlobal/>
+   )
+  }else {
 
 
   return (
@@ -89,7 +94,7 @@ function DayShare() {
 
       </ContainerDayShare>
     </div>
-  );
+  )};
 }
 
 export default DayShare;

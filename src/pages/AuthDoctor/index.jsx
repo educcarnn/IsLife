@@ -29,7 +29,6 @@ function AuthDoctor() {
     crm: yup.string().required("documentação obrigatória"),
   });
 
-
   const { register, handleSubmit,formState: { errors } } = useForm({
     resolver: yupResolver(schema),
   });

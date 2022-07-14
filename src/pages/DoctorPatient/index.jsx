@@ -6,8 +6,16 @@ import {
   ContentPatientList,
   UlContainer,
 } from "./styles";
+import AuthGlobal from "../../components/Roules/AuthGlobal";
 
 function DoctorPatient() {
+
+  if(localStorage.getItem('token') === null) {
+    return (
+     <AuthGlobal/>
+     )
+    }else {
+
   return (
     <ContainerPatient>
       <ContentPatientForm>
@@ -27,7 +35,7 @@ function DoctorPatient() {
         </UlContainer>
       </ContentPatientList>
     </ContainerPatient>
-  );
+  )};
 }
 
 export default DoctorPatient;

@@ -7,8 +7,15 @@ import {
   ListContentHour,
   ListContentConsult,
 } from "./style";
+import AuthGlobal from "../../components/Roules/AuthGlobal";
 
 function DashDoctor() {
+
+  if(localStorage.getItem('token') === null) {
+    return (
+     <AuthGlobal/>
+     )
+    }else {
   return (
     <div>
       <ContainerConsult>
@@ -26,7 +33,7 @@ function DashDoctor() {
         </ContentConsultList>
       </ContainerConsult>
     </div>
-  );
+  )};
 }
 
 export default DashDoctor;

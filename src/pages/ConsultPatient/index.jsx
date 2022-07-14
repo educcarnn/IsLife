@@ -1,4 +1,5 @@
 import ListPatientConsult from "../../components/ConsultListPatient";
+import AuthGlobal from "../../components/Roules/AuthGlobal";
 import {
   ContainerConsult,
   ContentConsult,
@@ -6,7 +7,15 @@ import {
   UlListConsult,
 } from "./style";
 
+
 function ConsultPatient() {
+
+  if(localStorage.getItem('token') === null) {
+    return (
+     <AuthGlobal/>
+     )
+  }else {
+
   return (
     <div>
       <ContainerConsult>
@@ -44,7 +53,8 @@ function ConsultPatient() {
         </ContentListConsult>
       </ContainerConsult>
     </div>
-  );
+  )};
+
 }
 
 export default ConsultPatient;
