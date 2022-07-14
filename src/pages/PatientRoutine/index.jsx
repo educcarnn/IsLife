@@ -5,8 +5,16 @@ import {
   ContentListRoutine,
   UlListRoutine,
 } from "./style";
+import AuthGlobal from "../../components/Roules/AuthGlobal";
 
 function PatientRoutine() {
+
+  if(localStorage.getItem('token') === null) {
+    return (
+     <AuthGlobal/>
+     )
+    }else {
+  
   return (
     <div>
       <ContainerRoutine>
@@ -41,7 +49,7 @@ function PatientRoutine() {
         </ContentListRoutine>
       </ContainerRoutine>
     </div>
-  );
+  )};
 }
 
 export default PatientRoutine;

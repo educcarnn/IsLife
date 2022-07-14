@@ -5,11 +5,22 @@ import { api } from "../../services/api";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 
+import { toast } from "react-toastify";
 
 function FormRegisterNewPatient() {
   const [datesDash, setDatesDash] = useState(
     JSON.parse(localStorage.getItem("token"))
   );
+
+  const date = new Date();
+  const currentYear = date.getFullYear();
+  const today = date.getDate();
+  const currentMonth = date.getMonth() + 1;
+
+  console.log(today, currentMonth, currentYear);
+  const dia = today + "/" + currentMonth + "/" + currentYear;
+
+  console.log(dia);
 
   const sendDates = (info) => {
     const dates = {
