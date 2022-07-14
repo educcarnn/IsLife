@@ -11,7 +11,9 @@ import {
   InputStatus,
 } from "./styles";
 import { api } from "../../services/api";
+
 import AuthGlobal from "../../components/Roules/AuthGlobal";
+
 
 function DayShare() {
   const [valueTextArea, setValueTextArea] = useState("");
@@ -60,6 +62,7 @@ function DayShare() {
       .then((response) => setMessages(response.data));
   }, [messages]);
 
+
  
     if(localStorage.getItem('token' === null)) {
       return (
@@ -106,6 +109,7 @@ function DayShare() {
     }
     
   ;
+
 }
 
 export default DayShare;
