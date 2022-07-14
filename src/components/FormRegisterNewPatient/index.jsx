@@ -5,6 +5,8 @@ import { api } from "../../services/api";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 
+import { toast } from "react-toastify";
+
 function FormRegisterNewPatient() {
   const [datesDash, setDatesDash] = useState(
     JSON.parse(localStorage.getItem("token"))
