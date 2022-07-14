@@ -10,6 +10,8 @@ import ListSchedule from "../../components/ListScheduleDashSoctor";
 import ModalSchedule from "../../components/modalSchedule/index";
 import { useEffect, useState } from "react";
 import { api } from "../../services/api";
+import AuthGlobal from "../../components/Roules/AuthGlobal";
+
 function DoctorSchedule() {
   const [showModal, setShowModal] = useState(false);
   const [arrConsultas, setArrConsultas] = useState([]);
@@ -22,6 +24,13 @@ function DoctorSchedule() {
       })
       .then((response) => setArrConsultas(response.data));
   }, [showModal, arrConsultas]);
+
+  if(localStorage.getItem('token') === null) {
+    return (
+     <AuthGlobal/>
+     )
+    }else {
+
 
   return (
     <ContainerSchedule>
@@ -45,7 +54,7 @@ function DoctorSchedule() {
         <img className="img-schedule" src={imgSchedule} alt="" />
       </ContentImgSchedule>
     </ContainerSchedule>
-  );
+  )};
 }
 
 export default DoctorSchedule;

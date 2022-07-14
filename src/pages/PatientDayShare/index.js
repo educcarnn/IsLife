@@ -12,6 +12,9 @@ import {
 } from "./styles";
 import { api } from "../../services/api";
 
+import AuthGlobal from "../../components/Roules/AuthGlobal";
+
+
 function DayShare() {
   const [valueTextArea, setValueTextArea] = useState("");
   const [valueInput, setValueInput] = useState("");
@@ -59,43 +62,54 @@ function DayShare() {
       .then((response) => setMessages(response.data));
   }, [messages]);
 
-  return (
-    <div>
-      <ContainerDayShare>
-        <ContentShare>
-          <h2 className="title-consults">Compartilhe</h2>
-          <p>com o seu médico como foi o seu dia</p>
 
-          <ContentDayShare>
-            <InputStatus
-              placeholder="status"
-              onChange={(event) => setValueInput(event.target.value)}
-            />
+ 
+    if(localStorage.getItem('token' === null)) {
+      return (
+        <AuthGlobal/>
+      )
+    } else {
+      return (
+        <div>
+        <ContainerDayShare>
+          <ContentShare>
+            <h2 className="title-consults">Compartilhe</h2>
+            <p>com o seu médico como foi o seu dia</p>
+  
+            <ContentDayShare>
+              <InputStatus
+                placeholder="status"
+                onChange={(event) => setValueInput(event.target.value)}
+              />
+  
+              <TextDayShare
+                rows="10"
+                placeholder="Como você está se sentindo hoje?"
+                onChange={(event) => setValueTextArea(event.target.value)}
+              />
+            </ContentDayShare>
+  
+            <ContainerBtn>
+              <button onClick={() => getInfo(valueInput, valueTextArea)}>
+                Enviar
+              </button>
+            </ContainerBtn>
+          </ContentShare>
+  
+          <ContentConsultList>
+            <ListContentDayshare>
+              {messages.map((element) => (
+                <PostDayShare element={element} />
+              ))}
+            </ListContentDayshare>
+          </ContentConsultList>
+        </ContainerDayShare>
+      </div>
+      )
+    }
+    
+  ;
 
-            <TextDayShare
-              rows="10"
-              placeholder="Como você está se sentindo hoje?"
-              onChange={(event) => setValueTextArea(event.target.value)}
-            />
-          </ContentDayShare>
-
-          <ContainerBtn>
-            <button onClick={() => getInfo(valueInput, valueTextArea)}>
-              Enviar
-            </button>
-          </ContainerBtn>
-        </ContentShare>
-
-        <ContentConsultList>
-          <ListContentDayshare>
-            {messages.map((element) => (
-              <PostDayShare element={element} />
-            ))}
-          </ListContentDayshare>
-        </ContentConsultList>
-      </ContainerDayShare>
-    </div>
-  );
 }
 
 export default DayShare;
