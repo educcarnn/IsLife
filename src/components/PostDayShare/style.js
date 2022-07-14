@@ -1,32 +1,23 @@
 import styled from "styled-components";
 
+
 export const PostContainer = styled.div`
   display: flex;
   gap: .6rem;
-
   width: 100%;
-
-
   padding: 1rem;
   color: #222;
   background-color: #F8F9FA;
 
-
-  section{
+  .testeImg{
     width: 50px;
     height: 50px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    margin-left: .3rem;
-    border-radius: 50px;
-    
-    background-color: #707070;
-
+    border-radius: 10px;
   }
 `;
+
+
+
 
 export const ContainerColumn = styled.div`
   display: flex;
