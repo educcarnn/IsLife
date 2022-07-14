@@ -19,6 +19,7 @@ export const Content = styled.button`
 
   :hover {
     color: var(--rosa);
+    transition: 0.4s;
     background: var(--brancoBackground);
     border: 1px solid var(--rosa);
   }

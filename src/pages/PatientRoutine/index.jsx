@@ -7,6 +7,7 @@ import {
 } from "./style";
 import AuthGlobal from "../../components/Roules/AuthGlobal";
 
+
 function PatientRoutine() {
 
   if(localStorage.getItem('token') === null) {
