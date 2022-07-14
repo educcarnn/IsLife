@@ -229,7 +229,7 @@ export const Footer = styled.footer`
   .ul-container {
     display: flex;
     justify-content: flex-start;
-    gap: 16px;
+    gap: 55px;
     padding: 16px;
   }
 
