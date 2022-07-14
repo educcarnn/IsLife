@@ -5,6 +5,7 @@ import { api } from "../../services/api";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 
+
 function FormRegisterNewPatient() {
   const [datesDash, setDatesDash] = useState(
     JSON.parse(localStorage.getItem("token"))
@@ -30,7 +31,7 @@ function FormRegisterNewPatient() {
       .then((res) => {
         console.log(res.response.data);
       });
-    toast.success("Paciente adicionado com sucesso");
+    //test
   };
 
   const schema = yup.object().shape({

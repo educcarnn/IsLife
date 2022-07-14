@@ -73,7 +73,6 @@ const Routes = () => {
         <Route exact path="/consultas">
           <HeaderPatient />
           <ListConsultPatient />
-          {/* <ConsultPatient /> */}
         </Route>
       </Switch>
     </BrowserRouter>

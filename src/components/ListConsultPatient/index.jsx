@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import { api } from "../../services/api";
-import { LiConsult, UlConsult } from "./style.js";
 import { UlListConsult } from "../../pages/ConsultPatient/style";
-import ListPatientConsult from "../ConsultListPatient";
 import { ContainerListConsult } from "../ConsultListPatient/style";
 
 function ListConsultPatient() {
