@@ -10,9 +10,7 @@ import { api } from "../../services/api";
 function Tarefa(props) {
   const { spyOnMove } = useContext(MyRoutineContext);
 
-  const paciente = JSON.parse(localStorage.getItem("token"));
-
-  const token = paciente.accessToken;
+  const token = JSON.parse(localStorage.getItem("token"));
 
   const [check, setCheck] = useState(props.check);
 
@@ -21,9 +19,10 @@ function Tarefa(props) {
   }
 
   function removeAtv() {
-    api.delete("/toDo", props.id, {
+    console.log("função foi startatda");
+    api.delete(`/toDo?id=${props.id}`, {
       header: {
-        Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${token.accessToken}`,
       },
     });
 

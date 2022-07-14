@@ -1,27 +1,19 @@
-import { ContainerColumn, PostContainer } from "./style";
+import { ContainerColumn, PostContainer,PostImg } from "./style";
 
-function PostDayShare() {
+function PostDayShare({element}) {
+  
   return (
     <PostContainer>
-      <div>
-        {/* imagem aqui */}
 
-        <section>Avatar</section>
-
-
-      </div>
+      <img src="https://www.seekpng.com/png/full/984-9840427_user-profile-computer-icons-facebook-avatar.png" alt="" className="testeImg"/>
 
       <ContainerColumn>
         <div>
-          <h3>Fernando Lacerda&#160;  - <span>está se sentindo feliz </span> </h3>
+          <h3>{element.status} </h3>
           <p>2 Jul 2022</p>
         </div>
         <div>
-          <p className="Text__Post">
-            Escolhi uma rota diferente para caminhar hoje e acabei descobrindo
-            uma cafeteria que nunca javia visto antes no meu bairro e comi o
-            melhor prailine da minha vida!
-          </p>
+          <p>{element.msgPatient}</p>
         </div>
 
       </ContainerColumn>

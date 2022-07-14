@@ -33,6 +33,7 @@ function HeaderPatient() {
 
         <nav className="Menu">
           <div className="Menu__Desktop">
+
             <ButtonForm className="btn-header--patient" onClick={handleClick}>
               Home
             </ButtonForm>
@@ -40,6 +41,10 @@ function HeaderPatient() {
               className="btn-header--patient"
               onClick={() => history.push("/consultas")}
             >
+
+            <ButtonForm onClick={() => history.push("/dashpatient")}>Home</ButtonForm>
+            <ButtonForm onClick={() => history.push("/consultas")}>
+
               Consultas
             </ButtonForm>
             <ButtonForm
