@@ -32,6 +32,11 @@ export const ContainerHeader = styled.header`
     width: 15%;
     display: flex;
     justify-content: space-between;
+    .btn-header {
+      width: 70px;
+      height: 30px;
+      border-radius: 8px;
+    }
   }
   @media (max-width: 800px) {
     display: flex;
@@ -55,15 +60,6 @@ export const ContainerHeader = styled.header`
     display: flex;
     justify-content: flex-start;
     gap: 10px;
-
-    .btn-header {
-      width: 175px;
-      height: 40px;
-      color: white;
-      background-color: #ce2d5d;
-      border: 1px solid black;
-      border-radius: 10px;
-    }
   }
 
   @media only screen and (min-width: 801px) {
