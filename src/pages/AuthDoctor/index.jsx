@@ -7,6 +7,7 @@ import { useHistory } from "react-router-dom";
 import { DivElems, FormElem, DivGlobalRegister } from "./style";
 import { DivVoltar } from "./style";
 import IsAuth from "../../components/Roules/IsAuth";
+import { toast } from "react-toastify";
 
 function AuthDoctor() {
   const schema = yup.object().shape({
@@ -30,6 +31,8 @@ function AuthDoctor() {
 
   function goToLogin() {
     history.push("/login");
+
+
   }
 
   const {
@@ -56,10 +59,10 @@ function AuthDoctor() {
 
     api
       .post("/register", dates)
-      .then((res) => console.log(res))
+      .then((res) => goToLogin())
       .catch((err) => console.log(err));
 
-    goToLogin();
+
   };
 
   if (localStorage.getItem("token") !== null) {

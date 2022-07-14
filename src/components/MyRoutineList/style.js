@@ -24,7 +24,7 @@ export const ContentPatient = styled.div`
 export const ListaTarefas = styled.ul`
   width: 95%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;

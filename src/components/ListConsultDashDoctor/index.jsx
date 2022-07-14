@@ -11,7 +11,7 @@ function ListConsultDashDoctor() {
 
   useEffect(() => {
     api
-      .get(`/consultas?IdDoctor=${4}`, {
+      .get(`/consultas?IdDoctor=${datesDash.user.id}`, {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${datesDash.accessToken}`,
@@ -21,6 +21,14 @@ function ListConsultDashDoctor() {
       .catch((err) => console.log(err));
   }, [consultas]);
 
+  if(consultas.length < 0) {
+    return (
+      <div>
+        <div>Sem consultas no momento</div>
+      </div>
+    )
+  } else {
+   
   return (
     <>
       {consultas?.map((info, key) => {
@@ -40,6 +48,7 @@ function ListConsultDashDoctor() {
       })}
     </>
   );
+}
 }
 
 export default ListConsultDashDoctor;

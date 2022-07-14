@@ -18,6 +18,7 @@ function Home() {
 
   function goToDash(path) {
     history.push(path);
+    console.log('home')
   }
 
   return (
@@ -27,6 +28,7 @@ function Home() {
       </Logo>
       <Container>
         <WelcomeContainer>
+          
           <h1>Seja Bem Vindo (a)</h1>
           <h2>IsLife</h2>
           <div className="typewr">
