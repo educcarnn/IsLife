@@ -19,7 +19,8 @@ function Tarefa(props) {
   }
 
   function removeAtv() {
-    api.delete("/toDo", props.id, {
+    console.log("função foi startatda");
+    api.delete(`/toDo?id=${props.id}`, {
       header: {
         Authorization: `Bearer ${token.accessToken}`,
       },
