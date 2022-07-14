@@ -10,13 +10,9 @@ import {
   ContainerBtn,
   InputStatus,
 } from "./styles";
-<<<<<<< HEAD
 import {api} from "../../services/api"
 import AuthGlobal from "../../components/Roules/AuthGlobal";
-
-=======
-import { api } from "../../services/api";
->>>>>>> 0a30808f3f44438a4e65f3dbbf7b6060eb4974b1
+const token = JSON.parse(localStorage.getItem("token"))
 
 function DayShare() {
   const [valueTextArea, setValueTextArea] = useState("");
@@ -33,7 +29,6 @@ function DayShare() {
 
   console.log(dia);
 
-<<<<<<< HEAD
  useEffect(()=>{
   api.get(`/messages?userId=${token.user.id}`,{
     headers: {"Authorization": `Bearer ${token.accessToken}`
@@ -46,9 +41,7 @@ if(localStorage.getItem('token') === null) {
    <AuthGlobal/>
    )
   }else {
-=======
   const token = JSON.parse(localStorage.getItem("token"));
->>>>>>> 0a30808f3f44438a4e65f3dbbf7b6060eb4974b1
 
   function getInfo(valueInput, valueTextArea) {
     api
