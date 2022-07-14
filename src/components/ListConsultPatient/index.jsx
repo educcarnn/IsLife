@@ -1,30 +1,29 @@
 import { useEffect, useState } from "react";
 import { api } from "../../services/api";
-import { LiConsult, UlConsult } from "./style.js";
 import { UlListConsult } from "../../pages/ConsultPatient/style";
-import ListPatientConsult from "../ConsultListPatient";
 import { ContainerListConsult } from "../ConsultListPatient/style";
 
 function ListConsultPatient() {
   const dataPatient = JSON.parse(localStorage.getItem("token"));
-
   const [consultas, setConsultas] = useState([])
 
   useEffect(() => {
-    api.get(`/consultas?IdPatient=${dataPatient.user.id}`, {
-        headers: { 
-            Authorization: `Bearer ${dataPatient.accessToken}` },
-      })
-      .then((res) => {
-        setConsultas(res.data);
-      });
+    if(localStorage.getItem('token') !== null){
+        api.get(`/consultas?IdPatient=${dataPatient.user.id}`, {
+            headers: { 
+                Authorization: `Bearer ${dataPatient.accessToken}` },
+          })
+          .then((res) => {
+            setConsultas(res.data);
+          });
+    }
 
   }, [consultas]);
 
   return (
     <UlListConsult>
       Consultas
-      {consultas.map((element, key) => {
+      {consultas?.map((element, key) => {
         return (
           <ContainerListConsult key={key}>
             <h3>{element.nome}</h3>

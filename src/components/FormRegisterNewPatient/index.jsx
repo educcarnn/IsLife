@@ -12,6 +12,16 @@ function FormRegisterNewPatient() {
     JSON.parse(localStorage.getItem("token"))
   );
 
+  const date = new Date();
+  const currentYear = date.getFullYear();
+  const today = date.getDate();
+  const currentMonth = date.getMonth() + 1;
+
+  console.log(today, currentMonth, currentYear);
+  const dia = today + "/" + currentMonth + "/" + currentYear;
+
+  console.log(dia);
+
   const sendDates = (info) => {
     const dates = {
       name: info.name,
@@ -32,7 +42,7 @@ function FormRegisterNewPatient() {
       .then((res) => {
         console.log(res.response.data);
       });
-    toast.success("Paciente adicionado com sucesso");
+    //test
   };
 
   const schema = yup.object().shape({

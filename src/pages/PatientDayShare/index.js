@@ -8,50 +8,56 @@ import {
   ListContentDayshare,
   TextDayShare,
   ContainerBtn,
-  InputStatus
+  InputStatus,
 } from "./styles";
-import {api} from "../../services/api"
+import { api } from "../../services/api";
 
 function DayShare() {
+  const [valueTextArea, setValueTextArea] = useState("");
+  const [valueInput, setValueInput] = useState("");
+  const [messages, setMessages] = useState([]);
 
- const [valueTextArea, setValueTextArea] = useState("")
- const [valueInput, setValueInput] = useState("")
- const [objMessage, setObjMessage] = useState({})
+  const date = new Date();
 
- const token = JSON.parse(localStorage.getItem("token"))
- 
- function getInfo(valueInput, valueTextArea){
+  const currentYear = date.getFullYear();
+  const today = date.getDate();
+  const currentMonth = date.getMonth() + 1;
 
-    console.log(token.user.id)
-    setObjMessage({
-      nome: token.user.name,
-      status: valueInput,
-      msgImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPL8t1n4_1cQSVsXJh9lhpFs1DRMFOF58V-Q&usqp=CAU",
-      msgPatient: valueTextArea,
-      userId: token.user.id,
-      IdDoctor: token.user.doctorId
-    })
+  const dia = today + "/" + currentMonth + "/" + currentYear;
 
-    api.post("/messages",{
-      nome: token.user.name,
-      status: valueInput,
-      msgImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPL8t1n4_1cQSVsXJh9lhpFs1DRMFOF58V-Q&usqp=CAU",
-      msgPatient: valueTextArea,
-      userId: token.user.id,
-      IdDoctor: token.user.doctorId
-    },
-    {
-        headers: {"Authorization": `Bearer ${token.accessToken}`
-    }})
-    .then((response)=> console.log(response))
-    .catch((err)=> console.log(err))
+  console.log(dia);
 
-}
+  const token = JSON.parse(localStorage.getItem("token"));
 
+  function getInfo(valueInput, valueTextArea) {
+    api
+      .post(
+        "/messages",
+        {
+          nome: token.user.name,
+          status: valueInput,
+          day: dia,
+          msgImage:
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPL8t1n4_1cQSVsXJh9lhpFs1DRMFOF58V-Q&usqp=CAU",
+          msgPatient: valueTextArea,
+          userId: token.user.id,
+          IdDoctor: token.user.doctorId,
+        },
+        {
+          headers: { Authorization: `Bearer ${token.accessToken}` },
+        }
+      )
+      .then((response) => console.log(response))
+      .catch((err) => console.log(err));
+  }
 
-
-
- 
+  useEffect(() => {
+    api
+      .get(`/messages?userId=${token.user.id}`, {
+        headers: { Authorization: `Bearer ${token.accessToken}` },
+      })
+      .then((response) => setMessages(response.data));
+  }, [messages]);
 
   return (
     <div>
@@ -59,29 +65,32 @@ function DayShare() {
         <ContentShare>
           <h2 className="title-consults">Compartilhe</h2>
           <p>com o seu médico como foi o seu dia</p>
+
           <ContentDayShare>
+            <InputStatus
+              placeholder="status"
+              onChange={(event) => setValueInput(event.target.value)}
+            />
 
             <TextDayShare
               rows="10"
               placeholder="Como você está se sentindo hoje?"
-              onChange={(event)=> setValueTextArea(event.target.value)}/>
-              
-              <InputStatus placeholder="status"
-              onChange={(event)=> setValueInput(event.target.value)}/>
-
+              onChange={(event) => setValueTextArea(event.target.value)}
+            />
           </ContentDayShare>
 
           <ContainerBtn>
-
-            <button onClick={()=> getInfo(valueInput,valueTextArea)}>Enviar</button>
-            <button>Limpar</button>
-
+            <button onClick={() => getInfo(valueInput, valueTextArea)}>
+              Enviar
+            </button>
           </ContainerBtn>
         </ContentShare>
 
         <ContentConsultList>
           <ListContentDayshare>
-            <PostDayShare/>
+            {messages.map((element) => (
+              <PostDayShare element={element} />
+            ))}
           </ListContentDayshare>
         </ContentConsultList>
       </ContainerDayShare>
