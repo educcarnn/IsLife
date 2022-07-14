@@ -26,6 +26,7 @@ import IsAuth from "../../components/Roules/IsAuth";
 //     crm: yup.string().required("documentação obrigatória"),
 //   });
 
+<<<<<<< HEAD
   
 //   function goToLogin() {
 //     history.push("/login");
@@ -55,6 +56,9 @@ import IsAuth from "../../components/Roules/IsAuth";
 //         .catch((err) => console.log(err));
 //       goToLogin();
   
+=======
+  const history = useHistory();
+>>>>>>> 43b2fc48eb08c4287f6cd891e1d8b0497451d0b2
 
 //   }
 //   }
@@ -73,7 +77,17 @@ import IsAuth from "../../components/Roules/IsAuth";
 //           </button>
 //         </DivVoltar>
 
+<<<<<<< HEAD
 //         <h2>CADASTRO</h2>
+=======
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
+>>>>>>> 43b2fc48eb08c4287f6cd891e1d8b0497451d0b2
 
 //         <div className="divGlobalForm">
 //           <FormElem className="formItem" onSubmit={handleSubmit(sendDates)}>

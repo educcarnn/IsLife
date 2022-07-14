@@ -13,7 +13,6 @@ import { useHistory } from "react-router";
 import { Container, Logo, WelcomeContainer, Footer } from "./style";
 import Typewriter from "typewriter-effect";
 
-
 function Home() {
   const history = useHistory();
 
@@ -66,7 +65,7 @@ function Home() {
           <li className="devs-li">
             <img src={Eduardo} alt="Eduardo" />
             <h2>Eduardo Carneiro</h2>
-            <h4>Dev</h4>
+            <h4>Tech Leader</h4>
 
             <div className="icons">
               <a href="https://github.com/educcarnn">
@@ -80,7 +79,7 @@ function Home() {
           <li>
             <img src={Idaline} alt="Idaline" />
             <h2>Idaline Viana</h2>
-            <h4>Dev</h4>
+            <h4>PO</h4>
 
             <div className="icons">
               <a href="https://github.com/idalineviana">
@@ -94,7 +93,7 @@ function Home() {
           <li>
             <img src={Fernando} alt="Fernando" />
             <h2>Fernando Lacerda</h2>
-            <h4>Dev</h4>
+            <h4>QA</h4>
 
             <div className="icons">
               <a href="https://github.com/anjosdelacerda">
@@ -108,7 +107,7 @@ function Home() {
           <li>
             <img src={Herbert} alt="Herbert" />
             <h2>Herbert Sipriano</h2>
-            <h4>Dev</h4>
+            <h4>Scrum Master</h4>
 
             <div className="icons">
               <a href="https://github.com/herbertcaiosama">
@@ -122,7 +121,7 @@ function Home() {
           <li className="li-card--devs">
             <img src={Leomar} alt="Leomar" />
             <h2>Leomar Paz</h2>
-            <h4>Dev</h4>
+            <h4>QA</h4>
 
             <div className="icons">
               <a href="https://github.com/LeomarPaz2022">
@@ -136,7 +135,7 @@ function Home() {
           <li>
             <img src={Lucas} alt="Lucas" />
             <h2>Lucas Roque</h2>
-            <h4>Dev</h4>
+            <h4>QA</h4>
 
             <div className="icons">
               <a href="https://github.com/lucasroquesousa">
