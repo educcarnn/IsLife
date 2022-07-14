@@ -95,8 +95,11 @@ export const UlListConsult = styled.ul`
   flex-direction: column;
   gap: 20px;
   padding-top: 45px;
+  margin-top: -25px;
+    margin-left: 60px;
 
   @media (max-width: 800px) {
+    margin-left: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;

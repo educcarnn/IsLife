@@ -45,7 +45,7 @@ export const Container = styled.main`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 55px;
 
   img {
     width: 375px;

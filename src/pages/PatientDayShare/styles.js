@@ -8,7 +8,6 @@ export const ContainerDayShare = styled.main`
   justify-content: center;
 
 
-
   @media (max-width: 800px) {
     display: flex;
     flex-direction: column;
@@ -26,6 +25,7 @@ export const ContentShare = styled.div`
   padding: 16px;
   display: flex;
   flex-direction: column;
+  gap: 15px;
 
 
  
@@ -51,8 +51,7 @@ export const ContentDayShare = styled.div`
   margin-right: 0;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+  justify-content: center;
   gap: 20px;
 
  
@@ -70,11 +69,43 @@ export const ContentDayShare = styled.div`
 `;
 
 export const InputStatus = styled.input`
-width: 150px;
-height: 30px;
-background-color: blueviolet;
-color: white;
+ width: 94%;
+ height: 35px;
+ background-color: white;
+ color:#CE2D5D;
+ border-radius: 8px;
+ border: 1px solid #CE2D5D;
+ outline: 0px;
+ padding-left: 5px;
+
 `
+
+export const TextDayShare = styled.textarea`
+  width: 98%;
+  min-width: 220px;
+  
+  resize: none;
+  padding: 1rem;
+  
+  border-radius: 8px;
+  box-sizing: border-box;
+
+color:#CE2D5D;
+ border-radius: 8px;
+ border: 1px solid #CE2D5D;
+ outline: 0px;
+ padding-left: 5px;
+
+
+  @media (min-width: 800px) {
+    width: 96%;
+    min-width: 320px;
+  }
+
+`
+
+
+
 
 export const ContentConsultList = styled.div`
   display: flex;
@@ -107,17 +138,13 @@ export const ListContentDayshare = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 20px;
-
-  
-
   max-height: 600px;
   overflow-y: auto;
   overflow-x: hidden;
-
   border-radius: 10px;
   box-shadow: 1px 2px 8px #777;
 
-  background-color: aqua;
+  background-color: #B32751;
 
   @media (max-width: 800px) {
     display: flex;
@@ -126,42 +153,25 @@ export const ListContentDayshare = styled.ul`
   }
 `;
 
-
-
-
-export const TextDayShare = styled.textarea`
-  width: 98%;
-  min-width: 220px;
-  
-  resize: none;
-  padding: 1rem;
-  
-  border-radius: 8px;
-  box-sizing: border-box;
-
-  @media (min-width: 800px) {
-    width: 96%;
-    min-width: 320px;
-  }
-
-`
-
 export const ContainerBtn = styled.div`
   display: flex;
-  justify-content: space-around;
-  justify-content: flex-start;
-  gap: 10px;
-  padding: 1rem;
-
-  box-sizing: border-box;
-
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 95%;
   
   button{
-    font-weight: 500;
-    width: 10vw;
-    max-width: 150px;
-    min-width:  100px;
-    padding: .6rem 1rem;
+    width: 250px;
+    height: 40px;
+    border-radius: 5px;
+    border:1px solid #CE2D5D;
+
+    :hover{
+      background-color: white;
+      color: #CE2D5D;
+      border: 1px solid #CE2D5D;
+    }
+
   }
 
   @media screen and (min-width: 800px){

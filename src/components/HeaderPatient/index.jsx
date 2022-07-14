@@ -32,7 +32,7 @@ function HeaderPatient() {
         </div>
         {/* mudança no button form */}
         <nav className="Menu">
-          <div className="Menu__Desktop">
+        <div className="Menu__Desktop">
             <ButtonForm className="btn-header--patient" onClick={handleClick}>
               Home
             </ButtonForm>

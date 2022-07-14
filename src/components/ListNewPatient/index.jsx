@@ -1,6 +1,8 @@
 import { api } from "../../services/api";
 import { ContainerListNewPatient } from "./styles";
 import { useState } from "react";
+import { useEffect } from "react";
+import { toast } from "react-toastify";
 
 function ListNewPatient() {
   const [datesDash, setDatesDash] = useState(
@@ -8,9 +10,8 @@ function ListNewPatient() {
   );
   const [patient, setPatient] = useState([]);
 
-  if (localStorage.getItem("token") !== null) {
-    api
-      .get(`/users?doctorId=${datesDash.user.id}`, {
+  useEffect(() => {
+    api.get(`/users?doctorId=${datesDash.user.id}`, {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${datesDash.accessToken}`,
@@ -18,11 +19,8 @@ function ListNewPatient() {
       })
       .then((res) => {
         setPatient(res.data);
-      })
-      .catch((res) => {
-        console.log(res);
       });
-  }
+  }, [patient]);
 
   const itemCart = (item) => {
     return (
@@ -39,11 +37,7 @@ function ListNewPatient() {
     );
   };
 
-  return (
-    <div>
-      {patient?.map(itemCart)}
-    </div>
-  );
+  return <div>{patient?.map(itemCart)}</div>;
 }
 
 export default ListNewPatient;
