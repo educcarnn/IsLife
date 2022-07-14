@@ -10,21 +10,19 @@ export const StyledHeader = styled.header`
   justify-content: space-between;
   align-items: center;
   padding: 0.2rem 4%;
-  box-shadow: 1px -3px 10px #3333 ;
+  box-shadow: 1px -3px 10px #3333;
 
-  .buttonImg{
+  .buttonImg {
     background-color: transparent;
     width: 0rem;
     height: 0rem;
     margin-top: -1rem;
   }
-    
-
 
   img {
     height: 50px;
     background-color: #ffffff;
-    padding:  0 1rem;
+    padding: 0 1rem;
     border-radius: 55%;
   }
 
@@ -72,10 +70,15 @@ export const StyledHeader = styled.header`
     margin-top: 100px;
   }
 
-  button {
-    margin-left: 10px;
-    border-radius: 5px;
-    padding: 0.3rem 1rem;
+  .Menu__Desktop {
+    display: flex;
+    justify-content: space-around;
+    width: 350px;
+    .btn-header--patient {
+      width: 100px;
+      height: 30px;
+      border-radius: 8px;
+    }
   }
 
   @media only screen and (max-width: 800px) {
@@ -86,10 +89,10 @@ export const StyledHeader = styled.header`
 
   @media only screen and (min-width: 801px) {
     .Menu__Mobile {
-        display: none;
+      display: none;
     }
-    .Menu__Mobile--icon{
-        display: none;
+    .Menu__Mobile--icon {
+      display: none;
     }
   }
 `;
@@ -187,7 +190,6 @@ export const StyledMenuMobile = styled.div`
     overflow-y: auto;
     visibility: hidden;
     background-color: #ce2d5d;
-
   }
 
   .Menu {
@@ -195,8 +197,7 @@ export const StyledMenuMobile = styled.div`
     width: 70%;
     min-width: 280px;
     height: calc(100vh - 60px);
-
-  } 
+  }
 
   .Menu li {
     margin-top: 45px;
@@ -211,8 +212,6 @@ export const StyledMenuMobile = styled.div`
     border-bottom: #e4e1e1 solid;
   }
 
-  @media screen and (max-width:800px) {
-    
+  @media screen and (max-width: 800px) {
   }
-
 `;

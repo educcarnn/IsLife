@@ -6,6 +6,7 @@ import { useState } from "react";
 import { Redirect } from "react-router-dom";
 import { FiMenu } from "react-icons/fi";
 import { MdClose } from "react-icons/md";
+import ButtonForm from "../button";
 
 function HeaderDoctor() {
   const history = useHistory();
@@ -24,24 +25,24 @@ function HeaderDoctor() {
       <img onClick={handleClick} src={logo} alt="" />
 
       <div className="div-buttons">
-        <button
+        <ButtonForm
           className="btn-header"
           onClick={() => history.push("./dashdoctor")}
         >
           Consultas
-        </button>
-        <button
+        </ButtonForm>
+        <ButtonForm
           className="btn-header"
           onClick={() => history.push("./doctorschedule")}
         >
           Agendar
-        </button>
-        <button
+        </ButtonForm>
+        <ButtonForm
           className="btn-header"
           onClick={() => history.push("./doctorpatient")}
         >
           Pacientes
-        </button>
+        </ButtonForm>
       </div>
 
       <div className="Menu__Mobile--icon">
