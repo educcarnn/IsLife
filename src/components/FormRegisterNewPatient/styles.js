@@ -10,6 +10,14 @@ export const ContainerForm = styled.form`
   margin-top: 30px;
   background: #f8f9fa;
 
+  span {
+    font-size: 10px;
+
+    margin-top: 7px;
+    margin-left: 5px;
+    color: var(--rosa);
+  }
+
   .div-input {
     margin-top: 32px;
     width: 100%;
@@ -19,7 +27,7 @@ export const ContainerForm = styled.form`
     flex-wrap: wrap;
     align-content: center;
   }
-  
+
   .input-new-patient {
     width: 90%;
     background: #e9ecef;

@@ -10,21 +10,17 @@ function ListNewPatient() {
   );
   const [patient, setPatient] = useState([]);
 
-  
   useEffect(() => {
-      api
-        .get(`/users?doctorId=${datesDash.user.id}`, {
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${datesDash.accessToken}`,
-          },
-        })
-        .then((res) => {
-          setPatient(res.data);
-        })
-    
+    api.get(`/users?doctorId=${datesDash.user.id}`, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${datesDash.accessToken}`,
+        },
+      })
+      .then((res) => {
+        setPatient(res.data);
+      });
   }, [patient]);
-
 
   const itemCart = (item) => {
     return (
@@ -41,11 +37,7 @@ function ListNewPatient() {
     );
   };
 
-  return (
-    <div>
-      {patient?.map(itemCart)}
-    </div>
-  );
+  return <div>{patient?.map(itemCart)}</div>;
 }
 
 export default ListNewPatient;
