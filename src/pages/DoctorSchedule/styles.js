@@ -1,4 +1,18 @@
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
+
+const animation = keyframes`
+from{
+ opacity: 0;
+  transform: translateX(50px);
+}
+
+to{
+ opacity: 1;
+  transform: translateX(0px);
+
+}
+`
+
 
 export const ContainerSchedule = styled.main`
   width: 100%;
@@ -7,6 +21,8 @@ export const ContainerSchedule = styled.main`
   flex-direction: row;
   justify-content: space-evenly;
   margin-top: 16px;
+  animation: ${animation} 1s;
+
   .title-content {
     display: flex;
     flex-direction: row;

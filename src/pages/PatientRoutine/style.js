@@ -1,4 +1,17 @@
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
+
+const animation = keyframes`
+from{
+ opacity: 0;
+  transform: translateX(50px);
+}
+
+to{
+ opacity: 1;
+  transform: translateX(0px);
+
+}
+`
 
 export const ContainerRoutine = styled.main`
   width: 100%;
@@ -7,6 +20,7 @@ export const ContainerRoutine = styled.main`
   display: flex;
   gap: 25px;
   justify-content: center;
+  animation: ${animation} 1s;
   .div-textarea {
     padding: 16px;
     line-height: 20px;

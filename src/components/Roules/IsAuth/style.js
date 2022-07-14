@@ -5,7 +5,7 @@ export const AuthDiv = styled.div`
     flex-direction: column;
     align-items: center;
     margin-top: 9rem;
-    background-color: darkseagreen;
+    background-color: white;
     padding-top: 4rem;
     padding-bottom: 5rem;
 

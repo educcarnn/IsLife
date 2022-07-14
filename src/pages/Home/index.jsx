@@ -10,7 +10,7 @@ import { AiFillGithub } from "react-icons/ai";
 import { AiFillLinkedin } from "react-icons/ai";
 import { AiOutlineInstagram } from "react-icons/ai";
 import { useHistory } from "react-router";
-import { Container, Logo, WelcomeContainer, Footer } from "./style";
+import { Container, Logo, WelcomeContainer, Footer,DivImgWelcome } from "./style";
 import Typewriter from "typewriter-effect";
 
 function Home() {
@@ -25,10 +25,13 @@ function Home() {
       <Logo>
         <img src={logo} alt="IsLife" />
       </Logo>
+
       <Container>
+
         <WelcomeContainer>
           <h1>Seja Bem Vindo (a)</h1>
           <h2>IsLife</h2>
+
           <div className="typewr">
             <Typewriter
               onInit={(typewriter) => {
@@ -46,18 +49,24 @@ function Home() {
             />
           </div>
 
-          <div>
+          <div  className="divBtnMedPac">
+
             <button onClick={() => goToDash("/home/doctor")}>
               Sou um médico
             </button>
+
             <button onClick={() => goToDash("/home/patient")}>
               Sou um paciente
             </button>
+
           </div>
+
         </WelcomeContainer>
-        <div>
+
+        <DivImgWelcome>
           <img src={ImgHome} alt="Welcome" />
-        </div>
+        </DivImgWelcome>
+
       </Container>
       <Footer>
         <h3>Conheça os devs que fizeram esse projeto</h3>

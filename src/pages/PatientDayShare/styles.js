@@ -1,4 +1,17 @@
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
+
+const animation = keyframes`
+from{
+ opacity: 0;
+  transform: translateX(50px);
+}
+
+to{
+ opacity: 1;
+  transform: translateX(0px);
+
+}
+`
 
 export const ContainerDayShare = styled.main`  
   margin-top: 25px;
@@ -6,6 +19,7 @@ export const ContainerDayShare = styled.main`
   display: flex;
   gap: 25px;
   justify-content: center;
+  animation: ${animation} 1s;
 
 
   @media (max-width: 800px) {

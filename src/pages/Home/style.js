@@ -1,4 +1,17 @@
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
+
+const anima = keyframes`
+from{
+ opacity: 0;
+  transform: translateX(100px);
+}
+
+to{
+ opacity: 1;
+  transform: translateX(0px);
+}
+`
+
 
 export const Logo = styled.header`
   position: relative;
@@ -65,7 +78,7 @@ export const Container = styled.main`
     border: none;
     margin-top: 10px;
     margin-left: 28px;
-    border-radius: 50px;
+    border-radius: 30px;
     transition: 0.6s;
     margin-top: 16px;
     margin-bottom: 16px;
@@ -165,6 +178,25 @@ export const WelcomeContainer = styled.div`
     font-family: "Edu SA Beginner", cursive;
   }
 
+  .divBtnMedPac{
+
+    button{
+      border-radius: 5px;
+      font-weight: 300;
+      background-color: white;
+      color:#CE2D5D;
+      border: 1px solid #CE2D5D;
+      font-family: "Inter";
+
+      :hover{
+      background-color: #CE2D5D;
+      color:white;
+      border: 1px solid #CE2D5D;
+
+      }
+    }
+  }
+
   @media screen and (min-width: 768px) {
     top: 160px;
     margin-bottom: 230px;
@@ -204,6 +236,14 @@ export const WelcomeContainer = styled.div`
     }
   }
 `;
+
+export const DivImgWelcome = styled.div`
+img{
+  margin-top: 64px;
+  animation: ${anima} 1s;
+}
+
+`
 
 export const Footer = styled.footer`
   flex-direction: column;

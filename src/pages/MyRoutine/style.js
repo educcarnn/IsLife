@@ -1,4 +1,18 @@
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
+
+const animation = keyframes`
+from{
+ opacity: 0;
+  transform: translateX(50px);
+}
+
+to{
+ opacity: 1;
+  transform: translateX(0px);
+
+}
+`
+
 
 export const Container = styled.section`
   width: 100vw;
@@ -10,4 +24,6 @@ export const Container = styled.section`
   margin-top: 1.5rem;
 
   background: var(--inputBackground);
+
+  animation: ${animation} 1s;
 `;
