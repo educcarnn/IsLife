@@ -15,7 +15,7 @@ function HeaderPatient() {
 
   const handleClick = () => {
     history.push("/");
-    localStorage.removeItem("token");
+    localStorage.clear()
   };
 
   const displayMenuMobile = () => {
@@ -33,7 +33,7 @@ function HeaderPatient() {
         {/* mudança no button form */}
         <nav className="Menu">
         <div className="Menu__Desktop">
-            <ButtonForm className="btn-header--patient" onClick={handleClick}>
+            <ButtonForm className="btn-header--patient" onClick={() => history.push("/dashpatient")}>
               Home
             </ButtonForm>
             <ButtonForm

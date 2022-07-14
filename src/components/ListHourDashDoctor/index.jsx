@@ -26,7 +26,7 @@ function ListHourDashDoctor() {
         return (
           <ContainerList className="li-content-hour" key={key}>
             <div className="avatar">
-              <img src={info.img} alt="" />
+             
             </div>
             <div className="list-info">
               <h3>{info.nome}</h3>

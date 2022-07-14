@@ -65,11 +65,6 @@ function  ModalSchedule({showModal,setShowModal}){
 
             <Form onSubmit={handleSubmit(onSubmitFunction)}>
 
-                {/* <input type="text" 
-                placeholder="Digite o nome do paciente"
-                {...register("nome")} 
-                name = "nome"
-                error={errors.nome?.message}/> */}
 
                 <select
                     className="selectPatient"

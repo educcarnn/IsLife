@@ -13,7 +13,7 @@ function HeaderDoctor() {
   const [isActiveMenuMobile, setIsActiveMenuMobile] = useState(false);
   const handleClick = () => {
     history.push("/");
-    localStorage.removeItem("token");
+    localStorage.clear()
   };
 
   const displayMenuMobile = () => {
