@@ -1,11 +1,13 @@
 import { useState } from "react"
 
 function AuthPatient(){
-    const [datesDash, setDatesDash] = useState([])
+    const [datesDash, setDatesDash] = useState(
+        JSON.parse(localStorage.getItem("token"))
+      );
     return (
       
         <div>
-            <img></img>
+            
 
         </div>
     )

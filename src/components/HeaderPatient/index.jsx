@@ -13,7 +13,7 @@ function HeaderPatient() {
   const history = useHistory();
 
   const handleClick = () => {
-    history.push("/dashpatient");
+    history.push("/");
     localStorage.removeItem("token");
   };
 
@@ -32,7 +32,7 @@ function HeaderPatient() {
 
         <nav className="Menu">
           <div className="Menu__Desktop">
-            <button onClick={handleClick}>Home</button>
+            <button onClick={() => history.push("/dashpatient")}>Home</button>
             <button onClick={() => history.push("/consultas")}>
               Consultas
             </button>
